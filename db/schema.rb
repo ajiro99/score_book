@@ -10,13 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310175015) do
+ActiveRecord::Schema.define(version: 20180310195527) do
 
   create_table "conventions", force: :cascade do |t|
     t.integer  "year"
     t.integer  "convention_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "convention_id",                                            null: false
+    t.string   "section",                                                  null: false
+    t.date     "date",                                                     null: false
+    t.time     "start_time",                                               null: false
+    t.integer  "opponent_id",                                              null: false
+    t.integer  "home_away",                                                null: false
+    t.integer  "weather",                                                  null: false
+    t.integer  "temperature",                                              null: false
+    t.string   "referee"
+    t.integer  "result",                                                   null: false
+    t.integer  "gool",                                         default: 0, null: false
+    t.integer  "gool_against",                                 default: 0, null: false
+    t.integer  "shoot",                                        default: 0, null: false
+    t.integer  "shoot_against",                                default: 0, null: false
+    t.integer  "ck",                                           default: 0, null: false
+    t.integer  "ck_against",                                   default: 0, null: false
+    t.integer  "fk",                                           default: 0, null: false
+    t.integer  "fk_against",                                   default: 0, null: false
+    t.integer  "yellow_card",                                  default: 0, null: false
+    t.integer  "gave_yellow_card",                             default: 0, null: false
+    t.integer  "red_card",                                     default: 0, null: false
+    t.integer  "gave_red_card",                                default: 0, null: false
+    t.decimal  "dominance_rate",       precision: 5, scale: 2
+    t.integer  "first_change_time"
+    t.integer  "first_change_out_id"
+    t.integer  "first_change_in_id"
+    t.integer  "second_change_time"
+    t.integer  "second_change_out_id"
+    t.integer  "second_change_in_id"
+    t.integer  "third_change_time"
+    t.integer  "third_change_out_id"
+    t.integer  "third_change_in_id"
+    t.integer  "number_of_visitors"
+    t.integer  "rank"
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.index ["convention_id"], name: "index_games_on_convention_id"
+    t.index ["first_change_in_id"], name: "index_games_on_first_change_in_id"
+    t.index ["first_change_out_id"], name: "index_games_on_first_change_out_id"
+    t.index ["opponent_id"], name: "index_games_on_opponent_id"
+    t.index ["second_change_in_id"], name: "index_games_on_second_change_in_id"
+    t.index ["second_change_out_id"], name: "index_games_on_second_change_out_id"
+    t.index ["third_change_in_id"], name: "index_games_on_third_change_in_id"
+    t.index ["third_change_out_id"], name: "index_games_on_third_change_out_id"
   end
 
 end

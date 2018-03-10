@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  convention: one
+  'no': MyString
+  date: 2018-03-11
+  start_time: 2018-03-11 04:55:27
+  opponent: one
+  home_away: 1
+  weather: 1
+  temperature: 1
+  referee: MyString
+  result: 1
+  gool: 1
+  gool_against: 1
+  shoot: 1
+  shoot_against: 1
+  ck: 1
+  ck_against: 1
+  fk: 1
+  fk_against: 1
+  yellow_card: 1
+  gave_yellow_card: 1
+  red_card: 1
+  gave_red_card: 1
+  dominance_rate: 1
+  change_1_time: 1
+  change_1_in: 
+  change_2_time: 1
+  change_2_in: 
+  change_3_time: 1
+  change_3_in: 
+  number_of_visitors: 1
+  rank: 1
+
+two:
+  convention: two
+  'no': MyString
+  date: 2018-03-11
+  start_time: 2018-03-11 04:55:27
+  opponent: two
+  home_away: 1
+  weather: 1
+  temperature: 1
+  referee: MyString
+  result: 1
+  gool: 1
+  gool_against: 1
+  shoot: 1
+  shoot_against: 1
+  ck: 1
+  ck_against: 1
+  fk: 1
+  fk_against: 1
+  yellow_card: 1
+  gave_yellow_card: 1
+  red_card: 1
+  gave_red_card: 1
+  dominance_rate: 1
+  change_1_time: 1
+  change_1_in: 
+  change_2_time: 1
+  change_2_in: 
+  change_3_time: 1
+  change_3_in: 
+  number_of_visitors: 1
+  rank: 1
