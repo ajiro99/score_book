@@ -1,0 +1,8 @@
+ja:
+  enumerize:
+    convention:
+      convention_type:
+        j_league: Jリーグ
+        j_league_cup: Jリーグカップ
+        emperor_cup: 天皇杯
+        acl: アジアチャンピオンズリーグ
