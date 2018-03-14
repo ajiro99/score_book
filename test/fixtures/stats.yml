@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  player: one
+  participation: 1
+  time: 1
+  gool: 1
+  gool_against: 1
+  shoot: 1
+  shoot_against: 1
+  yellow_card: 1
+  red_card: 1
+
+two:
+  game: two
+  player: two
+  participation: 1
+  time: 1
+  gool: 1
+  gool_against: 1
+  shoot: 1
+  shoot_against: 1
+  yellow_card: 1
+  red_card: 1

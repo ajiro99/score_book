@@ -1,0 +1,39 @@
+h1 Listing result
+= link_to 'games', admin_games_path
+table
+  thead
+    tr
+      th Game
+      th Player
+      th Participation
+      th Time
+      th Gool
+      th Gool against
+      th Shoot
+      th Shoot against
+      th Yellow card
+      th Red card
+      th
+      th
+      th
+
+  tbody
+    - @results.each do |result|
+      tr
+        td = result.game.section
+        td = result.player.name
+        td = result.participation_text
+        td = result.time
+        td = result.gool
+        td = result.gool_against
+        td = result.shoot
+        td = result.shoot_against
+        td = result.yellow_card
+        td = result.red_card
+        td = link_to 'Show', admin_result_path(result)
+        td = link_to 'Edit', edit_admin_result_path(result)
+        td = link_to 'Destroy', admin_result_path(result), data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Result', new_admin_result_path

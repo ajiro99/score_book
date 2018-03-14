@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310195527) do
+ActiveRecord::Schema.define(version: 20180314114855) do
 
   create_table "conventions", force: :cascade do |t|
     t.integer  "year"
@@ -64,6 +64,42 @@ ActiveRecord::Schema.define(version: 20180310195527) do
     t.index ["second_change_out_id"], name: "index_games_on_second_change_out_id"
     t.index ["third_change_in_id"], name: "index_games_on_third_change_in_id"
     t.index ["third_change_out_id"], name: "index_games_on_third_change_out_id"
+  end
+
+  create_table "opponents", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "category",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "year",       null: false
+    t.integer  "number",     null: false
+    t.string   "name",       null: false
+    t.integer  "position",   null: false
+    t.date     "birthday",   null: false
+    t.integer  "height",     null: false
+    t.integer  "weight",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer  "game_id",                   null: false
+    t.integer  "player_id",                 null: false
+    t.integer  "participation",             null: false
+    t.integer  "time",          default: 0, null: false
+    t.integer  "gool"
+    t.integer  "gool_against"
+    t.integer  "shoot"
+    t.integer  "shoot_against"
+    t.integer  "yellow_card",   default: 0, null: false
+    t.integer  "red_card",      default: 0, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["game_id"], name: "index_results_on_game_id"
+    t.index ["player_id"], name: "index_results_on_player_id"
   end
 
 end

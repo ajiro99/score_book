@@ -1,0 +1,108 @@
+p#notice = notice
+
+p
+  strong Convention:
+  = @game.convention
+p
+  strong No:
+  = @game.section
+p
+  strong Date:
+  = @game.date
+p
+  strong Start time:
+  = @game.start_time
+p
+  strong Opponent:
+  = @game.opponent
+p
+  strong Home away:
+  = @game.home_away
+p
+  strong Weather:
+  = @game.weather
+p
+  strong Temperature:
+  = @game.temperature
+p
+  strong Referee:
+  = @game.referee
+p
+  strong Result:
+  = @game.result
+p
+  strong Gool:
+  = @game.gool
+p
+  strong Gool against:
+  = @game.gool_against
+p
+  strong Shoot:
+  = @game.shoot
+p
+  strong Shoot against:
+  = @game.shoot_against
+p
+  strong Ck:
+  = @game.ck
+p
+  strong Ck against:
+  = @game.ck_against
+p
+  strong Fk:
+  = @game.fk
+p
+  strong Fk against:
+  = @game.fk_against
+p
+  strong Yellow card:
+  = @game.yellow_card
+p
+  strong Gave yellow card:
+  = @game.gave_yellow_card
+p
+  strong Red card:
+  = @game.red_card
+p
+  strong Gave red card:
+  = @game.gave_red_card
+p
+  strong Dominance rate:
+  = @game.dominance_rate
+p
+  strong first_change_time:
+  = @game.first_change_time
+p
+  strong first_change_out_id:
+  = @game.first_change_out_id
+p
+  strong first_change_in_id:
+  = @game.first_change_in_id
+p
+  strong second_change_time:
+  = @game.second_change_time
+p
+  strong second_change_out_id:
+  = @game.second_change_out_id
+p
+  strong second_change_in_id:
+  = @game.second_change_in_id
+p
+  strong third_change_time:
+  = @game.third_change_time
+p
+  strong third_change_out_id:
+  = @game.third_change_out_id
+p
+  strong third_change_in_id:
+  = @game.third_change_in_id
+p
+  strong Number of visitors:
+  = @game.number_of_visitors
+p
+  strong Rank:
+  = @game.rank
+
+=> link_to 'Edit', edit_admin_game_path(@game)
+'|
+=< link_to 'Back', admin_games_path

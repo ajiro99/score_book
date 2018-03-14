@@ -1,0 +1,113 @@
+= form_for([:admin, @game]) do |f|
+  - if @game.errors.any?
+    #error_explanation
+    h2 = "#{pluralize(@game.errors.count, "error")} prohibited this product from being saved:"
+
+    ul
+      - @game.errors.full_messages.each do |message|
+        li = message
+
+  .field
+    = f.label :convention
+    = f.collection_select :convention_id, Convention.all, :id, :convention_type_text
+  .field
+    = f.label :section
+    = f.text_field :section
+  .field
+    = f.label :date
+    = f.date_select :date, include_blank: true, selected: @game.date
+  .field
+    = f.label :start_time
+    = f.time_select :start_time
+  .field
+    = f.label :opponent
+    = f.collection_select :opponent_id, Opponent.all, :id, :name
+  .field
+    = f.label :home_away
+    = f.select :home_away, Game.home_away.options
+  .field
+    = f.label :weather
+    = f.select :weather, Game.weather.options
+  .field
+    = f.label :temperature
+    = f.number_field :temperature
+  .field
+    = f.label :referee
+    = f.text_field :referee
+  .field
+    = f.label :result
+    = f.select :result, Game.result.options
+  .field
+    = f.label :gool
+    = f.number_field :gool, min: 0
+  .field
+    = f.label :gool_against
+    = f.number_field :gool_against, min: 0
+  .field
+    = f.label :shoot
+    = f.number_field :shoot, min: 0
+  .field
+    = f.label :shoot_against
+    = f.number_field :shoot_against, min: 0
+  .field
+    = f.label :ck
+    = f.number_field :ck, min: 0
+  .field
+    = f.label :ck_against
+    = f.number_field :ck_against, min: 0
+  .field
+    = f.label :fk
+    = f.number_field :fk, min: 0
+  .field
+    = f.label :fk_against
+    = f.number_field :fk_against, min: 0
+  .field
+    = f.label :yellow_card
+    = f.number_field :yellow_card, min: 0
+  .field
+    = f.label :gave_yellow_card
+    = f.number_field :gave_yellow_card, min: 0
+  .field
+    = f.label :red_card
+    = f.number_field :red_card, min: 0
+  .field
+    = f.label :gave_red_card
+    = f.number_field :gave_red_card, min: 0
+  .field
+    = f.label :dominance_rate
+    = f.number_field :dominance_rate, step: 0.1, max: 100, min: 0, value: 50
+  .field
+    = f.label :first_change_time
+    = f.number_field :first_change_time, min: 0
+  .field
+    = f.label :first_change_out_id
+    = f.text_field :first_change_out_id
+  .field
+    = f.label :first_change_in_id
+    = f.text_field :first_change_in_id
+  .field
+    = f.label :second_change_time
+    = f.number_field :second_change_time, min: 0
+  .field
+    = f.label :second_change_out_id
+    = f.text_field :second_change_out_id
+  .field
+    = f.label :second_change_in_id
+    = f.text_field :second_change_in_id
+  .field
+    = f.label :third_change_time
+    = f.number_field :third_change_time, min: 0
+  .field
+    = f.label :third_change_out_id
+    = f.text_field :third_change_out_id
+  .field
+    = f.label :third_change_in_id
+    = f.text_field :third_change_in_id
+  .field
+    = f.label :number_of_visitors
+    = f.number_field :number_of_visitors, min: 0
+  .field
+    = f.label :rank
+    = f.number_field :rank, min: 1
+  .actions
+    = f.submit

@@ -1,0 +1,39 @@
+= form_for([:admin, @result]) do |f|
+  - if @result.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@result.errors.count, "error")} prohibited this result from being saved:"
+      ul
+        - @result.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :game
+    = f.collection_select :game_id, Game.all, :id, :section
+  .field
+    = f.label :player
+    = f.collection_select :player_id, Player.all, :id, :name
+  .field
+    = f.label :participation
+    = f.select :participation, Result.participation.options
+  .field
+    = f.label :time
+    = f.number_field :time, min: 0, max: 120
+  .field
+    = f.label :gool
+    = f.number_field :gool, min: 0
+  .field
+    = f.label :gool_against
+    = f.number_field :gool_against, min: 0
+  .field
+    = f.label :shoot
+    = f.number_field :shoot, min: 0
+  .field
+    = f.label :shoot_against
+    = f.number_field :shoot_against, min: 0
+  .field
+    = f.label :yellow_card
+    = f.number_field :yellow_card, min: 0
+  .field
+    = f.label :red_card
+    = f.number_field :red_card, min: 0
+  .actions = f.submit

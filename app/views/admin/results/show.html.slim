@@ -1,0 +1,36 @@
+p#notice = notice
+
+p
+  strong Game:
+  = @result.game
+p
+  strong Player:
+  = @result.player
+p
+  strong Participation:
+  = @result.participation
+p
+  strong Time:
+  = @result.time
+p
+  strong Gool:
+  = @result.gool
+p
+  strong Gool against:
+  = @result.gool_against
+p
+  strong Shoot:
+  = @result.shoot
+p
+  strong Shoot against:
+  = @result.shoot_against
+p
+  strong Yellow card:
+  = @result.yellow_card
+p
+  strong Red card:
+  = @result.red_card
+
+=> link_to 'Edit', edit_admin_result_path(@result)
+'|
+=< link_to 'Back', admin_results_path
