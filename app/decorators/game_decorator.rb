@@ -48,6 +48,10 @@ class GameDecorator < Draper::Decorator
     value
   end
 
+  def sort_icon
+    h.fa_icon("sort-amount-asc")
+  end
+
   private
 
   def day_of_week(date)
