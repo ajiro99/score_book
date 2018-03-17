@@ -63,3 +63,6 @@ gem 'enumerize'
 gem 'seed-fu'
 
 gem 'slim-rails'
+gem 'materialize-sass'
+gem 'draper'
+gem 'font-awesome-rails'

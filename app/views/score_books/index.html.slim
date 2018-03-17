@@ -1,0 +1,9 @@
+h5 = Convention.first.convention_type_text
+table.bordered.striped
+  thead#game_title
+    == render partial: 'score_books/game_title'
+  tbody#games
+    == render partial: 'score_books/game', collection: @games
+div#test
+
+

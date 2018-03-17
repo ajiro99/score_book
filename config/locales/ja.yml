@@ -33,14 +33,14 @@ ja:
 
     game:
       home_away:
-        home: ホーム
-        away: アウェイ
-        neutral: 中立地
+        home: Home
+        away: Away
+        neutral: Neutral
       weather:
         sunny: 晴れ
         cloudy: 曇り
         rain: 雨
-        snow:
+        snow: 雪
       result:
         win: 勝ち
         lose: 負け
