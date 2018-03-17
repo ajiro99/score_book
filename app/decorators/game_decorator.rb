@@ -2,11 +2,11 @@ class GameDecorator < Draper::Decorator
   delegate_all
 
   def section_decorate
-    "第#{section}節"
+    "#{section}節"
   end
 
   def date_decorate
-    "#{date.strftime('%m/%d')}#{day_of_week(date)}"
+    h.raw("#{date.strftime('%m/%d')}#{day_of_week(date)}")
   end
 
   def start_time_decorate
@@ -48,14 +48,12 @@ class GameDecorator < Draper::Decorator
     value
   end
 
-  def sort_icon
-    h.fa_icon("sort-amount-asc")
-  end
-
   private
 
   def day_of_week(date)
-    %w{（日） （月） （火） （水） （木） （金） （土）}[date.wday]
+    return font_tag('（日）', 'red') if date.wday == 0
+    return font_tag('（土）', 'blue') if date.wday == 6
+    %w{（月） （火） （水） （木） （金）}[date.wday]
   end
 
   def font_tag(value, color = 'black', size = nil)

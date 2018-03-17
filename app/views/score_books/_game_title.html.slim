@@ -1,41 +1,28 @@
 tr
   th.center-align 節
   th.center-align
-    = sortable "date", "試合日"
-    = fa_icon("sort-amount-asc")
+    = sortable "date", "試合日", params[:sort]
   th.center-align
-    = sortable "start_time", "Kick off"
-    = fa_icon("sort-amount-asc")
+    = sortable "start_time", "Kick off", params[:sort]
   th.center-align
-    = sortable "opponent_id", "対戦相手"
-    = fa_icon("sort-amount-asc")
+    = sortable "opponent_id", "対戦相手", params[:sort]
   th.center-align
-    = sortable "home_away", "H/A"
-    = fa_icon("sort-amount-asc")
+    = sortable "home_away", "H/A", params[:sort]
   th.center-align
-    = sortable "result", "結果"
-    = fa_icon("sort-amount-asc")
+    = sortable "result", "結果", params[:sort]
   th.center-align
-    = sortable "gool", "得点"
-    = fa_icon("sort-amount-asc")
+    = sortable "gool", "得点", params[:sort]
   th.center-align
-    = sortable "gool_against", "失点"
-    = fa_icon("sort-amount-asc")
+    = sortable "gool_against", "失点", params[:sort]
   th.center-align
-    = sortable "shoot", "シュート"
-    = fa_icon("sort-amount-asc")
+    = sortable "shoot", "シュート", params[:sort]
   th.center-align
-    = sortable "shoot_against", "被シュート"
-    = fa_icon("sort-amount-asc")
+    = sortable "shoot_against", "被シュート", params[:sort]
   th.center-align
-    = sortable "dominance_rate", "支配率"
-    = fa_icon("sort-amount-asc")
+    = sortable "dominance_rate", "支配率", params[:sort]
   th.center-align
-    = sortable "number_of_visitors", "観客動員数"
-    = fa_icon("sort-amount-asc")
+    = sortable "number_of_visitors", "観客動員数", params[:sort]
   th.center-align
-    = sortable "weather", "天候"
-    = fa_icon("sort-amount-asc")
+    = sortable "weather", "天候", params[:sort]
   th.center-align
-    = sortable "temperature", "気温"
-    = fa_icon("sort-amount-asc")
+    = sortable "temperature", "気温", params[:sort]
