@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def sortable(column, title = nil, select_title = nil)
+  def sortable(column, title = nil)
     title ||= column.titleize
     css_class = (column == sort_column) ? "current #{sort_direction}" : nil
     direction = (column == sort_column && sort_direction == "asc") ? "desc" : "asc"
     sort_icon_class = 
-      column == select_title ? sort_direction == "desc" ? "sort-desc" : "sort-asc" : "sort"
+      column == params[:sort] ? sort_direction == "desc" ? "sort-desc" : "sort-asc" : "sort"
 
     link_to({:sort => column, :direction => direction, :remote => true}, :class => css_class) do
       raw("#{title}#{fa_icon("#{sort_icon_class} sort-padding")}")

@@ -111,3 +111,41 @@ Game.seed do |s|
   s.number_of_visitors = 16799
   s.rank = 9
 end
+
+Game.seed do |s|
+  s.id = 4
+  s.convention_id = 1
+  s.section = 4
+  s.date = "2018/3/18"
+  s.start_time = "2018/3/18 16:00"
+  s.opponent_id = 16
+  s.home_away = 1
+  s.weather = 0
+  s.temperature = 19
+  s.referee = "荒木　友輔"
+  s.result = 0
+  s.gool = 1
+  s.gool_against = 0
+  s.shoot = 7
+  s.shoot_against = 8
+  s.ck = 3
+  s.ck_against = 10
+  s.fk = 17
+  s.fk_against = 17
+  s.yellow_card = 3
+  s.gave_yellow_card = 3
+  s.red_card = 0
+  s.gave_red_card = 0
+  s.dominance_rate = 43
+  s.first_change_time = 70
+  s.first_change_out_id = 26
+  s.first_change_in_id = 13
+  s.second_change_time = 81
+  s.second_change_out_id = 10
+  s.second_change_in_id = 7
+  s.third_change_time = 87
+  s.third_change_out_id = 8
+  s.third_change_in_id = 4
+  s.number_of_visitors = 17757
+  s.rank = 6
+end
