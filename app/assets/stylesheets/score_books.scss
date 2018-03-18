@@ -6,3 +6,24 @@
 .fa-gray {color: gray}
 .fa-blue {color: blue}
 .fa-sort-padding {padding-left: 5px}
+
+tbody tr {
+  cursor:pointer;
+}
+
+tbody tr:hover {
+  text-shadow: 1px 1px 2px #427388;
+  filter:alpha(opacity=80);
+  opacity:0.8;
+  font-weight: bold;
+}
+
+#lean_overlay{
+  position: fixed; z-index:100;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}

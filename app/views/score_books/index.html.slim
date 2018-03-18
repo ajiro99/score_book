@@ -4,6 +4,10 @@ table.bordered.striped
     == render partial: 'score_books/game_title'
   tbody#games
     == render partial: 'score_books/game', collection: @games
-div#test
 
-
+div#game-modal.modal
+  div.modal-content
+    h4 Modal Header
+    p A bunch of text
+  div.modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!" Agree
