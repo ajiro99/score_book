@@ -17,19 +17,12 @@
 //= require materialize-sprockets
 
 $(function() {
-  $('tbody tr[data-href]').addClass('clickable').click( function() {
-    window.location = $(this).attr('data-href');
-  }).find('a').hover( function() {
-    $(this).parents('tr').unbind('click');
-  }, function() {
-    $(this).parents('tr').click( function() {
-      window.location = $(this).attr('data-href');
-    });
-  });
+  $('.modal').modal();
 
-  $('tr[rel*=leanModal]').leanModal({
-      top: 50,                     // モーダルウィンドウの縦位置を指定
-      overlay : 0.5              // 背面の透明度 
-
+  $("[id^='game_']").click(function(){
+    $.get("http://" + location.host + "/score_books/" + $(this).attr("id").slice(5),
+      function(data){ }
+    );
+    $('#game-modal').modal('open');
   });
-}); 
+});

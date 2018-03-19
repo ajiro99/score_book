@@ -6,6 +6,10 @@ class ScoreBooksController < ApplicationController
     @games = GameDecorator.decorate_collection(Game.all.order(sort_column + ' ' + sort_direction))
   end
 
+  def game_detail
+    @game = Game.find(params[:id])
+  end
+
   private
 
   def sort_direction
