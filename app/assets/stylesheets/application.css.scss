@@ -17,3 +17,18 @@
 $primary-color: color("red", "lighten-2") !default;
 @import 'materialize';
 @import "font-awesome";
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+
+body {
+  font-family: "Yu Gothic";
+}
+
+.modal {
+  max-height: 90%;
+  width: 65%;
+}

@@ -43,7 +43,7 @@ class GameDecorator < Draper::Decorator
 
   def number_of_visitors_decorate
     value = "#{number_of_visitors.to_s(:delimited)}人"
-    return font_tag(value, 'red') if number_of_visitors >= 25000
+    return font_tag(value, 'red') if number_of_visitors >= 20000
     return font_tag(value, 'blue') if number_of_visitors <= 9999
     value
   end

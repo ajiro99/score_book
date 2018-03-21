@@ -1,6 +1,51 @@
 div.modal-content
-  h4 Modal Header
-  h1 =@game.opponent.name
-  
+  div.card-panel.hoverable
+    div.row
+      div.col.s12.center-align
+        h3 = "#{@game.gool} - #{@game.gool_against}"
+      div.col.s6 6-columns (one-half)
+      div.col.s6 6-columns (one-half)
+
+
+  canvas#myChart" width="200" height="200"
+  script draw_graph()
+  div.video-container
+    iframe width="400" height="250" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen
+
+  div.card-panel.hoverable
+    table.highlight
+      thead
+        tr
+          th.center-align 番号
+          th.center-align ポジション
+          th.center-align 名前
+          th.center-align 交代時間
+          th.center-align ゴール
+          th.center-align シュート
+          th.center-align 警告
+      tbody
+        tr
+          th スタメン
+        - @game.results.each do |result|
+          tr
+            td = result.player.number
+            td = result.player.position_text
+            td = result.player.name
+            td = result.time
+            td = result.gool
+            td = result.shoot
+            td = result.yellow_card
+        tr
+          th サブ
+        - @game.results.each do |result|
+          tr
+            td = result.player.number
+            td = result.player.position_text
+            td = result.player.name
+            td = result.time
+            td = result.gool
+            td = result.shoot
+            td = result.yellow_card
+
 div.modal-footer
   a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!" Agree
