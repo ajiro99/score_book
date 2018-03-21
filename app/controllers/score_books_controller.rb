@@ -4,10 +4,15 @@ class ScoreBooksController < ApplicationController
 
   def index
     @games = GameDecorator.decorate_collection(Game.all.order(sort_column + ' ' + sort_direction))
+    game = Game.find(1)
   end
 
   def game_detail
-    @game = Game.find(params[:id])
+    game = Game.find(params[:id])
+    gon.opponent_name = game.opponent.name
+    gon.result = [game.shoot, game.ck, game.fk]
+    gon.opponent_result  = [game.shoot_against, game.ck_against, game.fk_against]
+    @game = game
   end
 
   private

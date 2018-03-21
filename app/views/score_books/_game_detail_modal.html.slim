@@ -1,14 +1,19 @@
+= Gon::Base.render_data
 div.modal-content
   div.card-panel.hoverable
     div.row
-      div.col.s12.center-align
-        h3 = "#{@game.gool} - #{@game.gool_against}"
+      div.col.s4.center-align
+        h5 鹿島アントラーズ
+      div.col.s4.center-align
+        h4 = "#{@game.gool} - #{@game.gool_against}"
+      div.col.s4.center-align
+        h5 = @game.opponent.name
       div.col.s6 6-columns (one-half)
       div.col.s6 6-columns (one-half)
-
 
   canvas#myChart" width="200" height="200"
   script draw_graph()
+
   div.video-container
     iframe width="400" height="250" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen
 
