@@ -2,20 +2,59 @@
 div.modal-content
   div.card-panel.hoverable
     div.row
+      div.col.s12
+        h6 = "J LEAGUE DIVISON1 #{@game.section} #{@game.date}  #{@game.start_time}"
+    div.row
       div.col.s4.center-align
         h5 鹿島アントラーズ
+        h6 = @game.home_away_text
       div.col.s4.center-align
         h4 = "#{@game.gool} - #{@game.gool_against}"
+        h6 = "1st：#{@game.gool} - #{@game.gool_against}　　2nd：#{@game.gool} - #{@game.gool_against}"
       div.col.s4.center-align
         h5 = @game.opponent.name
-      div.col.s6 6-columns (one-half)
-      div.col.s6 6-columns (one-half)
+    div.row
+      div.col.s3.right-align 10'
+      div.col.s3 金崎（鈴木）
+      div.col.s3.right-align 10'
+      div.col.s3 失点
+      div.col.s3.right-align 10'
+      div.col.s3 金崎
+      div.col.s3.right-align 10'
+      div.col.s3 失点
 
-  canvas#myChart" width="200" height="200"
-  script draw_graph()
+  div.card-panel.hoverable
+    canvas#myChart
+    script draw_graph()
+    div.row
+    div.row
+      div.col.s3.right-align シュート
+      div.col.s3 6
+      div.col.s3.right-align シュート
+      div.col.s3 6
+      div.col.s3.right-align FK
+      div.col.s3 6
+      div.col.s3.right-align FK
+      div.col.s3 6
+      div.col.s3.right-align CK
+      div.col.s3 6
+      div.col.s3.right-align CK
+      div.col.s3 6
+      div.col.s3.right-align 支配率
+      div.col.s3 60%
+      div.col.s3.right-align 支配率
+      div.col.s3 60%
+      div.col.s3.right-align イエローカード
+      div.col.s3 0
+      div.col.s3.right-align イエローカード
+      div.col.s3 2
+      div.col.s3.right-align レッドカード
+      div.col.s3 0
+      div.col.s3.right-align レッドカード
+      div.col.s3 2
 
   div.video-container
-    iframe width="400" height="250" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen
+    iframe width="640" height="360" src="https://www.youtube.com/embed/wmKfoDZFCpk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
 
   div.card-panel.hoverable
     table.highlight
@@ -53,4 +92,5 @@ div.modal-content
             td = result.yellow_card
 
 div.modal-footer
+  a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!" Agree
   a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!" Agree

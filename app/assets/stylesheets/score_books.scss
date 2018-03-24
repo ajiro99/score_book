@@ -2,10 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    background-color: #f443360a;
+}
+
+#wrapper {
+  overflow: hidden;
+}
+
+div#graph_zone {
+  float: left;
+  width: 63%;
+}
+
+aside {
+  width: 35%;
+}
+
 .fa-red {color: red}
 .fa-gray {color: gray}
 .fa-blue {color: blue}
 .fa-sort-padding {padding-left: 5px}
+.fa-title-padding {padding-right: 5px}
 
 tbody tr {
   cursor:pointer;
@@ -17,4 +35,8 @@ tbody tr:hover {
   opacity:0.8;
   font-weight: bold;
   letter-spacing  : -1px;
+}
+
+.card-panel {
+   padding: 15px 15px 5px 15px !important;
 }

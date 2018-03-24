@@ -1,8 +1,71 @@
 h5 = Convention.first.convention_type_text
-table.bordered.striped
-  thead#game_title
-    == render partial: 'score_books/game_title'
-  tbody#games
-    == render partial: 'score_books/game', collection: @games
+
+div#wrapper
+  div#graph_zone
+    div.card-panel.hoverable
+      = fa_icon("database title-padding")
+      b
+        i TOTAL DATA
+      div.divider
+      div.row
+        div.col.s12
+          ul.tabs
+            li.tab.col.s3
+              a href="#test1" ゴールランキング
+            li.tab.col.s3
+              a href="#test2" アシストランキング
+            li.tab.col.s3
+              a href="#test3" 順位推移
+            li.tab.col.s3
+              a href="#test4" 観客動員数
+
+      div#test1.col.s12 Test 1
+      div#test2.col.s12 Test 2
+      div#test3.col.s12 Test 3
+      div#test4.col.s12 Test 4
+
+  aside.right
+    div.card-panel.hoverable
+      = fa_icon("info-circle title-padding")
+      b
+        i INFORMATION
+      div.divider
+      div.row
+        div.col.s6
+          span LEAGE RANK
+          span.flow-text.count data-num="5" 0
+          span th
+        div.col.s6
+          span.flow-text.count data-num="10" 0
+          span = "/ 34 GAMES"
+        div.col.s4
+          span.flow-text.count.teal-text data-num="21" 0
+          span WIN
+        div.col.s4
+          span.flow-text.count.teal-text data-num="7" 0
+          span DLAW
+        div.col.s4
+          span.flow-text.count.teal-text data-num="10" 0
+          span LOSE
+        div.col.s4
+          span.flow-text.count.blue-text data-num="30" 0
+          span GOOL
+        div.col.s4
+          span.flow-text.count.blue-text data-num="10" 0
+          span LOST
+        div.col.s4
+          span.flow-text.count.blue-text data-num="20" 0
+          span DIFF
+
+div.card-panel.hoverable
+  = fa_icon("calendar-check-o title-padding")
+  b
+    i RESUST
+  div.divider
+  table.bordered.striped
+    thead#game_title
+      == render partial: 'score_books/game_title'
+    tbody#games
+      == render partial: 'score_books/game', collection: @games
 
 div#game-modal.modal

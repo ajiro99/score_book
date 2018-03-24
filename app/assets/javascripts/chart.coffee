@@ -1,16 +1,20 @@
 window.draw_graph = ->
     ctx = document.getElementById("myChart").getContext('2d')
+    ctx.canvas.height = 100;
     myChart = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
           labels: ["シュート", "CK", "FK"],
           datasets: [
-            { label: "鹿島アントラーズ",    data: gon.result,  backgroundColor: "rgba(244, 143, 177, 0.6)" },
-            { label: gon.opponent_name, data: gon.opponent_result, backgroundColor: "rgba(255, 235, 59, 0.6)" }
+            { label: "鹿島アントラーズ",    data: gon.result,  backgroundColor: "rgba(255, 0, 0, 1)" },
+            { label: gon.opponent_name, data: gon.opponent_result, backgroundColor: "rgba(0, 0, 255, 0.5)" }
           ]
         },
         options: {
-          stacked: "100%"
+            title: {
+                display: true,
+                text: 'スタッツ比較'
+            }
         }
     })
 
