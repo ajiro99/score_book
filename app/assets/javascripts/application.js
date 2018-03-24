@@ -36,7 +36,7 @@ $(function() {
   });
 
   var countElm = $('.count'),
-  countSpeed = 30;
+  countSpeed = 35;
 
   countElm.each(function(){
       var self = $(this),

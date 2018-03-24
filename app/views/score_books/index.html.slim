@@ -32,30 +32,39 @@ div#wrapper
       div.divider
       div.row
         div.col.s6
-          span LEAGE RANK
-          span.flow-text.count data-num="5" 0
-          span th
+          span
+            b LEAGE RANK
+          span.flow-text.count data-num=@games.last.rank 0
+          span
+            b th
         div.col.s6
-          span.flow-text.count data-num="10" 0
-          span = "/ 34 GAMES"
+          span.flow-text.count data-num=@games.size 0
+          span
+            b = "/ 34 GAMES"
         div.col.s4
-          span.flow-text.count.teal-text data-num="21" 0
-          span WIN
+          span.flow-text.count.teal-text data-num=@games.result_count(:win) 0
+          span
+            b WIN
         div.col.s4
-          span.flow-text.count.teal-text data-num="7" 0
-          span DLAW
+          span.flow-text.count.teal-text data-num=@games.result_count(:draw) 0
+          span
+            b DLAW
         div.col.s4
-          span.flow-text.count.teal-text data-num="10" 0
-          span LOSE
+          span.flow-text.count.teal-text data-num=@games.result_count(:lose) 0
+          span
+            b LOSE
         div.col.s4
-          span.flow-text.count.blue-text data-num="30" 0
-          span GOOL
+          span.flow-text.count.blue-text data-num=@games.total_count(:gool)  0
+          span
+            b GOOL
         div.col.s4
-          span.flow-text.count.blue-text data-num="10" 0
-          span LOST
+          span.flow-text.count.blue-text data-num=@games.total_count(:gool_against) 0
+          span
+            b LOST
         div.col.s4
-          span.flow-text.count.blue-text data-num="20" 0
-          span DIFF
+          span.flow-text.count.blue-text data-num=@games.gool_difference 0
+          span
+            b DIFF
 
 div.card-panel.hoverable
   = fa_icon("calendar-check-o title-padding")

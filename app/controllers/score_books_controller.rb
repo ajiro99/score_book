@@ -4,7 +4,6 @@ class ScoreBooksController < ApplicationController
 
   def index
     @games = GameDecorator.decorate_collection(Game.all.order(sort_column + ' ' + sort_direction))
-    game = Game.find(1)
   end
 
   def game_detail
