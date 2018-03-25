@@ -24,47 +24,7 @@ div#wrapper
       div#test3.col.s12 Test 3
       div#test4.col.s12 Test 4
 
-  aside.right
-    div.card-panel.hoverable
-      = fa_icon("info-circle title-padding")
-      b
-        i INFORMATION
-      div.divider
-      div.row
-        div.col.s6
-          span
-            b LEAGE RANK
-          span.flow-text.count data-num=@games.last.rank 0
-          span
-            b th
-        div.col.s6
-          span.flow-text.count data-num=@games.size 0
-          span
-            b = "/ 34 GAMES"
-        div.col.s4
-          span.flow-text.count.teal-text data-num=@games.result_count(:win) 0
-          span
-            b WIN
-        div.col.s4
-          span.flow-text.count.teal-text data-num=@games.result_count(:draw) 0
-          span
-            b DLAW
-        div.col.s4
-          span.flow-text.count.teal-text data-num=@games.result_count(:lose) 0
-          span
-            b LOSE
-        div.col.s4
-          span.flow-text.count.blue-text data-num=@games.total_count(:gool)  0
-          span
-            b GOOL
-        div.col.s4
-          span.flow-text.count.blue-text data-num=@games.total_count(:gool_against) 0
-          span
-            b LOST
-        div.col.s4
-          span.flow-text.count.blue-text data-num=@games.gool_difference 0
-          span
-            b DIFF
+  == render partial: 'information', locals: { games: @games }
 
 div.card-panel.hoverable
   = fa_icon("calendar-check-o title-padding")

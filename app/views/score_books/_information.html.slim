@@ -1,0 +1,51 @@
+aside.right
+  div.card-panel.hoverable
+    = fa_icon("info-circle title-padding")
+    b
+      i INFORMATION
+    div.divider
+    div.row
+    div.row
+      div.col.s3.right-align
+        span
+          b RANKING
+      div.col.s3
+        span.flow-text.count data-num=games.last.rank 0
+        span
+          b th
+      div.col.s3.right-align
+        span
+          b = "GAMES"
+      div.col.s3
+        span.flow-text.count data-num=games.size 0
+        b = "/ 34"
+      div.col.s2.right-align
+        span
+          b WIN
+      div.col.s2.right-align
+        span.flow-text.count.teal-text data-num=games.result_count(:win) 0
+      div.col.s2.right-align
+        span
+          b DLAW
+      div.col.s2.right-align
+        span.flow-text.count.teal-text data-num=games.result_count(:draw) 0
+      div.col.s2.right-align
+        span
+          b LOSE
+      div.col.s2.right-align
+        span.flow-text.count.teal-text data-num=games.result_count(:lose) 0
+      div.col.s2.right-align
+        span
+          b GOOL
+      div.col.s2.right-align
+        span.flow-text.count.blue-text data-num=games.total_count(:gool)  0
+      div.col.s2.right-align
+        span
+          b LOST
+      div.col.s2.right-align
+        span.flow-text.count.blue-text data-num=games.total_count(:gool_against) 0
+      div.col.s2.right-align
+        span
+          b DIFF
+      div.col.s2.right-align
+        span.flow-text.count.blue-text data-num=games.gool_difference 0
