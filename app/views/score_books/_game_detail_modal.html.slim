@@ -2,17 +2,26 @@
 div.modal-content
   div.card-panel.hoverable
     div.row
-      div.col.s12
-        h6 = "J LEAGUE DIVISON1 #{@game.section} #{@game.date}  #{@game.start_time}"
+      div.col.s6
+        b = @game.detail_date
     div.row
       div.col.s4.center-align
         h5 鹿島アントラーズ
-        h6 = @game.home_away_text
       div.col.s4.center-align
-        h4 = "#{@game.gool} - #{@game.gool_against}"
-        h6 = "1st：#{@game.gool} - #{@game.gool_against}　　2nd：#{@game.gool} - #{@game.gool_against}"
+        h5
+          b = "#{@game.gool} - #{@game.gool_against}"
       div.col.s4.center-align
         h5 = @game.opponent.name
+
+      div.col.s4.center-align
+        = @game.home_away_text
+      div.col.s2.right-align
+        = "1st：#{@game.gool} - #{@game.gool_against}"
+      div.col.s2.left-align
+        = "2nd：#{@game.gool} - #{@game.gool_against}"
+      div.col.s4.center-align
+        = @game.home_away_text
+
     div.row
       div.col.s3.right-align 10'
       div.col.s3 金崎（鈴木）
@@ -26,35 +35,59 @@ div.modal-content
   div.card-panel.hoverable
     canvas#myChart
     script draw_graph()
-    div.row
-    div.row
-      div.col.s3.right-align シュート
-      div.col.s3 6
-      div.col.s3.right-align シュート
-      div.col.s3 6
-      div.col.s3.right-align FK
-      div.col.s3 6
-      div.col.s3.right-align FK
-      div.col.s3 6
-      div.col.s3.right-align CK
-      div.col.s3 6
-      div.col.s3.right-align CK
-      div.col.s3 6
-      div.col.s3.right-align 支配率
-      div.col.s3 60%
-      div.col.s3.right-align 支配率
-      div.col.s3 60%
-      div.col.s3.right-align イエローカード
-      div.col.s3 0
-      div.col.s3.right-align イエローカード
-      div.col.s3 2
-      div.col.s3.right-align レッドカード
-      div.col.s3 0
-      div.col.s3.right-align レッドカード
-      div.col.s3 2
+    div#wrapper
+      div#comparison_zone
+        table.bordered
+          thead
+            tr
+              td
+              td.center-align 鹿島
+              td.center-align 清水
+          tbody
+            tr
+              th シュート
+              td.right-align = @game.shoot
+              td.right-align = @game.shoot_against
+            tr
+              th FK
+              td.right-align = @game.fk
+              td.right-align = @game.fk_against
+            tr
+              th CK
+              td.right-align = @game.ck
+              td.right-align = @game.ck_against
+            tr
+              th 支配率
+              td.right-align = @game.dominance_rate_decorate
+              td.right-align = @game.opponent_dominance_rate_decorate
+            tr
+              th イエローカード
+              td.right-align = @game.yellow_card
+              td.right-align = @game.gave_yellow_card
+            tr
+              th レッドカード
+              td.right-align = @game.red_card
+              td.right-align = @game.gave_red_card
+        v.row
 
-  div.video-container
-    iframe width="640" height="360" src="https://www.youtube.com/embed/wmKfoDZFCpk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+      aside.right
+        table.bordered
+          thead
+            tr
+              th 　
+          tbody
+            tr
+              th 主審
+              td.right-align = @game.referee
+            tr
+              th 観客動員数
+              td.right-align = @game.number_of_visitors_decorate(is_color: false)
+            tr
+              th 天候
+              td.right-align = @game.weather_text
+            tr
+              th 気温
+              td.right-align = @game.temperature_decorate(is_color: false)
 
   div.card-panel.hoverable
     table.highlight
@@ -90,6 +123,9 @@ div.modal-content
             td = result.gool
             td = result.shoot
             td = result.yellow_card
+
+  div.video-container
+    iframe width="640" height="360" src="https://www.youtube.com/embed/wmKfoDZFCpk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
 
 div.modal-footer
   a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!" Agree

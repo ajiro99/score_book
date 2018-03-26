@@ -30,8 +30,9 @@ class GameDecorator < Draper::Decorator
   	h.fa_icon("circle lg")
   end
 
-  def temperature_decorate
+  def temperature_decorate(is_color: true)
   	value = "#{temperature}℃"
+    return value unless is_color
     return font_tag(value, 'red') if temperature >= 25
     return font_tag(value, 'blue') if temperature <= 9
     value
@@ -41,11 +42,24 @@ class GameDecorator < Draper::Decorator
     "#{dominance_rate}%"
   end
 
-  def number_of_visitors_decorate
+  def opponent_dominance_rate_decorate
+    "#{100 - dominance_rate}%"
+  end
+
+  def number_of_visitors_decorate(is_color: true)
     value = "#{number_of_visitors.to_s(:delimited)}人"
+    return value unless is_color
     return font_tag(value, 'red') if number_of_visitors >= 20000
     return font_tag(value, 'blue') if number_of_visitors <= 9999
     value
+  end
+
+  def detail_date
+    h.raw("第#{section_decorate} #{date_decorate}  #{start_time_decorate} kick off")
+  end
+
+  def ather_date
+    h.raw("天候：#{weather_text}　気温：#{temperature}℃")
   end
 
   private

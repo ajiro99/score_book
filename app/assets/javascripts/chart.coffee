@@ -13,7 +13,7 @@ window.draw_graph = ->
         options: {
             title: {
                 display: true,
-                text: 'スタッツ比較'
+                text: 'データ'
             }
         }
     })

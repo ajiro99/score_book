@@ -11,7 +11,7 @@ class ScoreBooksController < ApplicationController
     gon.opponent_name = game.opponent.name
     gon.result = [game.shoot, game.ck, game.fk]
     gon.opponent_result  = [game.shoot_against, game.ck_against, game.fk_against]
-    @game = game
+    @game = game.decorate
   end
 
   private
