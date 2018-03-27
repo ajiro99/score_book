@@ -6,7 +6,7 @@ class GameDecorator < Draper::Decorator
   end
 
   def date_decorate
-    h.raw("#{date.strftime('%m/%d')}#{day_of_week(date)}")
+    h.raw("#{date.strftime('%-m/%d')}#{day_of_week(date)}")
   end
 
   def start_time_decorate
@@ -46,6 +46,10 @@ class GameDecorator < Draper::Decorator
     "#{100 - dominance_rate}%"
   end
 
+  def opponent_home_away
+    home_away.home? ? "Away" : "Home"
+  end
+
   def number_of_visitors_decorate(is_color: true)
     value = "#{number_of_visitors.to_s(:delimited)}人"
     return value unless is_color
@@ -62,6 +66,18 @@ class GameDecorator < Draper::Decorator
     h.raw("天候：#{weather_text}　気温：#{temperature}℃")
   end
 
+  def first_change_time_decorate
+    format_minute(first_change_time)
+  end
+
+  def second_change_time_decorate
+    format_minute(second_change_time)
+  end
+
+  def third_change_time_decorate
+    format_minute(third_change_time)
+  end
+
   private
 
   def day_of_week(date)
@@ -72,5 +88,9 @@ class GameDecorator < Draper::Decorator
 
   def font_tag(value, color = 'black', size = nil)
     h.content_tag(:font, value, color: color, size: size)
+  end
+
+  def format_minute(time)
+    "#{time}`"
   end
 end
