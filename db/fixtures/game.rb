@@ -34,6 +34,9 @@ Game.seed do |s|
   s.third_change_in_id = 7
   s.number_of_visitors = 19632
   s.rank = 12
+  s.pk = 0
+  s.pk_against = 1
+  s.video_url = "https://www.youtube.com/embed/wmKfoDZFCpk"
 end
 
 Game.seed do |s|
@@ -72,6 +75,9 @@ Game.seed do |s|
   s.third_change_in_id = 6
   s.number_of_visitors = 24545
   s.rank = 7
+  s.pk = 0
+  s.pk_against = 0
+  s.video_url = "https://www.youtube.com/embed/KjDSlnp-6UU"
 end
 
 Game.seed do |s|
@@ -110,6 +116,9 @@ Game.seed do |s|
   s.third_change_in_id = 13
   s.number_of_visitors = 16799
   s.rank = 9
+  s.pk = 1
+  s.pk_against = 0
+  s.video_url = "https://www.youtube.com/embed/BvrIAgLCIbk"
 end
 
 Game.seed do |s|
@@ -148,4 +157,7 @@ Game.seed do |s|
   s.third_change_in_id = 4
   s.number_of_visitors = 17757
   s.rank = 6
+  s.pk = 0
+  s.pk_against = 0
+  s.video_url = "https://www.youtube.com/embed/0aGKA6Qu6TI"
 end

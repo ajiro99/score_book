@@ -91,6 +91,6 @@ class GameDecorator < Draper::Decorator
   end
 
   def format_minute(time)
-    "#{time}`"
+    "#{time}'"
   end
 end

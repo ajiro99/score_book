@@ -1,9 +1,10 @@
 class Game < ApplicationRecord
   extend Enumerize
-#TODO: pk追加
+
   belongs_to :convention
   belongs_to :opponent
   has_many :results
+  has_many :goal_patterns
   has_one :first_change_out_player, class_name: 'Player', primary_key: :first_change_out_id, foreign_key: :id
   has_one :first_change_in_player, class_name: 'Player', primary_key: :first_change_in_id, foreign_key: :id
   has_one :second_change_out_player, class_name: 'Player', primary_key: :second_change_out_id, foreign_key: :id
