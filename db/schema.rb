@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328163511) do
+ActiveRecord::Schema.define(version: 20180329171629) do
 
   create_table "conventions", force: :cascade do |t|
     t.integer  "year"
@@ -67,6 +67,20 @@ ActiveRecord::Schema.define(version: 20180328163511) do
     t.index ["second_change_out_id"], name: "index_games_on_second_change_out_id"
     t.index ["third_change_in_id"], name: "index_games_on_third_change_in_id"
     t.index ["third_change_out_id"], name: "index_games_on_third_change_out_id"
+  end
+
+  create_table "goal_against_patterns", force: :cascade do |t|
+    t.integer  "game_id",                null: false
+    t.integer  "goal_against_time"
+    t.integer  "goal_against_player_id", null: false
+    t.integer  "pattern"
+    t.integer  "starting_area"
+    t.integer  "goal_area"
+    t.integer  "goal_parts"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["game_id"], name: "index_goal_against_patterns_on_game_id"
+    t.index ["goal_against_player_id"], name: "index_goal_against_patterns_on_goal_against_player_id"
   end
 
   create_table "goal_patterns", force: :cascade do |t|

@@ -1,5 +1,7 @@
 class GameDecorator < Draper::Decorator
   delegate_all
+  decorates_association :goal_patterns
+  decorates_association :goal_against_patterns
 
   def section_decorate
     "#{section}節"

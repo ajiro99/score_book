@@ -2,7 +2,7 @@ Player.seed do |s|
   s.id = 1
   s.year = 2018
   s.number = 1
-  s.name = "クォン　スンテ"
+  s.name = "クォン スンテ"
   s.position = 0
   s.birthday = "1984/9/11"
   s.height = 184
@@ -13,7 +13,7 @@ Player.seed do |s|
   s.id = 2
   s.year = 2018
   s.number = 2
-  s.name = "内田　篤人"
+  s.name = "内田 篤人"
   s.position = 1
   s.birthday = "1988/3/27"
   s.height = 176
@@ -24,7 +24,7 @@ Player.seed do |s|
   s.id = 3
   s.year = 2018
   s.number = 3
-  s.name = "昌子　源"
+  s.name = "昌子 源"
   s.position = 1
   s.birthday = "1992/12/11"
   s.height = 182
@@ -35,7 +35,7 @@ Player.seed do |s|
   s.id = 4
   s.year = 2018
   s.number = 4
-  s.name = "レオ　シルバ"
+  s.name = "レオ シルバ"
   s.position = 2
   s.birthday = "1985/12/24"
   s.height = 181
@@ -46,7 +46,7 @@ Player.seed do |s|
   s.id = 5
   s.year = 2018
   s.number = 5
-  s.name = "植田　直通"
+  s.name = "植田 直通"
   s.position = 1
   s.birthday = "1994/10/24"
   s.height = 186
@@ -68,7 +68,7 @@ Player.seed do |s|
   s.id = 7
   s.year = 2018
   s.number = 7
-  s.name = "ペドロ ジュニオール"
+  s.name = "P.ジュニオール"
   s.position = 3
   s.birthday = "1987/01/29"
   s.height = 182
@@ -156,7 +156,7 @@ Player.seed do |s|
   s.id = 15
   s.year = 2018
   s.number = 16
-  s.name = "山本　脩斗"
+  s.name = "山本 脩斗"
   s.position = 1
   s.birthday = "1985/6/1"
   s.height = 180
@@ -189,7 +189,7 @@ Player.seed do |s|
   s.id = 18
   s.year = 2018
   s.number = 21
-  s.name = "曽ヶ端　準"
+  s.name = "曽ヶ端 準"
   s.position = 0
   s.birthday = "1979/8/2"
   s.height = 187

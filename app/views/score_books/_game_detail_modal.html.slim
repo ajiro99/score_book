@@ -24,8 +24,12 @@ div.modal-content
 
     div.row
       - @game.goal_patterns.each do |goal_pattern|
-        div.col.s3.right-align = goal_pattern.goal_time
-        div.col.s3 = "#{goal_pattern.player.name}（#{goal_pattern.assist_player.name}）"
+        div.col.s3.right-align = goal_pattern.goal_time_decorate
+        div.col.s3 = goal_pattern.goal_and_assist_player
+
+      - @game.goal_against_patterns.each do |goal_against_pattern|
+        div.col.s3.right-align = goal_against_pattern.goal_against_time_decorate
+        div.col.s3 = goal_against_pattern.goal_against_player_decorate
 
     div.row
       div.col.s3.right-align = @game.first_change_time_decorate
