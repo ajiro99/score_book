@@ -16,4 +16,29 @@ class Game < ApplicationRecord
   enumerize :home_away, in: { home: 0, away: 1, neutral: 2 }, scope: true
   enumerize :weather, in: { sunny: 0, cloudy: 1, rain: 2, snow: 3 }, scope: true
   enumerize :result, in: { win: 0, draw: 1, lose: 2, }, scope: true
+
+
+  def first_herf_goal_count
+    goal_patterns.where("goal_time < ?", 46).size
+  end
+
+  def first_herf_goal_against_count
+    goal_against_patterns.where("goal_against_time < ?", 46).size
+  end
+
+  def second_herf_goal_count
+    goal_patterns.where("goal_time >= ?", 46).size
+  end
+
+  def second_herf_goal_against_count
+    goal_against_patterns.where("goal_against_time >= ?", 46).size
+  end
+
+  def starting_members
+    results.with_participation(:starting)
+  end
+
+  def sub_members
+    results.without_participation(:starting)
+  end
 end

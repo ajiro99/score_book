@@ -51,3 +51,10 @@ ja:
         starting: 先発
         half_way_out: 途中出場
         no_participation: 出場なし
+
+    player:
+      position:
+        gk: GK
+        df: DF
+        mf: MF
+        fw: FW
