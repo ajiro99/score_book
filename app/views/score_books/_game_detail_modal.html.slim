@@ -123,6 +123,7 @@ div.modal-content
           th ゴール
           th シュート
           th 警告
+          th 退場
       tbody
         tr
           th スタメン
@@ -135,6 +136,7 @@ div.modal-content
             td = starting_member.gool
             td = starting_member.shoot
             td = starting_member.yellow_card
+            td = starting_member.red_card
         tr
           th サブ
         - @game.sub_members.each do |sub_member|
@@ -146,6 +148,7 @@ div.modal-content
             td = sub_member.gool
             td = sub_member.shoot
             td = sub_member.yellow_card
+            td = sub_member.red_card
 
   div.video-container
     iframe width="640" height="360" src=@game.video_url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen

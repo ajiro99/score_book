@@ -32,8 +32,8 @@ div.card-panel.hoverable
     i RESUST
   div.divider
   table.bordered.striped
-    thead#game_title
-      == render partial: 'score_books/game_title'
+    thead#games_title
+      == render partial: 'score_books/games_title'
     tbody#games
       == render partial: 'score_books/game', collection: @games
 
