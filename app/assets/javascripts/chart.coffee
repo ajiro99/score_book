@@ -18,10 +18,10 @@ window.draw_graph = ->
         }
     })
 
-###
-window.draw_graph = ->
-    ctx = document.getElementById("myChart").getContext('2d')
-    myChart = new Chart(ctx, {
+window.goal_rank_graph = ->
+    ctx = document.getElementById("goal_rank_graph").getContext('2d')
+    ctx.canvas.height = 100;
+    goal_rank_graph = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["シュート", "シュート（相手）", "CK", "CK（相手）", "FK", "FK（相手）"],
@@ -57,7 +57,7 @@ window.draw_graph = ->
             }
             title: {
                 display: true,
-                text: 'Custom Chart Title'
+                text: 'テストです'
             }
             layout: {
                 padding: {
@@ -69,4 +69,3 @@ window.draw_graph = ->
             }
         }
     })
-###
