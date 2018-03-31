@@ -6,8 +6,8 @@ window.draw_graph = ->
         data: {
           labels: ["シュート", "CK", "FK"],
           datasets: [
-            { label: "鹿島アントラーズ",    data: gon.result,  backgroundColor: "rgba(255, 0, 0, 1)" },
-            { label: gon.opponent_name, data: gon.opponent_result, backgroundColor: "rgba(0, 0, 255, 0.5)" }
+            { label: "鹿島アントラーズ", data: gon.result, backgroundColor: "rgba(255, 99, 132, 0.2)", borderColor: "rgba(255,99,132,1)",borderWidth: 1 },
+            { label: gon.opponent_name, data: gon.opponent_result, backgroundColor: "rgba(54, 162, 235, 0.2)", borderColor: "rgba(54, 162, 235, 1)", borderWidth: 1 }
           ]
         },
         options: {

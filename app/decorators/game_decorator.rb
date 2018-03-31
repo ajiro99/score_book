@@ -7,8 +7,8 @@ class GameDecorator < Draper::Decorator
     "#{section}節"
   end
 
-  def date_decorate
-    h.raw("#{date.strftime('%-m/%d')}#{day_of_week(date)}")
+  def date_decorate(is_color: true)
+    h.raw("#{date.strftime('%-m/%d')}#{day_of_week(date, is_color)}")
   end
 
   def start_time_decorate
@@ -60,8 +60,8 @@ class GameDecorator < Draper::Decorator
     value
   end
 
-  def detail_date
-    h.raw("第#{section_decorate} #{date_decorate}  #{start_time_decorate} kick off")
+  def detail_date(is_color: true)
+    h.raw("　第#{section_decorate} #{date_decorate(is_color: is_color)}  #{start_time_decorate} kick off　 VS #{opponent.name}")
   end
 
   def ather_date
@@ -82,7 +82,8 @@ class GameDecorator < Draper::Decorator
 
   private
 
-  def day_of_week(date)
+  def day_of_week(date, is_color = true)
+    return %w{（月） （火） （水） （木） （金） （土） （日）}[date.wday] unless is_color
     return font_tag('（日）', 'red') if date.wday == 0
     return font_tag('（土）', 'blue') if date.wday == 6
     %w{（月） （火） （水） （木） （金）}[date.wday]
