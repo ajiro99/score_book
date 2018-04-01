@@ -2,33 +2,46 @@ h5 = Convention.first.convention_type_text
 
 div#wrapper
   div#graph_zone
-    div.card-panel.hoverable
+    div.card-panel.hoverable.indigo.lighten-2
       = fa_icon("database title-padding")
       b
         i TOTAL DATA
       div.divider
       div.row
         div.col.s12
-          ul.tabs
+          ul.tabs.indigo.lighten-2
             li.tab.col.s3
-              a href="#test1" ゴールランキング
+              a.black-text href="#test1" ゴールランキング
             li.tab.col.s3
-              a href="#test2" アシストランキング
+              a.black-text href="#test2" アシストランキング
             li.tab.col.s3
-              a href="#test3" 順位推移
+              a.black-text href="#test3" 順位推移
             li.tab.col.s3
-              a href="#test4" 観客動員数
+              a.black-text href="#test4" 観客動員数
 
       div#test1.col.s12
-        canvas#goal_rank_graph
-        script goal_rank_graph()
+        div#wrapper
+          div.graph
+            canvas#goal_rank_graph
+            script goal_rank_graph()
+          div.data
+            table.bordered
+              - @goal_ranking.each_with_index do |(key, val), i|
+                tr
+                  td
+                    b = (i + 1).ordinalize
+                  td.white-text
+                    b = goal_ranking_name(key)
+                  td.white-text
+                    b.white-text = val
+
       div#test2.col.s12 Test 2
       div#test3.col.s12 Test 3
       div#test4.col.s12 Test 4
 
   == render partial: 'information', locals: { games: @games }
 
-div.card-panel.hoverable
+div.card-panel.hoverable.grey.lighten-4
   = fa_icon("calendar-check-o title-padding")
   b
     i RESUST

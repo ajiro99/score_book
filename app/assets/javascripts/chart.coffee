@@ -19,6 +19,48 @@ window.draw_graph = ->
     })
 
 window.goal_rank_graph = ->
+    ctx = document.getElementById("goal_rank_graph").getContext('2d');
+
+    goal_rank_graph = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: gon.goal_players,
+        datasets: [{
+          backgroundColor: [
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c"
+          ],
+          data: gon.goals
+        }]
+      }
+    });
+
+
+###
+window.goal_rank_graph = ->
+    ctx = document.getElementById("goal_rank_graph").getContext('2d');
+
+    goal_rank_graph = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["M", "T", "W", "R", "F"],
+        datasets: [{
+          label: 'TOP10',
+          data: [12, 19, 3, 17, 28]
+                   'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+        }]
+      }
+    });
+
+window.goal_rank_graph = ->
     ctx = document.getElementById("goal_rank_graph").getContext('2d')
     ctx.canvas.height = 100;
     goal_rank_graph = new Chart(ctx, {
@@ -69,3 +111,4 @@ window.goal_rank_graph = ->
             }
         }
     })
+###

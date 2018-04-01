@@ -10,4 +10,17 @@ module ApplicationHelper
       raw("#{title}#{fa_icon("#{sort_icon_class} sort-padding")}")
     end
   end
+
+  def goal_ranking_name(player_id)
+    player = Player.find(player_id)
+    "#{player.position_text}　#{player.name}"
+  end
+
+  def total_count(column)
+    count = 0
+    self.each do |game|
+      count += game.send(column)
+    end
+    count
+  end
 end
