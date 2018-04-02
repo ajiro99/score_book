@@ -15,12 +15,4 @@ module ApplicationHelper
     player = Player.find(player_id)
     "#{player.position_text}　#{player.name}"
   end
-
-  def total_count(column)
-    count = 0
-    self.each do |game|
-      count += game.send(column)
-    end
-    count
-  end
 end

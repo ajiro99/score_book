@@ -153,76 +153,56 @@ window.visitors_rank_graph = ->
       }
     })
 
+window.ave_dominance_rate_graph = ->
+    ctx = document.getElementById("ave_dominance_rate_graph").getContext('2d');
 
-###
-window.goal_rank_graph = ->
-    ctx = document.getElementById("goal_rank_graph").getContext('2d');
-
-    goal_rank_graph = new Chart(ctx, {
-      type: 'bar',
+    ave_dominance_rate_graph = new Chart(ctx, {
+      type: 'pie',
       data: {
-        labels: ["M", "T", "W", "R", "F"],
+        labels: ["全試合平均支配率","対戦相手"],
         datasets: [{
-          label: 'TOP10',
-          data: [12, 19, 3, 17, 28]
-                   'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)'
+          backgroundColor: [
+            "rgba(255,255,51,1)",
+            "#3498db",
+          ],
+          data: gon.ave_dominance_rate
         }]
+      },
+      options: {
+          cutoutPercentage: 50,
+          rotation: 3.143,
+          circumference: 3.143,
+          legend: {
+            labels: {
+               fontColor: 'white'
+            }
+          }
       }
     });
 
-window.goal_rank_graph = ->
-    ctx = document.getElementById("goal_rank_graph").getContext('2d')
-    ctx.canvas.height = 100;
-    goal_rank_graph = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["シュート", "シュート（相手）", "CK", "CK（相手）", "FK", "FK（相手）"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
+window.home_ave_dominance_rate_graph = ->
+    ctx = document.getElementById("home_ave_dominance_rate_graph").getContext('2d');
+
+    home_ave_dominance_rate_graph = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["HOME平均支配率","対戦相手"],
+        datasets: [{
+          backgroundColor: [
+            "rgba(255,255,51,1)",
+            "#3498db",
+          ],
+          data: gon.ave_dominance_rate
+        }]
+      },
+      options: {
+          cutoutPercentage: 50,
+          rotation: 3.143,
+          circumference: 3.143,
+          legend: {
+            labels: {
+               fontColor: 'white'
             }
-            title: {
-                display: true,
-                text: 'テストです'
-            }
-            layout: {
-                padding: {
-                    left: 0,
-                    right: 0,
-                    top: 0,
-                    bottom: 0
-                }
-            }
-        }
-    })
-###
+          }
+      }
+    });

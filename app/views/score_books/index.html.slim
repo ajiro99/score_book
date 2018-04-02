@@ -17,7 +17,7 @@ div#wrapper
             li.tab.col.s3
               a.black-text href="#visitors_rank" 観客動員数
             li.tab.col.s3
-              a.black-text href="#test4" test
+              a.black-text href="#ave_dominance_rate" 支配率
 
       div#goal_rank.col.s12
         div#wrapper
@@ -41,7 +41,14 @@ div#wrapper
       div#visitors_rank.col.s12
         canvas#visitors_rank_graph
         script visitors_rank_graph()
-      div#test4.col.s12 Test 4
+      div#ave_dominance_rate.col.s12
+        div#wrapper.row
+          div.col.s6
+            canvas#ave_dominance_rate_graph
+            script ave_dominance_rate_graph()
+          div.col.s6
+            canvas#home_ave_dominance_rate_graph
+            script home_ave_dominance_rate_graph()
 
   == render partial: 'information', locals: { games: @games }
 

@@ -3,25 +3,15 @@ class ScoreBooksController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    games = Game.all.order(sort_column + ' ' + sort_direction)
-    @goal_ranking = Convention.find(1).games.joins(:goal_patterns).group(:player_id).order('count_all desc').limit(5).count
+    convention = Convention.find(1)
+    games = convention.games.order(sort_column + ' ' + sort_direction)
+    @goal_ranking = convention.games.joins(:goal_patterns).group(:player_id).order('count_all desc').limit(5).count
 
     gon.goal_players = @goal_ranking.keys.map {|player| Player.find(player).name.split(" ").first}
     gon.goal_players << "その他"
 
     gon.goals = @goal_ranking.values
-
-    goal_ranker_total_goals = 0
-    @goal_ranking.values.each do |goal|
-      goal_ranker_total_goals += goal
-    end
-
-    total_goals = 0
-    Game.all.each do |game|
-      total_goals += game.gool
-    end
-
-    gon.goals << (total_goals - goal_ranker_total_goals)
+    gon.goals << (games.sum(:gool) - @goal_ranking.values.sum())
 
     gon.leage_section = games.pluck(:section)
     gon.leage_rank = games.pluck(:rank)
@@ -29,6 +19,9 @@ class ScoreBooksController < ApplicationController
     home_games = games.with_home_away(:home)
     gon.home_section = home_games.pluck(:section)
     gon.visitors_rank = home_games.pluck(:number_of_visitors)
+
+    gon.ave_dominance_rate = [games.average(:dominance_rate), 100 - games.average(:dominance_rate)]
+    gon.home_ave_dominance_rate = [home_games.average(:dominance_rate), 100 - home_games.average(:dominance_rate)]
 
     @games = GameDecorator.decorate_collection(games)
   end
