@@ -13,11 +13,11 @@ div#wrapper
             li.tab.col.s3
               a.black-text href="#goal_rank" ゴールランキング
             li.tab.col.s3
-              a.black-text href="#leage_rank" アシストランキング
+              a.black-text href="#leage_rank" 順位推移
             li.tab.col.s3
-              a.black-text href="#test3" 順位推移
+              a.black-text href="#visitors_rank" 観客動員数
             li.tab.col.s3
-              a.black-text href="#test4" 観客動員数
+              a.black-text href="#test4" test
 
       div#goal_rank.col.s12
         div#wrapper
@@ -38,7 +38,9 @@ div#wrapper
       div#leage_rank.col.s12
         canvas#leage_rank_graph
         script leage_rank_graph()
-      div#test3.col.s12 Test 3
+      div#visitors_rank.col.s12
+        canvas#visitors_rank_graph
+        script visitors_rank_graph()
       div#test4.col.s12 Test 4
 
   == render partial: 'information', locals: { games: @games }

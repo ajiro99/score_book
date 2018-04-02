@@ -3,7 +3,7 @@ class ScoreBooksController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @games = GameDecorator.decorate_collection(Game.all.order(sort_column + ' ' + sort_direction))
+    games = Game.all.order(sort_column + ' ' + sort_direction)
     @goal_ranking = Convention.find(1).games.joins(:goal_patterns).group(:player_id).order('count_all desc').limit(5).count
 
     gon.goal_players = @goal_ranking.keys.map {|player| Player.find(player).name.split(" ").first}
@@ -23,8 +23,14 @@ class ScoreBooksController < ApplicationController
 
     gon.goals << (total_goals - goal_ranker_total_goals)
 
-    gon.leage_section = @games.pluck(:section)
-    gon.leage_rank = @games.pluck(:rank)
+    gon.leage_section = games.pluck(:section)
+    gon.leage_rank = games.pluck(:rank)
+
+    home_games = games.with_home_away(:home)
+    gon.home_section = home_games.pluck(:section)
+    gon.visitors_rank = home_games.pluck(:number_of_visitors)
+
+    @games = GameDecorator.decorate_collection(games)
   end
 
   def game_detail

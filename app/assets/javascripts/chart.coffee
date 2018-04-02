@@ -74,7 +74,9 @@ window.leage_rank_graph = ->
                   },
                   ticks: {
                       reverse: true,
-                      fontColor: 'white'
+                      fontColor: 'white',
+                      min: 1,
+                      max: 18
                   }
               }],
               xAxes: [{
@@ -99,6 +101,58 @@ window.leage_rank_graph = ->
           }
       }
     });
+
+window.visitors_rank_graph = ->
+    ctx = document.getElementById("visitors_rank_graph").getContext('2d')
+    myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: gon.home_section,
+          datasets: [{
+            label: "ホーム観客動員数",
+            data: gon.visitors_rank,
+            backgroundColor: "rgba(255,255,51,0.3)",
+            borderColor: "rgba(255,255,51,1)",
+            borderWidth: 3 }
+          ]
+        },
+      options: {
+          barPercentage: 0.1,
+          scales: {
+              yAxes: [{
+                  scaleLabel: {
+                      fontColor: 'white'
+                  },
+                  ticks: {
+                      fontColor: 'white',
+                      min: 0,
+                  }
+              }],
+              xAxes: [{
+                  barPercentage: 0.4,
+                  categoryPercentage: 0.4,
+                  gridLines: {
+                      display: false,
+                      fontColor: 'white'
+                  },
+                  scaleLabel: {
+                      display: true,
+                      labelString: '節',
+                      fontColor: 'white'
+                  },
+                  ticks: {
+                      fontColor: 'white'
+                  }
+              }]
+          },
+          legend: {
+              labels: {
+                  fontColor: 'white'
+              }
+          }
+      }
+    })
+
 
 ###
 window.goal_rank_graph = ->
