@@ -1,8 +1,8 @@
-h5 = Convention.first.convention_type_text
+h5.white-text 鹿島アントラーズ　MATCH DATA ANALYSIS
 
 div#wrapper
   div#graph_zone
-    div.card-panel.hoverable.indigo.lighten-2
+    div.card-panel.hoverable.indigo.lighten-2.z-depth-5
       = fa_icon("database title-padding")
       b
         i TOTAL DATA
@@ -11,15 +11,15 @@ div#wrapper
         div.col.s12
           ul.tabs.indigo.lighten-2
             li.tab.col.s3
-              a.black-text href="#test1" ゴールランキング
+              a.black-text href="#goal_rank" ゴールランキング
             li.tab.col.s3
-              a.black-text href="#test2" アシストランキング
+              a.black-text href="#leage_rank" アシストランキング
             li.tab.col.s3
               a.black-text href="#test3" 順位推移
             li.tab.col.s3
               a.black-text href="#test4" 観客動員数
 
-      div#test1.col.s12
+      div#goal_rank.col.s12
         div#wrapper
           div.graph
             canvas#goal_rank_graph
@@ -35,7 +35,9 @@ div#wrapper
                   td.white-text
                     b.white-text = val
 
-      div#test2.col.s12 Test 2
+      div#leage_rank.col.s12
+        canvas#leage_rank_graph
+        script leage_rank_graph()
       div#test3.col.s12 Test 3
       div#test4.col.s12 Test 4
 

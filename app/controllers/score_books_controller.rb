@@ -22,6 +22,9 @@ class ScoreBooksController < ApplicationController
     end
 
     gon.goals << (total_goals - goal_ranker_total_goals)
+
+    gon.leage_section = @games.pluck(:section)
+    gon.leage_rank = @games.pluck(:rank)
   end
 
   def game_detail

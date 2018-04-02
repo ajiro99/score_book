@@ -36,9 +36,69 @@ window.goal_rank_graph = ->
           ],
           data: gon.goals
         }]
+      },
+      options: {
+          legend: {
+            labels: {
+               fontColor: 'white'
+            }
+          }
       }
     });
 
+window.leage_rank_graph = ->
+    ctx = document.getElementById("leage_rank_graph").getContext('2d');
+
+    leage_rank_graph = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: gon.leage_section,
+          datasets: [{
+              label: 'リーグ順位'
+              tension: 0.1,
+              fill: false,
+              borderColor: "rgba(255,255,51,1)",
+              data: gon.leage_rank,
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  gridLines: {
+                      display: false,
+                  },
+                  scaleLabel: {
+                      display: true,
+                      labelString: '順位',
+                      fontColor: 'white'
+                  },
+                  ticks: {
+                      reverse: true,
+                      fontColor: 'white'
+                  }
+              }],
+              xAxes: [{
+                  gridLines: {
+                      display: false,
+                      fontColor: 'white'
+                  },
+                  scaleLabel: {
+                      display: true,
+                      labelString: '節',
+                      fontColor: 'white'
+                  },
+                  ticks: {
+                      fontColor: 'white'
+                  }
+              }]
+          },
+          legend: {
+              labels: {
+                  fontColor: 'white'
+              }
+          }
+      }
+    });
 
 ###
 window.goal_rank_graph = ->
