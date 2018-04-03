@@ -21,27 +21,3 @@ GoalPattern.seed do |s|
   s.goal_area = 2
   s.goal_parts = 2
 end
-
-GoalPattern.seed do |s|
-  s.id = 3
-  s.game_id = 5
-  s.goal_time = 14
-  s.player_id = 7
-  s.assist_player_id = 9
-  s.pattern = 11
-  s.starting_area = 2
-  s.goal_area = 2
-  s.goal_parts = 2
-end
-
-GoalPattern.seed do |s|
-  s.id = 4
-  s.game_id = 5
-  s.goal_time = 14
-  s.player_id = 8
-  s.assist_player_id = 9
-  s.pattern = 11
-  s.starting_area = 2
-  s.goal_area = 2
-  s.goal_parts = 2
-end

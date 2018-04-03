@@ -20,8 +20,12 @@ class ScoreBooksController < ApplicationController
     gon.home_section = home_games.pluck(:section)
     gon.visitors_rank = home_games.pluck(:number_of_visitors)
 
-    gon.ave_dominance_rate = [games.average(:dominance_rate), 100 - games.average(:dominance_rate)]
-    gon.home_ave_dominance_rate = [home_games.average(:dominance_rate), 100 - home_games.average(:dominance_rate)]
+    gon.ave_dominance_rate = [
+      games.average(:dominance_rate).round, (100 - games.average(:dominance_rate)).round
+    ]
+    gon.home_ave_dominance_rate = [
+      home_games.average(:dominance_rate).round, 100 - (home_games.average(:dominance_rate)).round
+    ]
 
     @games = GameDecorator.decorate_collection(games)
   end
