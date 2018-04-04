@@ -23,9 +23,12 @@ window.draw_graph = ->
       ]
     },
     options: {
-      title: {
-        display: true,
-        text: 'データ'
+      scales: {
+        xAxes: [{
+          ticks: {
+            min: 0,
+          }
+        }],
       }
     }
   })

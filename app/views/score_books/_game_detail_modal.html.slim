@@ -7,13 +7,13 @@ div.modal-footer.indigo.darken-1
 div.modal-content.indigo.lighten-4
   div.card-panel.hoverable
     div.row
-      div.col.s4.center-align
-        h5 鹿島アントラーズ
+      div.col.s4.center-align.red-text.text-lighten-2
+        h5 鹿島
       div.col.s4.center-align
         h5
           b = "#{@game.gool} - #{@game.gool_against}"
-      div.col.s4.center-align
-        h5 = @game.opponent.name
+      div.col.s4.center-align.blue-text
+        h5 = @game.opponent.short_name
 
       div.col.s4.center-align
         = @game.home_away_text
@@ -26,6 +26,7 @@ div.modal-content.indigo.lighten-4
 
     div.row
       div.col.s3.right-align
+        = fa_icon("soccer-ball-o title-padding")
         b 得点経過
       div.col.s9 　
       - @game.goal_patterns.each do |goal_pattern|
@@ -38,6 +39,7 @@ div.modal-content.indigo.lighten-4
 
     div.row
       div.col.s3.right-align
+        = fa_icon("exchange title-padding")
         b 選手交代
       div.col.s9 　
       div.col.s3.right-align = @game.first_change_time_decorate
@@ -52,6 +54,18 @@ div.modal-content.indigo.lighten-4
       div.col.s2.red-text.text-lighten-2 = @game.third_change_out_player.name
       div.col.s1 = fa_icon('angle-double-right lg')
       div.col.s6.red-text.text-lighten-2 = @game.third_change_in_player.name
+
+    div.row
+      div.col.s6
+        - @game.goal_patterns.each do |goal_pattern|
+          ul
+            div.col.s2 = goal_pattern.goal_time_decorate
+            div.col.s10.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
+
+      div.col.s6
+        ul.collection
+          li.collection-item aa
+          li.collection-item bb
 
   div.card-panel.hoverable
     canvas#myChart
