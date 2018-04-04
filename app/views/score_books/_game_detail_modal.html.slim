@@ -67,66 +67,76 @@ div.modal-content.indigo.lighten-4
           li.collection-item aa
           li.collection-item bb
 
-  div.card-panel.hoverable
+      div.col.s10.offset-s1
+        table.bordered
+          tbody
+            - @game.goal_patterns.each do |goal_pattern|
+              - @game.goal_against_patterns.each do |goal_against_pattern|
+              tr
+                td.right-align.red-text = goal_pattern.goal_and_assist_player
+                th.center-align = goal_pattern.goal_time_decorate
+                td.blue-text = goal_pattern.goal_and_assist_player
+
+  div#comparison_zone.card-panel.hoverable
     canvas#myChart
     script draw_graph()
-    div#wrapper
-      div#comparison_zone
+    div#wrapper.row
+      div.col.s5.offset-s1
         table.bordered
           thead
             tr
-              td
               td.center-align.red-text 鹿島
+              td
               td.center-align.blue-text = @game.opponent.short_name
           tbody
             tr
-              th シュート
               td.right-align.red-text = @game.shoot
+              th.center-align シュート
               td.right-align.blue-text = @game.shoot_against
             tr
-              th FK
-              td.right-align.red-text = @game.fk
-              td.right-align.blue-text = @game.fk_against
-            tr
-              th CK
               td.right-align.red-text = @game.ck
+              th.center-align CK
               td.right-align.blue-text = @game.ck_against
             tr
-              th PK
+              td.right-align.red-text = @game.fk
+              th.center-align FK
+              td.right-align.blue-text = @game.fk_against
+            tr
               td.right-align.red-text = @game.pk
+              th.center-align PK
               td.right-align.blue-text = @game.pk_against
             tr
-              th 支配率
               td.right-align.red-text = @game.dominance_rate_decorate
+              th.center-align 支配率
               td.right-align.blue-text = @game.opponent_dominance_rate_decorate
             tr
-              th イエローカード
               td.right-align.red-text = @game.yellow_card
+              th.center-align イエローカード
               td.right-align.blue-text = @game.gave_yellow_card
             tr
-              th レッドカード
               td.right-align.red-text = @game.red_card
+              th.center-align レッドカード
               td.right-align.blue-text = @game.gave_red_card
-        v.row
 
-      aside.right
+      div.col.s4.offset-s1
         table.bordered
           thead
             tr
               th 　
           tbody
             tr
-              th 主審
+              th.right-align 主審
               td.right-align = @game.referee
             tr
-              th 観客動員数
+              th.right-align 観客動員数
               td.right-align = @game.number_of_visitors_decorate(is_color: false)
             tr
-              th 天候
+              th.right-align 天候
               td.right-align = @game.weather_text
             tr
-              th 気温
+              th.right-align 気温
               td.right-align = @game.temperature_decorate(is_color: false)
+      div.col.s1
 
   div.card-panel.hoverable
     table.bordered.highlight
