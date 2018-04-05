@@ -19,7 +19,6 @@ $primary-color: color("red", "lighten-2") !default;
 @import "font-awesome";
 
 body {
-  font-family: "Yu Gothic";
   padding: 5px;
 }
 
@@ -38,7 +37,7 @@ body {
 
 .modal {
   max-height: 95%;
-  width: 65%;
+  width: 60%;
   border-radius: 15px;
   top: 3% !important;
 }

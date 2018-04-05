@@ -1,81 +1,61 @@
 = Gon::Base.render_data
 div.modal-footer.indigo.darken-1
-  span.white-text
-    b = @game.detail_date(is_color: false)
-  a href="#link1" 　ハイライト
-  a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="" close
+  div.row
+    div.col.s10
+      p.white-text
+        b = @game.detail_date(is_color: false)
+    div.col.s2.right-align
+      span.white-text.modal-close.btn-flat = fa_icon("close title-padding")
+
 div.modal-content.indigo.lighten-4
   div.card-panel.hoverable
     div.row
-      div.col.s4.center-align.red-text.text-lighten-2
-        h5 鹿島
-      div.col.s4.center-align
-        h5
-          b = "#{@game.gool} - #{@game.gool_against}"
-      div.col.s4.center-align.blue-text
-        h5 = @game.opponent.short_name
-
-      div.col.s4.center-align
+      div.col.s3.right-align.red-text.text-lighten-2
+        h4 鹿島
         = @game.home_away_text
-      div.col.s2.right-align
-        = "1st：#{@game.first_herf_goal_count} - #{@game.first_herf_goal_against_count}"
-      div.col.s2.left-align
-        = "2nd：#{@game.second_herf_goal_count} - #{@game.second_herf_goal_against_count}"
-      div.col.s4.center-align
+      div.col.s6.center-align
+        h4
+          b = "#{@game.gool} - #{@game.gool_against}"
+        = "1st：#{@game.first_herf_goal_count} - #{@game.first_herf_goal_against_count}　2nd：#{@game.second_herf_goal_count} - #{@game.second_herf_goal_against_count}"
+      div.col.s3.left-align.blue-text
+        h4 = @game.opponent.short_name
         = @game.opponent_home_away
 
     div.row
-      div.col.s3.right-align
-        = fa_icon("soccer-ball-o title-padding")
-        b 得点経過
-      div.col.s9 　
-      - @game.goal_patterns.each do |goal_pattern|
-        div.col.s3.right-align = goal_pattern.goal_time_decorate
-        div.col.s3.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
+      div.col.s5.offset-s1
+        ul
+          li
+            = fa_icon("soccer-ball-o title-padding")
+            b 得点
+          - @game.goal_patterns.each do |goal_pattern|
+            li
+              div.col.s2 = goal_pattern.goal_time_decorate
+              div.col.s10.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
 
-      - @game.goal_against_patterns.each do |goal_against_pattern|
-        div.col.s3.right-align = goal_against_pattern.goal_against_time_decorate
-        div.col.s3 = goal_against_pattern.goal_against_player_decorate
+      div.col.s5
+        ul
+          li
+            = fa_icon("soccer-ball-o title-padding")
+            b 失点
+          - @game.goal_against_patterns.each do |goal_against_pattern|
+            li
+              div.col.s2 = goal_against_pattern.goal_against_time_decorate
+              div.col.s10.blue-text.text-lighten-2 = goal_against_pattern.goal_against_player_decorate
 
     div.row
-      div.col.s3.right-align
+      div.col.s5.offset-s1
         = fa_icon("exchange title-padding")
         b 選手交代
-      div.col.s9 　
-      div.col.s3.right-align = @game.first_change_time_decorate
-      div.col.s2.red-text.text-lighten-2 = @game.first_change_out_player.name
-      div.col.s1 = fa_icon('angle-double-right lg')
-      div.col.s6.red-text.text-lighten-2 = @game.first_change_in_player.name
-      div.col.s3.right-align = @game.second_change_time_decorate
-      div.col.s2.red-text.text-lighten-2 = @game.second_change_out_player.name
-      div.col.s1 = fa_icon('angle-double-right lg')
-      div.col.s6.red-text.text-lighten-2 = @game.second_change_in_player.name
-      div.col.s3.right-align = @game.third_change_time_decorate
-      div.col.s2.red-text.text-lighten-2 = @game.third_change_out_player.name
-      div.col.s1 = fa_icon('angle-double-right lg')
-      div.col.s6.red-text.text-lighten-2 = @game.third_change_in_player.name
+      div.col.s6 　
 
-    div.row
-      div.col.s6
-        - @game.goal_patterns.each do |goal_pattern|
-          ul
-            div.col.s2 = goal_pattern.goal_time_decorate
-            div.col.s10.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
+      div.col.s2.right-align = @game.first_change_time_decorate
+      div.col.s10.red-text.text-lighten-2 == "#{@game.first_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.first_change_in_player.name}"
 
-      div.col.s6
-        ul.collection
-          li.collection-item aa
-          li.collection-item bb
+      div.col.s2.right-align = @game.second_change_time_decorate
+      div.col.s10.red-text.text-lighten-2 == "#{@game.second_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.second_change_in_player.name}"
 
-      div.col.s10.offset-s1
-        table.bordered
-          tbody
-            - @game.goal_patterns.each do |goal_pattern|
-              - @game.goal_against_patterns.each do |goal_against_pattern|
-              tr
-                td.right-align.red-text = goal_pattern.goal_and_assist_player
-                th.center-align = goal_pattern.goal_time_decorate
-                td.blue-text = goal_pattern.goal_and_assist_player
+      div.col.s2.right-align = @game.third_change_time_decorate
+      div.col.s10.red-text.text-lighten-2 == "#{@game.third_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.third_change_in_player.name}"
 
   div#comparison_zone.card-panel.hoverable
     canvas#myChart
@@ -128,7 +108,7 @@ div.modal-content.indigo.lighten-4
               th.right-align 主審
               td.right-align = @game.referee
             tr
-              th.right-align 観客動員数
+              th.right-align 入場者数
               td.right-align = @game.number_of_visitors_decorate(is_color: false)
             tr
               th.right-align 天候

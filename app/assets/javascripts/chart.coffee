@@ -125,7 +125,7 @@ window.visitors_rank_graph = ->
     data: {
       labels: gon.home_section,
       datasets: [{
-        label: "ホーム観客動員数",
+        label: "ホーム入場者数",
         data: gon.visitors_rank,
         backgroundColor: "rgba(255, 99, 132)",
         borderColor: "white",
@@ -185,7 +185,7 @@ window.ave_dominance_rate_graph = ->
       }]
     },
     options: {
-      cutoutPercentage: 50,
+      cutoutPercentage: 60,
       rotation: 3.143,
       circumference: 3.143,
       legend: {
@@ -225,7 +225,7 @@ window.home_ave_dominance_rate_graph = ->
       }]
     },
     options: {
-      cutoutPercentage: 50,
+      cutoutPercentage: 60,
       rotation: 3.143,
       circumference: 3.143,
       legend: {
