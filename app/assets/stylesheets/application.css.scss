@@ -14,12 +14,17 @@
  *= require_self
  */
 @import "materialize/components/color";
-$primary-color: color("red", "lighten-2") !default;
+$primary-color: color("red", "darken-3") !default;
 @import 'materialize';
 @import "font-awesome";
 
-body {
-  padding: 5px;
+.brand-logo {
+  font-family: 'Anton', sans-serif;
+}
+
+div#main {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .count {
@@ -32,12 +37,12 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%;
+  width: 96%;
 }
 
 .modal {
   max-height: 95%;
-  width: 60%;
+  width: 63%;
   border-radius: 15px;
   top: 3% !important;
 }
@@ -53,5 +58,5 @@ body {
 }
 
 .tabs .indicator {
-    background-color: #eeff41;
+  background-color: #eeff41;
 }

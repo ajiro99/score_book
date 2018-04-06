@@ -10,7 +10,30 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
 
-  <body class="container indigo darken-1">
-    <%= yield %>
+  <body class = "indigo darken-1">
+    <header>
+      <div>
+        <nav class="z-depth-5">
+          <div class = "nav-wrapper container">
+            <i><a href="/" class="brand-logo">Kashima Antlers DATE ANALYSIS</a></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div id = "main" class = "container">
+      <%= yield %>
+    </div>
+
+    <footer class = "page-footer">
+      <div class = "footer-copyright">
+        <div class = "container">
+          © 2018 liberta web engineer
+          <a class = "right" href = "http://www.so-net.ne.jp/antlers/" target="_blank">
+            <%= image_tag 'toANT.gif', :size => "140x40" %>
+          </a>
+        </div>
+       </div>
+     </footer>
   </body>
 </html>
