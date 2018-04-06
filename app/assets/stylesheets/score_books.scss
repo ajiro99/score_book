@@ -21,7 +21,7 @@ aside {
 
 #comparison_zone tbody th {
   background-color: #e5e5e5;
-
+  width: 48%;
 }
 
 .fa-black {color: black}
@@ -44,4 +44,19 @@ aside {
 
 .card-panel {
    padding: 15px 15px 5px 15px !important;
+}
+
+
+span.label {
+    font-weight: 300;
+    color: #fff;
+    background-color: #F44336;
+    border-radius: 6px;
+    min-width: 3rem;
+    padding: 4px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 22px;
+    height: 22px;
+    box-sizing: border-box;
 }

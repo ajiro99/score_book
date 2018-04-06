@@ -8,7 +8,7 @@ div.modal-footer.indigo.darken-1
       span.white-text.modal-close.btn-flat = fa_icon("close title-padding")
 
 div.modal-content.indigo.lighten-4
-  div.card-panel.hoverable
+  div.card-panel.hoverable.z-depth-5
     div.row
       div.col.s3.right-align.red-text.text-lighten-2
         h4 鹿島
@@ -57,7 +57,7 @@ div.modal-content.indigo.lighten-4
       div.col.s2.right-align = @game.third_change_time_decorate
       div.col.s10.red-text.text-lighten-2 == "#{@game.third_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.third_change_in_player.name}"
 
-  div#comparison_zone.card-panel.hoverable
+  div#comparison_zone.card-panel.hoverable.z-depth-5
     canvas#myChart
     script draw_graph()
     div#wrapper.row
@@ -118,43 +118,57 @@ div.modal-content.indigo.lighten-4
               td.right-align = @game.temperature_decorate(is_color: false)
       div.col.s1
 
-  div.card-panel.hoverable
+  div.card-panel.hoverable.z-depth-5
+    span.label == "#{fa_icon("users title-padding")}スターティングメンバー"
     table.bordered.highlight
       thead
         tr
-          th 番号
-          th ポジション
-          th 名前
-          th 交代時間
-          th ゴール
-          th シュート
-          th 警告
-          th 退場
+          th.center-align 番号
+          th.center-align ポジション
+          th.center-align 名前
+          th.center-align 交代時間
+          th.center-align ゴール
+          th.center-align シュート
+          th.center-align 警告
+          th.center-align 退場
       tbody
         tr
-          th スタメン
         - @game.starting_members.each do |starting_member|
           tr
-            td = starting_member.player.number
-            td = starting_member.player.position_text
+            td.right-align = starting_member.player.number
+            td.center-align = starting_member.player.position_text
             td = starting_member.player.name
-            td = starting_member.time
-            td = starting_member.gool
-            td = starting_member.shoot
-            td = starting_member.yellow_card
-            td = starting_member.red_card
+            td.right-align = starting_member.time
+            td.right-align = starting_member.gool
+            td.right-align = starting_member.shoot
+            td.right-align = starting_member.yellow_card
+            td.right-align = starting_member.red_card
+
+    div.row
+    span.label.blue  == "#{fa_icon("users title-padding")}控えメンバー"
+    table.bordered.highlight
+      thead
         tr
-          th サブ
+          th.center-align 番号
+          th.center-align ポジション
+          th.center-align 名前
+          th.center-align 交代時間
+          th.center-align ゴール
+          th.center-align シュート
+          th.center-align 警告
+          th.center-align 退場
+      tbody
+        tr
         - @game.sub_members.each do |sub_member|
           tr
-            td = sub_member.player.number
-            td = sub_member.player.position_text
+            td.right-align = sub_member.player.number
+            td.center-align = sub_member.player.position_text
             td = sub_member.player.name
-            td = sub_member.time
-            td = sub_member.gool
-            td = sub_member.shoot
-            td = sub_member.yellow_card
-            td = sub_member.red_card
-
-  div.video-container#link1
+            td.right-align = sub_member.time
+            td.right-align = sub_member.gool
+            td.right-align = sub_member.shoot
+            td.right-align = sub_member.yellow_card
+            td.right-align = sub_member.red_card
+  div.row
+  div.video-container.z-depth-5
     iframe width="640" height="360" src=@game.video_url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""
