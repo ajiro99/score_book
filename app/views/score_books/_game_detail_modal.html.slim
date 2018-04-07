@@ -62,7 +62,7 @@ div.modal-content.indigo.lighten-4
     script draw_graph()
     div#wrapper.row
       div.col.s5.offset-s1
-        table.bordered
+        table#comparison_detail.bordered
           thead
             tr
               td.center-align.red-text 鹿島
@@ -124,18 +124,18 @@ div.modal-content.indigo.lighten-4
       thead
         tr
           th.center-align 番号
-          th.center-align ポジション
+          th.center-align ﾎﾟｼﾞｼｮﾝ
           th.center-align 名前
-          th.center-align 交代時間
-          th.center-align ゴール
-          th.center-align シュート
+          th.center-align 出場時間
+          th.center-align 得点
+          th.center-align ｼｭｰﾄ
           th.center-align 警告
           th.center-align 退場
       tbody
         tr
         - @game.starting_members.each do |starting_member|
           tr
-            td.right-align = starting_member.player.number
+            td.right-align.member = starting_member.player.number
             td.center-align = starting_member.player.position_text
             td = starting_member.player.name
             td.right-align = starting_member.time
@@ -152,16 +152,16 @@ div.modal-content.indigo.lighten-4
           th.center-align 番号
           th.center-align ポジション
           th.center-align 名前
-          th.center-align 交代時間
-          th.center-align ゴール
-          th.center-align シュート
+          th.center-align 出場時間
+          th.center-align 得点
+          th.center-align ｼｭｰﾄ
           th.center-align 警告
           th.center-align 退場
       tbody
         tr
         - @game.sub_members.each do |sub_member|
           tr
-            td.right-align = sub_member.player.number
+            td.right-align.member = sub_member.player.number
             td.center-align = sub_member.player.position_text
             td = sub_member.player.name
             td.right-align = sub_member.time
@@ -171,4 +171,4 @@ div.modal-content.indigo.lighten-4
             td.right-align = sub_member.red_card
   div.row
   div.video-container.z-depth-5
-    iframe width="640" height="360" src=@game.video_url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""
+    iframe width="640" height="360" src=@game.video_url frameborder="0" allowfullscreen=""

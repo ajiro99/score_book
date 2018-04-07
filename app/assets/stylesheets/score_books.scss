@@ -40,6 +40,16 @@ aside {
   width: 48%;
 }
 
+#comparison_detail tbody th {
+  border-radius: 42px;
+}
+
+td.member {
+  color: #FFFFFF;
+  background-color: #F44336;
+  border-radius: 40px 0px 0px 40px / 40px 0px 0px 40px;
+}
+
 .fa-black {color: black}
 .fa-red {color: red}
 .fa-gray {color: gray}
