@@ -96,3 +96,7 @@ div.card-panel.hoverable.grey.lighten-4.z-depth-5
       == render partial: 'score_books/game', collection: @games
 
 div#game-modal.modal.modal-fixed-footer
+
+- content_for(:js) do
+  = javascript_include_tag 'counter'
+  = javascript_include_tag 'modal'
