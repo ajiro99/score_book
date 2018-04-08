@@ -4,6 +4,8 @@ class Game < ApplicationRecord
   belongs_to :convention
   belongs_to :opponent
   has_many :results
+  has_many :starting_members, ->{ with_participation(:starting) }, class_name: 'Result'
+  has_many :sub_members, ->{ without_participation(:starting) }, class_name: 'Result'
   has_many :goal_patterns
   has_many :goal_against_patterns
   has_one :first_change_out_player, class_name: 'Player', primary_key: :first_change_out_id, foreign_key: :id
@@ -32,13 +34,5 @@ class Game < ApplicationRecord
 
   def second_herf_goal_against_count
     goal_against_patterns.where("goal_against_time >= ?", 46).size
-  end
-
-  def starting_members
-    results.with_participation(:starting)
-  end
-
-  def sub_members
-    results.without_participation(:starting)
   end
 end

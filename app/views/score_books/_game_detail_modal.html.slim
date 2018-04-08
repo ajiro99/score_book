@@ -29,7 +29,7 @@ div.modal-content.indigo.lighten-4
             b 得点
           - @game.goal_patterns.each do |goal_pattern|
             li
-              div.col.s2 = goal_pattern.goal_time_decorate
+              div.col.s2.right-align = goal_pattern.goal_time_decorate
               div.col.s10.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
 
       div.col.s5
@@ -39,7 +39,7 @@ div.modal-content.indigo.lighten-4
             b 失点
           - @game.goal_against_patterns.each do |goal_against_pattern|
             li
-              div.col.s2 = goal_against_pattern.goal_against_time_decorate
+              div.col.s2.right-align = goal_against_pattern.goal_against_time_decorate
               div.col.s10.blue-text.text-lighten-2 = goal_against_pattern.goal_against_player_decorate
 
     div.row
@@ -124,7 +124,7 @@ div.modal-content.indigo.lighten-4
       thead
         tr
           th.center-align 番号
-          th.center-align ﾎﾟｼﾞｼｮﾝ
+          th.center-align ポジション
           th.center-align 名前
           th.center-align 出場時間
           th.center-align 得点
@@ -138,7 +138,7 @@ div.modal-content.indigo.lighten-4
             td.right-align.member = starting_member.player.number
             td.center-align = starting_member.player.position_text
             td = starting_member.player.name
-            td.right-align = starting_member.time
+            td.right-align = starting_member.time_decorate
             td.right-align = starting_member.gool
             td.right-align = starting_member.shoot
             td.right-align = starting_member.yellow_card
@@ -164,7 +164,7 @@ div.modal-content.indigo.lighten-4
             td.right-align.member = sub_member.player.number
             td.center-align = sub_member.player.position_text
             td = sub_member.player.name
-            td.right-align = sub_member.time
+            td.right-align = sub_member.time_decorate
             td.right-align = sub_member.gool
             td.right-align = sub_member.shoot
             td.right-align = sub_member.yellow_card
