@@ -202,3 +202,44 @@ Game.seed do |s|
   s.pk_against = 0
   s.video_url = "https://www.youtube.com/embed/pFdBxQD55zQ"
 end
+
+Game.seed do |s|
+  s.id = 6
+  s.convention_id = 1
+  s.section = 6
+  s.date = "2018/4/7"
+  s.start_time = "2018/4/7 19:00"
+  s.opponent_id = 8
+  s.home_away = 1
+  s.weather = 2
+  s.temperature = 13
+  s.referee = "山本　雄大"
+  s.result = 2
+  s.gool = 1
+  s.gool_against = 2
+  s.shoot = 16
+  s.shoot_against = 4
+  s.ck = 9
+  s.ck_against = 4
+  s.fk = 26
+  s.fk_against = 22
+  s.yellow_card = 1
+  s.gave_yellow_card = 3
+  s.red_card = 0
+  s.gave_red_card = 0
+  s.dominance_rate = 62
+  s.first_change_time = 69
+  s.first_change_out_id = 8
+  s.first_change_in_id = 26
+  s.second_change_time = 79
+  s.second_change_out_id = 19
+  s.second_change_in_id = 6
+  s.third_change_time = 86
+  s.third_change_out_id = 31
+  s.third_change_in_id = 13
+  s.number_of_visitors = 13947
+  s.rank = 12
+  s.pk = 0
+  s.pk_against = 0
+  s.video_url = "https://www.youtube.com/embed/d_dyRds6W7s"
+end
