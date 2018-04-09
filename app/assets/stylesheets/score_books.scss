@@ -15,23 +15,23 @@ div#graph_zone {
   width: 63%;
 
   div.card-panel {
-     height: 375px;
+     height: 385px;
   }
 }
 
 canvas#leage_rank_graph {
-  height: 260px !important;
+  height: 270px !important;
 }
 
 canvas#visitors_rank_graph {
-  height: 260px !important;
+  height: 270px !important;
 }
 
 aside {
   width: 35%;
 
   div.card-panel {
-     height: 375px;
+     height: 385px;
   }
 }
 
@@ -74,7 +74,7 @@ td.member {
 
 span.label {
     color: #fff;
-    background-color: #F44336;
+    background-color: #ad1457;
     border-radius: 6px;
     min-width: 3rem;
     padding: 4px 13px;
@@ -89,4 +89,8 @@ span.label {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-style: italic;
+}
+
+.next_game {
+  font-family: 'Anton', sans-serif;
 }

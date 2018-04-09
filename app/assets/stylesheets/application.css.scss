@@ -14,7 +14,7 @@
  *= require_self
  */
 @import "materialize/components/color";
-$primary-color: color("red", "darken-3") !default;
+$primary-color: color("pink", "darken-3") !default;
 @import 'materialize';
 @import "font-awesome";
 
@@ -59,7 +59,7 @@ div#main {
 
 .tabs .indicator {
   height: 4px;
-  background-color: #F44336;
+  background-color: #ad1457;
 }
 
 .divider {

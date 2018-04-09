@@ -35,19 +35,13 @@ aside.right
         span.flow-text.count.white-text data-num=games.gool_difference 0
 
     div.row
-      div.col.s5.information_title 
+      div.col.s12.information_title
         span.label.z-depth-3.blue
-          i LAST GAME
-      div.col.s7.information_titl 
-        h5 ==games.last.result
-
-      div.col.s2
-        span.flow-text.count.white-text data-num=games.last.gool 0
-      div.col.s1
-        span.flow-text.white-text　―
-      div.col.s2
-        span.flow-text.count.white-text data-num=games.last.gool_against 0
-      div.col.s7.information_title 
-        = games.last.date
-      div.col.s7.information_title 
-        = games.last.opponent.name
+          i NEXT GAME
+      div.row
+      div.col.s11.offset-s1.next_game
+        u
+          == "第#{games.last.section_decorate}　#{games.last.date_decorate} #{games.last.start_time_decorate} Kick off（#{games.last.home_away_text}）"
+      div.col.s11.offset-s1.next_game.white-text
+        h5
+          = "vs #{games.last.opponent.name}"
