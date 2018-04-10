@@ -6,7 +6,7 @@ class GoalAgainstPatternDecorator < Draper::Decorator
   end
 
   def goal_pattern
-    "　#{goal_parts_text} / #{goal_area_text}"
+    "（#{goal_parts_text} / #{goal_area_text}）"
   end
 
   def goal_against_time_decorate

@@ -82,6 +82,26 @@ class GameDecorator < Draper::Decorator
     format_minute(third_change_time)
   end
 
+  def total_score
+    "#{gool} - #{gool_against}"
+  end
+
+  def half_score
+    "1st：#{first_herf_goal_count} - #{first_herf_goal_against_count}　2nd：#{second_herf_goal_count} - #{second_herf_goal_against_count}"
+  end
+
+  def first_change_player
+    "#{first_change_out_player.name}　#{h.fa_icon('angle-double-right lg black')}　#{first_change_in_player.name}"
+  end
+
+  def second_change_player
+    "#{second_change_out_player.name}　#{h.fa_icon('angle-double-right lg black')}　#{second_change_in_player.name}"
+  end
+
+  def third_change_player
+    "#{third_change_out_player.name}　#{h.fa_icon('angle-double-right lg black')}　#{third_change_in_player.name}"
+  end
+
   private
 
   def day_of_week(date, is_color = true)

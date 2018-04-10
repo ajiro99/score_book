@@ -15,8 +15,8 @@ div.modal-content.indigo.lighten-4
         = @game.home_away_text
       div.col.s6.center-align
         h4
-          b = "#{@game.gool} - #{@game.gool_against}"
-        = "1st：#{@game.first_herf_goal_count} - #{@game.first_herf_goal_against_count}　2nd：#{@game.second_herf_goal_count} - #{@game.second_herf_goal_against_count}"
+          b = @game.total_score
+        = @game.half_score
       div.col.s3.left-align.blue-text
         h4 = @game.opponent.short_name
         = @game.opponent_home_away
@@ -25,8 +25,7 @@ div.modal-content.indigo.lighten-4
       div.col.s5.offset-s1
         ul
           li
-            = fa_icon("soccer-ball-o title-padding")
-            b 得点
+            b = title_label('soccer-ball-o', '得点')
           - @game.goal_patterns.each do |goal_pattern|
             li
               div.col.s2.right-align = goal_pattern.goal_time_decorate
@@ -36,8 +35,7 @@ div.modal-content.indigo.lighten-4
       div.col.s5
         ul
           li
-            = fa_icon("soccer-ball-o title-padding")
-            b 失点
+            b = title_label('soccer-ball-o', '失点')
           - @game.goal_against_patterns.each do |goal_against_pattern|
             li
               div.col.s2.right-align = goal_against_pattern.goal_against_time_decorate
@@ -46,18 +44,17 @@ div.modal-content.indigo.lighten-4
 
     div.row
       div.col.s5.offset-s1
-        = fa_icon("exchange title-padding")
-        b 選手交代
+        b = title_label('exchange', '選手交代')
       div.col.s6 　
 
       div.col.s2.right-align = @game.first_change_time_decorate
-      div.col.s10.red-text.text-lighten-2 == "#{@game.first_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.first_change_in_player.name}"
+      div.col.s10.red-text.text-lighten-2 == @game.first_change_player
 
       div.col.s2.right-align = @game.second_change_time_decorate
-      div.col.s10.red-text.text-lighten-2 == "#{@game.second_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.second_change_in_player.name}"
+      div.col.s10.red-text.text-lighten-2 == @game.second_change_player
 
       div.col.s2.right-align = @game.third_change_time_decorate
-      div.col.s10.red-text.text-lighten-2 == "#{@game.third_change_out_player.name}　#{fa_icon('angle-double-right lg black')}　#{@game.third_change_in_player.name}"
+      div.col.s10.red-text.text-lighten-2 == @game.third_change_player
 
   div#comparison_zone.card-panel.hoverable.z-depth-5
     canvas#myChart
