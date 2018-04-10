@@ -58,3 +58,23 @@ ja:
         df: DF
         mf: MF
         fw: FW
+
+    goal_pattern:
+      goal_parts:
+        left: 左足
+        right: 右足
+        head: 頭
+        other:
+      goal_area:
+        pa_in: PA内
+        pa_out: PA外
+
+    goal_against_pattern:
+      goal_parts:
+        left: 左足
+        right: 右足
+        head: 頭
+        other: その他
+      goal_area:
+        pa_in: PA内
+        pa_out: PA外

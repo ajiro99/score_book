@@ -10,7 +10,7 @@ aside.right
       div.col.s3
         span.flow-text.count.white-text data-num=games.last.rank 0
         span
-          b th
+          b = games.last.rank.ordinalize[-2, 2]
       div.col.s2.right-align.information_title GAMES
       div.col.s4
         span.flow-text.count.white-text data-num=games.size 0
@@ -41,7 +41,8 @@ aside.right
       div.row
       div.col.s11.offset-s1.next_game
         u
-          == "第#{games.last.section_decorate}　#{games.last.date_decorate} #{games.last.start_time_decorate} Kick off（#{games.last.home_away_text}）"
+          == "第#{games.last.section_decorate}　#{games.last.date_decorate(is_color: false)} #{games.last.start_time_decorate} Kick off（#{games.last.home_away_text}）"
       div.col.s11.offset-s1.next_game.white-text
         h5
-          = "vs #{games.last.opponent.name}"
+          b
+            i = "vs #{games.last.opponent.name}"

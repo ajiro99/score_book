@@ -1,6 +1,6 @@
 window.draw_graph = ->
   ctx = document.getElementById("myChart").getContext('2d')
-  ctx.canvas.height = 100;
+  ctx.canvas.height = 88;
   myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
@@ -23,6 +23,9 @@ window.draw_graph = ->
       ]
     },
     options: {
+      legend: {
+        display: false,
+      },
       scales: {
         xAxes: [{
           ticks: {

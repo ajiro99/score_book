@@ -5,6 +5,10 @@ class GoalAgainstPatternDecorator < Draper::Decorator
     "失点（#{goal_against_player.name}）"
   end
 
+  def goal_pattern
+    "　#{goal_parts_text} / #{goal_area_text}"
+  end
+
   def goal_against_time_decorate
     format_minute(goal_against_time)
   end

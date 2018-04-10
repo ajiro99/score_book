@@ -5,6 +5,10 @@ class GoalPatternDecorator < Draper::Decorator
     "#{player.name}（#{assist_player.name}）"
   end
 
+  def goal_pattern
+    "　#{goal_parts_text} / #{goal_area_text}"
+  end
+
   def goal_time_decorate
     format_minute(goal_time)
   end
