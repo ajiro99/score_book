@@ -1,48 +1,46 @@
 aside.right
   div.card-panel.hoverable.indigo.lighten-2.z-depth-5
     span.label.z-depth-3
-      b
-        i == "#{fa_icon("info-circle title-padding")}INFORMATION"
+      = title_label('info-circle', 'INFORMATION')
     div.divider
     div.row
     div.row
       div.col.s3.right-align.information_title RANKING
       div.col.s3
-        span.flow-text.count.white-text data-num=games.last.rank 0
+        span.flow-text.count data-num=games.last.rank
         span
-          b = games.last.rank.ordinalize[-2, 2]
+          b = games.rank_unit
       div.col.s2.right-align.information_title GAMES
       div.col.s4
-        span.flow-text.count.white-text data-num=games.size 0
-        b = "/ 34"
+        span.flow-text.count data-num=games.size
+        b = '/ 34'
       div.col.s2.right-align.information_title WIN
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.result_count(:win) 0
+        span.flow-text.count data-num=games.result_count(:win)
       div.col.s2.right-align.information_title DLAW
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.result_count(:draw) 0
+        span.flow-text.count data-num=games.result_count(:draw)
       div.col.s2.right-align.information_title LOSE
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.result_count(:lose) 0
+        span.flow-text.count data-num=games.result_count(:lose)
       div.col.s2.right-align.information_title GOAL
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.total_count(:gool)  0
+        span.flow-text.count data-num=games.total_count(:gool)
       div.col.s2.right-align.information_title LOST
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.total_count(:gool_against) 0
+        span.flow-text.count data-num=games.total_count(:gool_against)
       div.col.s2.right-align.information_title DIFF
       div.col.s2.right-align
-        span.flow-text.count.white-text data-num=games.gool_difference 0
+        span.flow-text.count data-num=games.gool_difference
 
     div.row
-      div.col.s12.information_title
-        span.label.z-depth-3.blue
-          i NEXT GAME
+      div.col.s12
+        span.label.z-depth-3.blue LAST GAME
       div.row
       div.col.s11.offset-s1.next_game
-        u
-          == "第#{games.last.section_decorate}　#{games.last.date_decorate(is_color: false)} #{games.last.start_time_decorate} Kick off（#{games.last.home_away_text}）"
+        span
+          = games.last_game_date
       div.col.s11.offset-s1.next_game.white-text
         h5
           b
-            i = "vs #{games.last.opponent.name}"
+            i = games.last_game_result

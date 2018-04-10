@@ -6,6 +6,15 @@ body {
     font-size: 14px;
 }
 
+.brand-logo {
+  font-family: 'Nunito', sans-serif;
+}
+
+div#main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 #wrapper {
   overflow: hidden;
 }
@@ -75,26 +84,28 @@ td.member {
 span.label {
     color: #fff;
     background-color: #ad1457;
-    border-radius: 6px;
+    border-radius: 10px;
     min-width: 3rem;
     padding: 4px 13px;
     text-align: center;
-    font-size: 1rem;
     line-height: 22px;
-    height: 22px;
-    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .information_title {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-style: italic;
+  font-size: 1rem;
 }
 
 div.next_game {
   font-family: 'Anton', sans-serif;
 
-  u {
-    font-size: 1rem;
+  span {
+    font-size: 1.1rem;
+    text-decoration: underline;
   }
 }

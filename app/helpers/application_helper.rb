@@ -15,4 +15,8 @@ module ApplicationHelper
     player = Player.find(player_id)
     "#{player.position_text}　#{player.name}"
   end
+
+  def title_label(icon_name, title_name)
+    fa_icon("#{icon_name} " 'title-padding') + title_name
+  end
 end

@@ -2,8 +2,7 @@ div#wrapper
   div#graph_zone
     div.card-panel.hoverable.indigo.lighten-2.z-depth-5
       span.label.z-depth-3
-        b
-          i == "#{fa_icon("database title-padding")}PICK UP DATA"
+        = title_label('database', 'PICK UP DATA')
       div.divider
       div.row
         div.col.s12
@@ -86,8 +85,7 @@ div#wrapper
 
 div.card-panel.hoverable.grey.lighten-4.z-depth-5
   span.label.z-depth-3
-    b
-      i == "#{fa_icon("calendar-check-o title-padding")}RESUST"
+    = title_label('calendar-check-o', 'RESUST')
   div.divider
   table.bordered.striped
     thead#games_title

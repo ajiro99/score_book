@@ -121,7 +121,8 @@ div.modal-content.indigo.lighten-4
       div.col.s1
 
   div.card-panel.hoverable.z-depth-5
-    span.label.red.z-depth-3 == "#{fa_icon("users title-padding")}スターティングメンバー"
+    span.label.red.z-depth-3
+      = title_label('users', 'スターティングメンバー')
     table.bordered.highlight
       thead
         tr
@@ -147,7 +148,8 @@ div.modal-content.indigo.lighten-4
             td.right-align = starting_member.red_card
 
     div.row
-    span.label.z-depth-3.blue  == "#{fa_icon("users title-padding")}控えメンバー"
+    span.label.z-depth-3.blue
+      = title_label('users', '控えメンバー')
     table.bordered.highlight
       thead
         tr

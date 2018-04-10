@@ -18,20 +18,11 @@ $primary-color: color("pink", "darken-3") !default;
 @import 'materialize';
 @import "font-awesome";
 
-.brand-logo {
-  font-family: 'Nunito', sans-serif;
-}
-
-div#main {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .count {
   font-family: 'Anton', sans-serif;
   padding: 10px;
   font-size: 40px;
-  color: red;
+  color: #FFFFFF;
 }
 
 .container {
