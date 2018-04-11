@@ -38,6 +38,9 @@ class ScoreBooksController < ApplicationController
     @game = game.decorate
   end
 
+  def about
+  end
+
   private
 
   def sort_direction
