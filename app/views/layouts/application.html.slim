@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title　ScoreBook
+    = csrf_meta_tags
+
+    = Gon::Base.render_data
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"
+    link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"
+
+  body.indigo.darken-1
+    header
+      div
+        nav.z-depth-5
+          div.nav-wrapper.container
+            = link_to 'Kashima Antlers DATE ANALYSIS', root_path, { :class => "brand-logo" }
+            ul#nav-mobile.right.hide-on-med-and-down
+              li
+                = link_to 'Dashboard', root_path
+              li
+                = link_to 'About', about_path
+
+    div#main.container
+      == yield
+
+    footer.page-footer
+      div.container
+        div.row
+          div.col.l4.offset-l6.s12
+            h5.white-text Content
+            ul
+              li
+                = link_to 'Dashboard', root_path, { :class => "grey-text text-lighten-3" }
+              li
+                = link_to 'About', about_path, { :class => "grey-text text-lighten-3" }
+
+      div.footer-copyright
+        div.container
+          span © 2018 liberta web engineer
+          a.right href = "http://www.so-net.ne.jp/antlers/" target="_blank"
+            = image_tag 'toANT.gif', :size => "140x40"
+== yield(:js)
