@@ -243,3 +243,44 @@ Game.seed do |s|
   s.pk_against = 0
   s.video_url = "https://www.youtube.com/embed/d_dyRds6W7s"
 end
+
+Game.seed do |s|
+  s.id = 7
+  s.convention_id = 1
+  s.section = 7
+  s.date = "2018/4/11"
+  s.start_time = "2018/4/11 19:00"
+  s.opponent_id = 5
+  s.home_away = 1
+  s.weather = 1
+  s.temperature = 19
+  s.referee = "西村　雄一"
+  s.result = 2
+  s.gool = 1
+  s.gool_against = 2
+  s.shoot = 7
+  s.shoot_against = 7
+  s.ck = 7
+  s.ck_against = 5
+  s.fk = 17
+  s.fk_against = 13
+  s.yellow_card = 0
+  s.gave_yellow_card = 0
+  s.red_card = 0
+  s.gave_red_card = 0
+  s.dominance_rate = 66
+  s.first_change_time = 6
+  s.first_change_out_id = 15
+  s.first_change_in_id = 22
+  s.second_change_time = 60
+  s.second_change_out_id = 11
+  s.second_change_in_id = 31
+  s.third_change_time = 79
+  s.third_change_out_id = 21
+  s.third_change_in_id = 13
+  s.number_of_visitors = 17260
+  s.rank = 13
+  s.pk = 0
+  s.pk_against = 0
+  s.video_url = "https://www.youtube.com/embed/4gNWTlyo5lU"
+end

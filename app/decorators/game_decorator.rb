@@ -105,10 +105,9 @@ class GameDecorator < Draper::Decorator
   private
 
   def day_of_week(date, is_color = true)
-    return %w{（月） （火） （水） （木） （金） （土） （日）}[date.wday] unless is_color
-    return font_tag('（日）', 'red') if date.wday == 0
-    return font_tag('（土）', 'blue') if date.wday == 6
-    %w{（月） （火） （水） （木） （金）}[date.wday]
+    return font_tag('（日）', 'red') if date.wday == 0 && is_color
+    return font_tag('（土）', 'blue') if date.wday == 6 && is_color
+    %w{（日） （月） （火） （水） （木） （金） （土）}[date.wday]
   end
 
   def font_tag(value, color = 'black', size = nil)

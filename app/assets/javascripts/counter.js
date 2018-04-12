@@ -8,6 +8,11 @@ $(function() {
       thisCount = self.text(),
       countTimer;
 
+      if(countMax < 0 ) {
+        self.text(countMax);
+        return false;
+      }
+
       function timer(){
           countTimer = setInterval(function(){
               var countNext = thisCount++;
