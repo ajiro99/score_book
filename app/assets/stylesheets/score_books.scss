@@ -110,3 +110,25 @@ div.next_game {
     text-decoration: underline;
   }
 }
+
+#page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 77%;
+}
+#page-top a {
+    background: #666;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    padding: 30px 0;
+    text-align: center;
+    display: block;
+    border-radius: 40px;
+    opacity: 0.8;
+}
+#page-top a:hover {
+    text-decoration: none;
+    background: #999;
+}

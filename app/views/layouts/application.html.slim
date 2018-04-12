@@ -41,4 +41,9 @@ html
           span © 2018 liberta web engineer
           a.right href = "http://www.so-net.ne.jp/antlers/" target="_blank"
             = image_tag 'toANT.gif', :size => "140x40"
+
+p#page-top
+  = link_to 'PAGE TOP', '#wrap', { :id => "wrap" }
+
 == yield(:js)
+= javascript_include_tag 'page_top'
