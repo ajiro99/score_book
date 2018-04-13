@@ -17,9 +17,9 @@ html
           div.nav-wrapper.container
             = link_to 'Kashima Antlers DATE ANALYSIS', root_path, { :class => "brand-logo" }
             ul#nav-mobile.right.hide-on-med-and-down
-              li
+              li#navi-root
                 = link_to 'Dashboard', root_path
-              li
+              li#navi-about
                 = link_to 'About', about_path
 
     div#main.container
@@ -43,7 +43,7 @@ html
             = image_tag 'toANT.gif', :size => "140x40"
 
 p#page-top
-  = link_to 'PAGE TOP', '#wrap', { :id => "wrap" }
+  = link_to 'PAGE TOP', '#wrap', { :id => "wrap", :class => "z-depth-5" }
 
 == yield(:js)
-= javascript_include_tag 'page_top'
+= javascript_include_tag 'top'
