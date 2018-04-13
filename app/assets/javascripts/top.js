@@ -27,7 +27,7 @@ $(function() {
 
   var naviConfig = [
     { rule:"/", selector:"#navi-root" },
-    { rule:"/schedule", selector:"#navi-schedule" }
+    { rule:"/schedule", selector:"#navi-schedule" },
     { rule:"/about", selector:"#navi-about" }
   ];
 

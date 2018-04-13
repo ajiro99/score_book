@@ -19,7 +19,7 @@ html
             ul#nav-mobile.right.hide-on-med-and-down
               li#navi-root
                 = link_to 'Dashboard', root_path
-              li#navi-about
+              li#navi-schedule
                 = link_to 'Schedule', schedule_path
               li#navi-about
                 = link_to 'About', about_path
@@ -34,9 +34,11 @@ html
             h5.white-text Content
             ul
               li
-                = link_to 'Dashboard', root_path, { :class => "grey-text text-lighten-3" }
+                = link_to 'Dashboard', root_path
               li
-                = link_to 'About', about_path, { :class => "grey-text text-lighten-3" }
+                = link_to 'Schedule', schedule_path
+              li
+                = link_to 'About', about_path
           div.col.s2
             h5.white-text Official Site
             a.right href = "http://www.so-net.ne.jp/antlers/" target="_blank"

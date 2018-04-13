@@ -2,7 +2,8 @@ class GoalPatternDecorator < Draper::Decorator
   delegate_all
 
   def goal_and_assist_player
-    "#{player.name}#{assist_player&.name.blank? ? '' : （assist_player.name）}"
+    assist_player_name = assist_player&.name.blank? ? '' : "（#{assist_player.name}）"
+    "#{player.name}#{assist_player_name}"
   end
 
   def goal_pattern
