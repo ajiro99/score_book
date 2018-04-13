@@ -41,6 +41,11 @@ class ScoreBooksController < ApplicationController
   def about
   end
 
+  def schedule
+    convention = Convention.find(1)
+    @games = GameDecorator.decorate_collection(convention.games)
+  end
+
   private
 
   def sort_direction

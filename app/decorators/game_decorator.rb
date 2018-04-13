@@ -34,6 +34,12 @@ class GameDecorator < Draper::Decorator
   	h.fa_icon("circle lg")
   end
 
+  def result_score
+    return h.raw("#{h.fa_icon("circle-thin lg")} #{total_score}") if result.win?
+    return h.raw("#{font_tag("△", nil, 3)} #{total_score}") if result.draw?
+    h.raw("#{h.fa_icon("circle lg")} #{total_score}")
+  end
+
   def temperature_decorate(is_color: true)
   	value = "#{temperature}℃"
     return value unless is_color

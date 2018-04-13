@@ -1,0 +1,44 @@
+div.card-panel.hoverable.z-depth-5
+  div.row
+    div.div.col.s6
+      table.bordered.striped
+        thead
+          tr
+            th.center-align 節
+            th.center-align 試合日
+            th.center-align Kick off
+            th.center-align 対戦相手
+            th.center-align H/A
+            th.center-align 結果
+        tbody
+          tr
+          - @games.each do |game|
+            tr
+              td.right-align = game.section_decorate
+              td.center-align = game.date_decorate
+              td.center-align = game.start_time_decorate
+              td = game.opponent.name
+              td.center-align = game.home_away_decorate
+              td.center-align = game.result_score
+
+
+    div.div.col.s6
+      table.bordered.striped
+        thead
+          tr
+            th.center-align 節
+            th.center-align 試合日
+            th.center-align Kick off
+            th.center-align 対戦相手
+            th.center-align H/A
+            th.center-align 結果
+        tbody
+          tr
+          - @games.each do |game|
+            tr
+              td.right-align = game.section_decorate
+              td.center-align = game.date_decorate
+              td.center-align = game.start_time_decorate
+              td = game.opponent.name
+              td.center-align = game.home_away_decorate
+              td.center-align = game.result_decorate

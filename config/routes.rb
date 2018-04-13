@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'score_books#index'
   get 'score_books/:id' => 'score_books#game_detail'
   get 'about' => 'score_books#about'
+  get 'schedule' => 'score_books#schedule'
+
 
   namespace :admin do
   	resources :games
