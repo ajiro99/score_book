@@ -19,6 +19,8 @@ class Game < ApplicationRecord
   enumerize :weather, in: { sunny: 0, cloudy: 1, rain: 2, snow: 3 }, scope: true
   enumerize :result, in: { win: 0, draw: 1, lose: 2, }, scope: true
 
+  scope :performed, -> { where.not(result: nil) }
+
 
   def first_herf_goal_count
     goal_patterns.where("goal_time < ?", 46).size

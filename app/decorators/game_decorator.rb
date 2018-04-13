@@ -29,12 +29,14 @@ class GameDecorator < Draper::Decorator
   end
 
   def result_decorate
+    return '' if result.blank?
   	return h.fa_icon("circle-thin lg") if result.win?
   	return font_tag("△", nil, 3) if result.draw?
   	h.fa_icon("circle lg")
   end
 
   def result_score
+    return '' if result.blank?
     return h.raw("#{h.fa_icon("circle-thin lg")} #{total_score}") if result.win?
     return h.raw("#{font_tag("△", nil, 3)} #{total_score}") if result.draw?
     h.raw("#{h.fa_icon("circle lg")} #{total_score}")

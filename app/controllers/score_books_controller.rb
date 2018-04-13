@@ -4,7 +4,7 @@ class ScoreBooksController < ApplicationController
 
   def index
     convention = Convention.find(1)
-    games = convention.games.order(sort_column + ' ' + sort_direction)
+    games = convention.games.performed.order(sort_column + ' ' + sort_direction)
     @goal_ranking = convention.games.joins(:goal_patterns).group(:player_id).order('count_all desc').limit(5).count
 
     gon.goal_players = @goal_ranking.keys.map {|player| Player.find(player).name.split(" ").first}
@@ -43,7 +43,8 @@ class ScoreBooksController < ApplicationController
 
   def schedule
     convention = Convention.find(1)
-    @games = GameDecorator.decorate_collection(convention.games)
+    @first_half_games = GameDecorator.decorate_collection(convention.games.limit(17).offset(0))
+    @second_half_games = GameDecorator.decorate_collection(convention.games.limit(17).offset(17))
   end
 
   private

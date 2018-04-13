@@ -284,3 +284,216 @@ Game.seed do |s|
   s.pk_against = 0
   s.video_url = "https://www.youtube.com/embed/4gNWTlyo5lU"
 end
+
+Game.seed do |s|
+  s.id = 8
+  s.convention_id = 1
+  s.section = 8
+  s.date = "2018/4/14"
+  s.start_time = "2018/4/14 14:00"
+  s.opponent_id = 11
+  s.home_away = 0
+  s.weather = nil
+  s.temperature = nil
+  s.referee = nil
+  s.result = nil
+  s.gool = nil
+  s.gool_against = nil
+  s.shoot = nil
+  s.shoot_against = nil
+  s.ck = nil
+  s.ck_against = nil
+  s.fk = nil
+  s.fk_against = nil
+  s.yellow_card = nil
+  s.gave_yellow_card = nil
+  s.red_card = nil
+  s.gave_red_card = nil
+  s.dominance_rate = nil
+  s.first_change_time = nil
+  s.first_change_out_id = nil
+  s.first_change_in_id = nil
+  s.second_change_time = nil
+  s.second_change_out_id = nil
+  s.second_change_in_id = nil
+  s.third_change_time = nil
+  s.third_change_out_id = nil
+  s.third_change_in_id = nil
+  s.number_of_visitors = nil
+  s.rank = nil
+  s.pk = nil
+  s.pk_against = nil
+  s.video_url = nil
+end
+
+Game.seed do |s|
+  s.id = 9
+  s.convention_id = 1
+  s.section = 9
+  s.date = "2018/4/21"
+  s.start_time = "2018/4/21 16:00"
+  s.opponent_id = 6
+  s.home_away = 1
+  s.weather = nil
+  s.temperature = nil
+  s.referee = nil
+  s.result = nil
+  s.gool = nil
+  s.gool_against = nil
+  s.shoot = nil
+  s.shoot_against = nil
+  s.ck = nil
+  s.ck_against = nil
+  s.fk = nil
+  s.fk_against = nil
+  s.yellow_card = nil
+  s.gave_yellow_card = nil
+  s.red_card = nil
+  s.gave_red_card = nil
+  s.dominance_rate = nil
+  s.first_change_time = nil
+  s.first_change_out_id = nil
+  s.first_change_in_id = nil
+  s.second_change_time = nil
+  s.second_change_out_id = nil
+  s.second_change_in_id = nil
+  s.third_change_time = nil
+  s.third_change_out_id = nil
+  s.third_change_in_id = nil
+  s.number_of_visitors = nil
+  s.rank = nil
+  s.pk = nil
+  s.pk_against = nil
+  s.video_url = nil
+end
+
+Game.seed do |s|
+  s.id = 10
+  s.convention_id = 1
+  s.section = 10
+  s.date = "2018/4/25"
+  s.start_time = "2018/4/25 19:00"
+  s.opponent_id = 14
+  s.home_away = 0
+  s.weather = nil
+  s.temperature = nil
+  s.referee = nil
+  s.result = nil
+  s.gool = nil
+  s.gool_against = nil
+  s.shoot = nil
+  s.shoot_against = nil
+  s.ck = nil
+  s.ck_against = nil
+  s.fk = nil
+  s.fk_against = nil
+  s.yellow_card = nil
+  s.gave_yellow_card = nil
+  s.red_card = nil
+  s.gave_red_card = nil
+  s.dominance_rate = nil
+  s.first_change_time = nil
+  s.first_change_out_id = nil
+  s.first_change_in_id = nil
+  s.second_change_time = nil
+  s.second_change_out_id = nil
+  s.second_change_in_id = nil
+  s.third_change_time = nil
+  s.third_change_out_id = nil
+  s.third_change_in_id = nil
+  s.number_of_visitors = nil
+  s.rank = nil
+  s.pk = nil
+  s.pk_against = nil
+  s.video_url = nil
+end
+
+Game.seed do |s|
+  s.id = 11
+  s.convention_id = 1
+  s.section = 11
+  s.date = "2018/4/28"
+  s.start_time = "2018/4/28 19:00"
+  s.opponent_id = 7
+  s.home_away = 1
+end
+
+Game.seed do |s|
+  s.id = 12
+  s.convention_id = 1
+  s.section = 12
+  s.date = "2018/5/2"
+  s.start_time = "2018/5/2 19:00"
+  s.opponent_id = 7
+  s.home_away = 0
+end
+
+Game.seed do |s|
+  s.id = 13
+  s.convention_id = 1
+  s.section = 13
+  s.date = "2018/5/5"
+  s.start_time = "2018/5/5 17:00"
+  s.opponent_id = 3
+  s.home_away = 0
+end
+
+Game.seed do |s|
+  s.id = 14
+  s.convention_id = 1
+  s.section = 15
+  s.date = "2018/5/20"
+  s.start_time = "2018/5/20 14:00"
+  s.opponent_id = 2
+  s.home_away = 0
+end
+
+Game.seed do |s|
+  s.id = 15
+  s.convention_id = 1
+  s.section = 16
+  s.date = "2018/7/18"
+  s.start_time = "2018/7/18 19:00"
+  s.opponent_id = 10
+  s.home_away = 1
+end
+
+Game.seed do |s|
+  s.id = 16
+  s.convention_id = 1
+  s.section = 17
+  s.date = "2018/7/22"
+  s.start_time = "2018/7/22 18:30"
+  s.opponent_id = 4
+  s.home_away = 0
+end
+
+Game.seed do |s|
+  s.id = 17
+  s.convention_id = 1
+  s.section = 14
+  s.date = "2018/7/25"
+  s.start_time = "2018/7/25 19:00"
+  s.opponent_id = 13
+  s.home_away = 1
+end
+
+Game.seed do |s|
+  s.id = 18
+  s.convention_id = 1
+  s.section = 18
+  s.date = "2018/7/28"
+  s.start_time = "2018/7/28 19:00"
+  s.opponent_id = 12
+  s.home_away = 1
+end
+
+Game.seed do |s|
+  s.id = 19
+  s.convention_id = 1
+  s.section = 19
+  s.date = "2018/8/1"
+  s.start_time = "2018/8/1 19:00"
+  s.opponent_id = 5
+  s.home_away = 0
+end
