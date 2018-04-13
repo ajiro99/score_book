@@ -60,11 +60,11 @@ div#wrapper
               - @goal_ranking.each_with_index do |(key, val), i|
                 tr
                   td
-                    b = (i + 1).ordinalize
+                    span.label.cyan.z-depth-2 = (i + 1).ordinalize
                   td.white-text
                     b = goal_ranking_name(key)
                   td.white-text
-                    b.white-text = val
+                    b = val
 
       div#leage_rank.col.s12
         canvas#leage_rank_graph
