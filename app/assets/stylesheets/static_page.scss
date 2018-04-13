@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+h2.Pagetitle {
+  background: #FAFAFA;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0 0 10px;
+  padding: 15px 10px;
+  position: relative;
+}
+
+#law_contents p.indentsign,#terms_contents p.indentsign,#price_contents p.indentsign,#whats_contents p.indentsign{
+  border-left:5px solid #ad1457;
+  margin:0;
+  padding:3px 10px 1px;
+  font-weight:bold;
+  color:#000;
+  font-size:16px;
+  line-height:1.4;
+}
+#law_contents div.Item_Description,#terms_contents div.Item_Description,#price_contents div.Item_Description,#whats_contents div.Item_Description{
+  margin:5px 0 15px;
+  padding:5px;
+  line-height:1.8;
+  font-size:14px;
+  color:#000;
+}
+#law_contents div.title,#terms_contents div.title,#price_contents div.title,#whats_contents div.title{
+  background-color:#fff;
+  border-bottom:1px solid #000;
+  margin:20px 0 0;
+  padding:15px 5px 5px;
+  font-weight:nomal;
+  color:#000;
+  font-size:16px;
+}
+
+#terms_contents{
+    line-height:140%;
+}
+#terms_contents .read,#price_contents .read,#whats_contents .read,#law_contents .read{
+  margin:24px 0 24px;
+  font-size:16px;
+  font-weight:bold;
+  line-height:160%;
+  padding:0 5px;
+}
+#terms_contents p{
+  margin:25px 5px;
+  font-size:14px;
+  color:#000;
+  line-height:1.7;
+}
+#price_contents p{
+  margin:14px 5px;
+  font-size:14px;
+  color:#000;
+  line-height:1.7;
+}
+#terms_contents div ul{
+  margin-left:1em;
+}
+#terms_contents div ul li{
+  list-style-type: square;
+  list-style-position:outside;
+  marker-offset:2em;
+
+}
+
+/*** Notes ***/
+div.Notes{
+  background-color:#ececec;
+  margin:10px 0;
+  padding:12px 10px 15px;
+}
+div.Notes div.ttl{
+  font-size:16px;
+  padding:12px;
+  background-color:#f7f7f7;
+}
+div.Notes div.sttl{
+border-bottom: 1px solid #ececec;
+  font-size:14px;
+  padding:0 0 8px 12px;
+  margin:10px 0 ;
+
+}
+div.Notes div.txt{
+  font-size:14px;
+  padding:12px 0 6px 12px;
+  margin:0;
+  line-height:1.7;
+}
+
+/*** 以下　モバイル対応 ***/
+
+@media (max-width:767px) {
+
+  /*** FAQ ***/
+  #price_contents,#whats_contents,#terms_contents,#faq_contents,  #law_contents{
+    padding:0 10px;
+  }
+  #price_contents h2.Pagetitle,#whats_contents   h2.Pagetitle,#terms_contents h2.Pagetitle,#faq_contents   h2.Pagetitle,#law_contents h2.Pagetitle{
+    margin:10px -10px;
+    padding:15px 10px;
+  }
+  #faq_contents p.title{
+    display:block;
+    padding:2px 0;
+    margin:0 0 6px;
+    color:#000;
+    border-bottom:1px solid #000;
+  }
+  #faq_contents .read,#terms_contents .read,#price_contents   .read,#whats_contents .read,#law_contents .read{
+    margin:5px 0;
+    padding:0;
+    border:1px sold #E3E3E3;
+  }
+  #faq_contents p,#terms_contents p,#price_contents   p,#whats_contents p,#law_contents p{
+    margin:5px 0;
+  }
+
+  div.faq_a div.faq_a_split{
+    width:100%;
+    margin-bottom:14px;
+  }
+
+  table.type02 {
+    width:100%;
+  }
+}

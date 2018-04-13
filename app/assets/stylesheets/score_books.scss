@@ -82,23 +82,23 @@ td.member {
 }
 
 span.label {
-    color: #fff;
-    background-color: #ad1457;
-    border-radius: 10px;
-    min-width: 3rem;
-    padding: 4px 13px;
-    text-align: center;
-    line-height: 22px;
-    font-size: 1rem;
-    font-weight: bold;
-    font-style: italic;
+  color: #fff;
+  background-color: #ad1457;
+  border-radius: 10px;
+  min-width: 3rem;
+  padding: 4px 13px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .information_title {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 5px 0px;
 }
 
@@ -112,23 +112,32 @@ div.next_game {
 }
 
 #page-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 77%;
+  position: fixed;
+  bottom: 10px !important;
+  right: 15px;
+  font-size: 77%;
 }
 #page-top a {
-    background: #666;
-    text-decoration: none;
-    color: #fff;
-    width: 80px;
-    padding: 30px 0;
-    text-align: center;
-    display: block;
-    border-radius: 40px;
-    opacity: 0.8;
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 80px;
+  padding: 30px 0;
+  text-align: center;
+  display: block;
+  border-radius: 40px;
+  opacity: 0.7;
 }
 #page-top a:hover {
-    text-decoration: none;
-    background: #999;
+  text-decoration: none;
+  background: #999;
+}
+
+nav .brand-logo {
+  border-radius: 30px;
+  padding: 0px 20px !important;
+  font-style: italic;
+  font-size: 1.8rem !important;
+  background-color: #ff3366;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }

@@ -28,19 +28,21 @@ html
     footer.page-footer
       div.container
         div.row
-          div.col.l4.offset-l6.s12
+          div.col.offset-s5.s4
             h5.white-text Content
             ul
               li
                 = link_to 'Dashboard', root_path, { :class => "grey-text text-lighten-3" }
               li
                 = link_to 'About', about_path, { :class => "grey-text text-lighten-3" }
+          div.col.s2
+            h5.white-text Official Site
+            a.right href = "http://www.so-net.ne.jp/antlers/" target="_blank"
+              = image_tag 'toANT.gif', :size => "150x50"
 
       div.footer-copyright
         div.container
           span © 2018 liberta web engineer
-          a.right href = "http://www.so-net.ne.jp/antlers/" target="_blank"
-            = image_tag 'toANT.gif', :size => "140x40"
 
 p#page-top
   = link_to 'PAGE TOP', '#wrap', { :id => "wrap", :class => "z-depth-5" }
