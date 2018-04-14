@@ -323,7 +323,7 @@ Game.seed do |s|
   s.rank = 10
   s.pk = 0
   s.pk_against = 0
-  s.video_url = nil
+  s.video_url = "https://www.youtube.com/embed/nPNXCP8sI5E"
 end
 
 Game.seed do |s|

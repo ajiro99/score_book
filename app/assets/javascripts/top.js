@@ -33,7 +33,7 @@ $(function() {
 
   (function(config){
     for(var i=0;i<config.length;i++){
-      if( location.pathname === config[i].rule ){
+      if( location.pathname.endsWith(config[i].rule) ){
         $(config[i].selector).addClass("active");
         return;
       }

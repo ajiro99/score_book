@@ -10,7 +10,7 @@ $(function() {
   );
 
   $(document).on('click', "[id^='game_']", function (){
-    $.get("http://" + location.host + "/score_books/" + $(this).attr("id").slice(5),
+    $.get(location + "score_books/" + $(this).attr("id").slice(5),
       function(data){ }
     );
     $('#game-modal').modal('open');

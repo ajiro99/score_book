@@ -15,10 +15,10 @@ html
       div
         nav.z-depth-3
           div.nav-wrapper.container
-            = link_to 'Kashima Antlers DATE ANALYSIS', root_path, { :class => "brand-logo" }
+            = link_to 'Kashima Antlers DATE ANALYSIS', root_path, { :class => "brand-logo", data: {"turbolinks" => false} }
             ul#nav-mobile.right.hide-on-med-and-down
               li#navi-root
-                = link_to 'Dashboard', root_path
+                = link_to 'Dashboard', root_path, {data: {"turbolinks" => false} }
               li#navi-schedule
                 = link_to 'Schedule', schedule_path
               li#navi-about
@@ -34,7 +34,7 @@ html
             h5.white-text Content
             ul
               li
-                = link_to 'Dashboard', root_path
+                = link_to 'Dashboard', root_path, { data: {"turbolinks" => false} }
               li
                 = link_to 'Schedule', schedule_path
               li

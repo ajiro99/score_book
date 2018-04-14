@@ -66,6 +66,6 @@ GoalPattern.seed do |s|
   s.assist_player_id = 16
   s.pattern = 11
   s.starting_area = 2
-  s.goal_area = 1
+  s.goal_area = 2
   s.goal_parts = 2
 end
