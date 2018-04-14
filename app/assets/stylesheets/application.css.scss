@@ -36,6 +36,7 @@ $primary-color: color("pink", "darken-3") !default;
   width: 63%;
   border-radius: 15px;
   top: 3% !important;
+  overflow-x: hidden;
 }
 
 .modal.modal-fixed-footer {

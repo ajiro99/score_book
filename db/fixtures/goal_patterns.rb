@@ -41,6 +41,30 @@ GoalPattern.seed do |s|
   s.player_id = 10
   s.assist_player_id = nil
   s.pattern = 12
+  s.starting_area = 1
+  s.goal_area = 1
+  s.goal_parts = 2
+end
+
+GoalPattern.seed do |s|
+  s.id = 5
+  s.game_id = 8
+  s.goal_time = 10
+  s.player_id = 10
+  s.assist_player_id = 9
+  s.pattern = 12
+  s.starting_area = 1
+  s.goal_area = 1
+  s.goal_parts = 4
+end
+
+GoalPattern.seed do |s|
+  s.id = 6
+  s.game_id = 8
+  s.goal_time = 88
+  s.player_id = 10
+  s.assist_player_id = 16
+  s.pattern = 11
   s.starting_area = 2
   s.goal_area = 1
   s.goal_parts = 2

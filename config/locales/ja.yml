@@ -64,7 +64,7 @@ ja:
         left: 左足
         right: 右足
         head: 頭
-        other:
+        other: その他
       goal_area:
         pa_in: PA内
         pa_out: PA外
