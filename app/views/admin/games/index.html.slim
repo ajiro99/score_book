@@ -1,87 +1,40 @@
-h1 Listing games
-= link_to 'results', admin_results_path
-table
-  thead
-    tr
-      th Convention
-      th No
-      th Date
-      th Start time
-      th Opponent
-      th Home away
-      th Weather
-      th Temperature
-      th Referee
-      th Result
-      th Gool
-      th Gool against
-      th Shoot
-      th Shoot against
-      th Ck
-      th Ck against
-      th Fk
-      th Fk against
-      th Yellow card
-      th Gave yellow card
-      th Red card
-      th Gave red card
-      th Dominance rate
-      th first_change_time
-      th first_change_in
-      th first_change_out
-      th second_change_time
-      th second_change_in
-      th second_change_out
-      th third_change_time
-      th third_change_in
-      th third_change_out
-      th Number of visitors
-      th Rank
-      th
-      th
-      th
-
-  tbody
-    - @games.each do |game|
-      tr
-        td = game.convention.convention_type_text
-        td = game.section
-        td = game.date
-        td = game.start_time
-        td = game.opponent.name
-        td = game.home_away_text
-        td = game.weather_text
-        td = game.temperature
-        td = game.referee
-        td = game.result_text
-        td = game.gool
-        td = game.gool_against
-        td = game.shoot
-        td = game.shoot_against
-        td = game.ck
-        td = game.ck_against
-        td = game.fk
-        td = game.fk_against
-        td = game.yellow_card
-        td = game.gave_yellow_card
-        td = game.red_card
-        td = game.gave_red_card
-        td = game.dominance_rate
-        td = game.first_change_time
-        td = game.first_change_out_id
-        td = game.first_change_in_id
-        td = game.second_change_time
-        td = game.second_change_out_id
-        td = game.second_change_in_id
-        td = game.third_change_time
-        td = game.third_change_out_id
-        td = game.third_change_in_id
-        td = game.number_of_visitors
-        td = game.rank
-        td = link_to 'Show', admin_game_path(game)
-        td = link_to 'Edit', edit_admin_game_path(game)
-        td = link_to 'Destroy', admin_game_path(game), data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Game', new_admin_game_path
+div.card-panel.hoverable.z-depth-5
+  div.row
+    h4 Listing games
+    div.col.s2.offset-s10.right-align 
+      = link_to 'New Game', new_admin_game_path, class: "waves-effect waves-light btn"
+    div.row
+      div.col.s12
+        table.bordered.striped
+          thead
+            tr
+              th 大会
+              th 節
+              th 試合日
+              th Kick off
+              th 対戦相手
+              th H/A
+              th 結果
+              th 得点
+              th 失点
+              th 順位
+              th
+              th
+              th
+        
+          tbody
+            - @games.each do |game|
+              tr
+                td = game.convention.convention_type_text
+                td = game.section
+                td = game.date
+                td = game.start_time_decorate
+                td = game.opponent.name
+                td = game.home_away_text
+                td = game.result_text
+                td = game.gool
+                td = game.gool_against
+                td = game.rank
+                td = link_to 'Results', admin_results_path
+                td = link_to 'Edit', edit_admin_game_path(game)
+                td = link_to 'Destroy', admin_game_path(game), data: {   confirm:   'Are you sure?' }, method: :delete

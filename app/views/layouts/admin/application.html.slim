@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title　Kashima Antlers DATE ANALYSIS
+    = csrf_meta_tags
+
+    = Gon::Base.render_data
+    = stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload'
+
+  body
+    div.container
+      == yield
+
+= javascript_include_tag 'admin/admin'

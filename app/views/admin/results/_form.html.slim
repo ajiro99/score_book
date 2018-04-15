@@ -6,34 +6,49 @@
         - @result.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :game
-    = f.collection_select :game_id, Game.all, :id, :section
-  .field
-    = f.label :player
-    = f.collection_select :player_id, Player.all, :id, :name
-  .field
-    = f.label :participation
-    = f.select :participation, Result.participation.options
-  .field
-    = f.label :time
-    = f.number_field :time, min: 0, max: 120
-  .field
-    = f.label :gool
-    = f.number_field :gool, min: 0
-  .field
-    = f.label :gool_against
-    = f.number_field :gool_against, min: 0
-  .field
-    = f.label :shoot
-    = f.number_field :shoot, min: 0
-  .field
-    = f.label :shoot_against
-    = f.number_field :shoot_against, min: 0
-  .field
-    = f.label :yellow_card
-    = f.number_field :yellow_card, min: 0
-  .field
-    = f.label :red_card
-    = f.number_field :red_card, min: 0
-  .actions = f.submit
+  div.row
+    div.col.s12
+      div.row
+        div.input-field.col.s3
+          = f.collection_select :game_id, Game.all, :id, :section
+          = f.label :game
+
+      div.row
+        div.input-field.col.s3
+          = f.collection_select :player_id, Player.all, :id, :name
+          = f.label :player
+        div.input-field.col.s2
+          = f.select :participation, Result.participation.options
+          = f.label :participation
+        div.input-field.col.s2
+          = f.number_field :time, min: 0, max: 120
+          = f.label :time
+
+      div.row
+        div.input-field.col.s2
+          = f.number_field :gool, min: 0
+          = f.label :gool
+        div.input-field.col.s2
+          = f.number_field :shoot, min: 0
+          = f.label :shoot
+        div.input-field.col.s2
+          = f.number_field :gool_against, min: 0
+          = f.label :gool_against
+        div.input-field.col.s2
+          = f.number_field :shoot_against, min: 0
+          = f.label :shoot_against
+    
+
+      div.row
+        div.input-field.col.s2
+          = f.number_field :yellow_card, min: 0
+          = f.label :yellow_card
+        div.input-field.col.s2
+          = f.number_field :red_card, min: 0
+          = f.label :red_card
+
+      div.row
+        div.col.s2
+          = f.submit class: "waves-effect waves-light btn"
+        div.col.s2
+          = link_to 'Back', admin_results_path, class: "waves-effect waves-light btn orange"
