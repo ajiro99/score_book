@@ -29,7 +29,7 @@ class Admin::ResultsController < Admin::BaseController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to [:admin, @result], notice: 'Result was successfully created.' }
+        format.html { redirect_to edit_admin_result_path(@result), notice: 'Result was successfully created.' }
         format.json { render :show, status: :created, location: @result }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Admin::ResultsController < Admin::BaseController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to @result, notice: 'Result was successfully updated.' }
+        format.html { redirect_to edit_admin_result_path(@result), notice: 'Result was successfully updated.' }
         format.json { render :show, status: :ok, location: @result }
       else
         format.html { render :edit }

@@ -1,4 +1,5 @@
 = form_for([:admin, @result]) do |f|
+  p#notice.red-text = notice
   - if @result.errors.any?
     #error_explanation
       h2 = "#{pluralize(@result.errors.count, "error")} prohibited this result from being saved:"
@@ -37,7 +38,7 @@
         div.input-field.col.s2
           = f.number_field :shoot_against, min: 0
           = f.label :shoot_against
-    
+
 
       div.row
         div.input-field.col.s2
@@ -48,7 +49,7 @@
           = f.label :red_card
 
       div.row
-        div.col.s2
-          = f.submit class: "waves-effect waves-light btn"
-        div.col.s2
-          = link_to 'Back', admin_results_path, class: "waves-effect waves-light btn orange"
+        div.col.s12
+            = f.submit class: "waves-effect waves-light btn button-margin"
+            = link_to 'New', new_admin_result_path, class: "waves-effect waves-light btn blue button-margin"
+            = link_to 'Back', admin_results_path, class: "waves-effect waves-light btn orange button-margin"
