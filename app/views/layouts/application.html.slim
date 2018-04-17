@@ -4,6 +4,7 @@ html
     title　Kashima Antlers DATE ANALYSIS
     = csrf_meta_tags
 
+    = favicon_link_tag
     = Gon::Base.render_data
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -18,11 +19,11 @@ html
             = link_to 'Kashima Antlers DATE ANALYSIS', root_path, { :class => "brand-logo", data: {"turbolinks" => false} }
             ul#nav-mobile.right.hide-on-med-and-down
               li#navi-root
-                = link_to 'Dashboard', root_path, {data: {"turbolinks" => false} }
+                = link_to title_label('home', 'Dashboard'), root_path, {data: {"turbolinks" => false} }
               li#navi-schedule
-                = link_to 'Schedule', schedule_path
+                = link_to title_label('calendar', 'Schedule'), schedule_path, {data: {"turbolinks" => false} }
               li#navi-about
-                = link_to 'About', about_path
+                = link_to title_label('question-circle', 'About'), about_path, {data: {"turbolinks" => false} }
 
     div#main.container
       == yield
@@ -31,16 +32,16 @@ html
       div.container
         div.row
           div.col.offset-s5.s4
-            h5.white-text Content
+            h5.white-text = title_label('diamond', 'Content')
             ul
               li
-                = link_to 'Dashboard', root_path, { data: {"turbolinks" => false} }
+                = link_to title_label('home', 'Dashboard'), root_path, { data: {"turbolinks" => false} }
               li
-                = link_to 'Schedule', schedule_path
+                = link_to title_label('calendar', 'Schedule'), schedule_path, {data: {"turbolinks" => false} }
               li
-                = link_to 'About', about_path
+                = link_to title_label('question-circle', 'About'), about_path, {data: {"turbolinks" => false} }
           div.col.s2
-            h5.white-text Official Site
+            h5.white-text = title_label('link', 'Official Site')
             a href = "http://www.so-net.ne.jp/antlers/" target="_blank"
               = image_tag 'toANT.gif', :size => "150x50"
 

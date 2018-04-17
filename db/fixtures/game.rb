@@ -320,7 +320,7 @@ Game.seed do |s|
   s.third_change_out_id = 12
   s.third_change_in_id = 6
   s.number_of_visitors = 17921
-  s.rank = 10
+  s.rank = 8
   s.pk = 0
   s.pk_against = 0
   s.video_url = "https://www.youtube.com/embed/nPNXCP8sI5E"
