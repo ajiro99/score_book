@@ -1,4 +1,4 @@
-class Admin::GamesController < ApplicationController
+class Admin::GamesController < Admin::BaseController
   layout 'admin/application'
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 

@@ -1,4 +1,4 @@
-class Admin::ResultsController < ApplicationController
+class Admin::ResultsController < Admin::BaseController
   layout 'admin/application'
   before_action :set_result, only: [:show, :edit, :update, :destroy]
 
