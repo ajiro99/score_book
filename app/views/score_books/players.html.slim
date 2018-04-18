@@ -1,0 +1,33 @@
+div.card-panel.hoverable.z-depth-5
+  span.label.z-depth-3
+    = title_label('users', 'PLAYERS')
+  div.divider
+  div.row
+    div.col.s12
+      div.row
+      table.bordered.striped
+        thead#players_title
+          == render partial: 'score_books/players_title'
+        tbody#players
+          == render partial: 'score_books/player', collection: @players
+
+        thead
+          tr
+            th.center-align 背番号
+            th.center-align ﾎﾟｼﾞｼｮﾝ
+            th.center-align 名前
+            th.center-align 生年月日
+            th.center-align 身長
+            th.center-align 体重
+            th.center-align 出場<br>時間
+            th.center-align 出場<br>回数
+            th.center-align 先発<br>回数
+            th.center-align フル出<br>場回数
+            th.center-align 途中出<br>場回数
+            th.center-align ｺﾞｰﾙ
+            th.center-align ｼｭｰﾄ
+            th.center-align 失点
+            th.center-align 被ｼｭｰﾄ
+            th.center-align ｲｴﾛｰ<br>ｶｰﾄﾞ
+            th.center-align ﾚｯﾄﾞ<br>ｶｰﾄﾞ
+

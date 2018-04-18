@@ -4,6 +4,7 @@
 
 body {
     font-size: 14px;
+    background-image: image-url("blue_tile.jpg")
 }
 
 .brand-logo {
@@ -151,4 +152,8 @@ nav .brand-logo {
   border-radius: 4px;
   background-color: rgba(0,0,0,.5);
   box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.panel-opacity {
+  opacity: 0.9;
 }

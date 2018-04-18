@@ -22,6 +22,8 @@ html
                 = link_to title_label('home', 'Dashboard'), root_path, {data: {"turbolinks" => false} }
               li#navi-schedule
                 = link_to title_label('calendar', 'Schedule'), schedule_path, {data: {"turbolinks" => false} }
+              li#navi-players
+                = link_to title_label('users', 'players'), players_path, {data: {"turbolinks" => false} }
               li#navi-about
                 = link_to title_label('question-circle', 'About'), about_path, {data: {"turbolinks" => false} }
 
@@ -38,6 +40,8 @@ html
                 = link_to title_label('home', 'Dashboard'), root_path, { data: {"turbolinks" => false} }
               li
                 = link_to title_label('calendar', 'Schedule'), schedule_path, {data: {"turbolinks" => false} }
+              li
+                = link_to title_label('users', 'players'), players_path, {data: {"turbolinks" => false} }
               li
                 = link_to title_label('question-circle', 'About'), about_path, {data: {"turbolinks" => false} }
           div.col.s2

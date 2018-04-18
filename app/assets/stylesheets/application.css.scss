@@ -57,3 +57,7 @@ $primary-color: color("pink", "darken-3") !default;
 .divider {
     margin-top: 8px;
 }
+
+td, th {
+  padding: 10px 5px;
+}

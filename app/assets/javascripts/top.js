@@ -28,6 +28,7 @@ $(function() {
   var naviConfig = [
     { rule:"/", selector:"#navi-root" },
     { rule:"/schedule", selector:"#navi-schedule" },
+    { rule:"/players", selector:"#navi-players" },
     { rule:"/about", selector:"#navi-about" }
   ];
 

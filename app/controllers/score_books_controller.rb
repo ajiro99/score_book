@@ -47,6 +47,12 @@ class ScoreBooksController < ApplicationController
     @second_half_games = GameDecorator.decorate_collection(convention.games.limit(17).offset(17))
   end
 
+  def players
+    convention = Convention.find(1)
+    # @players = Player.where(year: convention.year).order(:position, :number)
+    @players = Player.includes(:results).where(year: convention.year).order(sort_column + ' ' + sort_direction)
+  end
+
   private
 
   def sort_direction
@@ -54,6 +60,14 @@ class ScoreBooksController < ApplicationController
   end
 
   def sort_column
-      Game.column_names.include?(params[:sort]) ? params[:sort] : "date"
+      # binding.pry
+      # default_column = params[:action] == 'players' ? "position" : "date"
+      # Game.column_names.include?(params[:sort]) ? params[:sort] : default_column
+
+      if params[:action] == 'players'
+        Player.column_names.include?(params[:sort]) ? params[:sort] : "position"
+      else
+        Game.column_names.include?(params[:sort]) ? params[:sort] : "date"
+      end
   end
 end

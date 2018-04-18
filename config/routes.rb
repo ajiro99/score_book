@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'score_books/:id' => 'score_books#game_detail'
   get 'about' => 'score_books#about'
   get 'schedule' => 'score_books#schedule'
+  get 'players' => 'score_books#players'
 
 
   namespace :admin do

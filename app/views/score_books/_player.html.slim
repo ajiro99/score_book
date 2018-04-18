@@ -1,0 +1,18 @@
+tr
+  td.right-align = player.number
+  td.center-align = player.position_text
+  td.center-align = player.name
+  td.center-align = player.birthday
+  td.center-align = player.height
+  td.center-align = player.weight
+  td.center-align = player.results.sum(:time)
+  td.center-align = player.results.without_participation(:no_participation).size
+  td.center-align = player.results.with_participation(:starting).size
+  td.center-align = player.results.with_participation(:starting).where(time: 90).size
+  td.center-align = player.results.with_participation(:half_way_out).size
+  td.center-align = player.results.sum(:gool)
+  td.center-align = player.results.sum(:shoot)
+  td.center-align = player.results.sum(:gool_against) if player.position.gk?
+  td.center-align = player.results.sum(:shoot_against)if player.position.gk?
+  td.center-align = player.results.sum(:yellow_card)
+  td.center-align = player.results.sum(:red_card)
