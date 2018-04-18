@@ -69,33 +69,33 @@ div.modal-content.indigo.lighten-4
               td.center-align.blue-text = @game.opponent.short_name
           tbody
             tr
-              td.right-align.red-text = @game.shoot
+              td.center-align.red-text = @game.shoot
               th.center-align シュート
-              td.right-align.blue-text = @game.shoot_against
+              td.center-align.blue-text = @game.shoot_against
             tr
-              td.right-align.red-text = @game.ck
+              td.center-align.red-text = @game.ck
               th.center-align CK
-              td.right-align.blue-text = @game.ck_against
+              td.center-align.blue-text = @game.ck_against
             tr
-              td.right-align.red-text = @game.fk
+              td.center-align.red-text = @game.fk
               th.center-align FK
-              td.right-align.blue-text = @game.fk_against
+              td.center-align.blue-text = @game.fk_against
             tr
-              td.right-align.red-text = @game.pk
+              td.center-align.red-text = @game.pk
               th.center-align PK
-              td.right-align.blue-text = @game.pk_against
+              td.center-align.blue-text = @game.pk_against
             tr
-              td.right-align.red-text = @game.dominance_rate_decorate
+              td.center-align.red-text = @game.dominance_rate_decorate
               th.center-align 支配率
-              td.right-align.blue-text = @game.opponent_dominance_rate_decorate
+              td.center-align.blue-text = @game.opponent_dominance_rate_decorate
             tr
-              td.right-align.red-text = @game.yellow_card
+              td.center-align.red-text = @game.yellow_card
               th.center-align イエローカード
-              td.right-align.blue-text = @game.gave_yellow_card
+              td.center-align.blue-text = @game.gave_yellow_card
             tr
-              td.right-align.red-text = @game.red_card
+              td.center-align.red-text = @game.red_card
               th.center-align レッドカード
-              td.right-align.blue-text = @game.gave_red_card
+              td.center-align.blue-text = @game.gave_red_card
 
       div.col.s4.offset-s1
         table.bordered
@@ -166,10 +166,10 @@ div.modal-content.indigo.lighten-4
             td.center-align = sub_member.player.position_text
             td = sub_member.player.name
             td.right-align = sub_member.time_decorate
-            td.right-align = sub_member.gool
-            td.right-align = sub_member.shoot
-            td.right-align = sub_member.yellow_card
-            td.right-align = sub_member.red_card
+            td.right-align = sub_member.gool unless sub_member.time == 0
+            td.right-align = sub_member.shoot unless sub_member.time == 0
+            td.right-align = sub_member.yellow_card unless sub_member.time == 0
+            td.right-align = sub_member.red_card unless sub_member.time == 0
   div.row
   div.video-container.z-depth-5
     iframe width="640" height="360" src=@game.video_url frameborder="0" allowfullscreen=""
