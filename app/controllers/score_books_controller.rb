@@ -49,8 +49,17 @@ class ScoreBooksController < ApplicationController
 
   def players
     convention = Convention.find(1)
-    # @players = Player.where(year: convention.year).order(:position, :number)
-    @players = Player.includes(:results).where(year: convention.year).order(sort_column + ' ' + sort_direction)
+    @players = Player.left_joins(:results)
+               .where(year: convention.year)
+               .order(sort_column + ' ' + sort_direction)
+               .group(:id)
+               .select("players.*, sum(results.time) AS sum_time, sum(results.gool) AS sum_gool,
+                        sum(results.gool_against) AS sum_gool_against, sum(results.shoot) AS sum_shoot,
+                        sum(results.shoot_against) AS sum_shoot_against, sum(results.yellow_card) AS sum_yellow_card,
+                        sum(results.red_card) AS sum_red_card,
+                        (select count(*) from players as p
+                           inner join results as r ON p.id  = r.player_id
+                           where r.participation <> 2 and r.player_id = players.id) as participation_count")
   end
 
   private
@@ -60,14 +69,13 @@ class ScoreBooksController < ApplicationController
   end
 
   def sort_column
-      # binding.pry
-      # default_column = params[:action] == 'players' ? "position" : "date"
-      # Game.column_names.include?(params[:sort]) ? params[:sort] : default_column
-
-      if params[:action] == 'players'
-        Player.column_names.include?(params[:sort]) ? params[:sort] : "position"
-      else
-        Game.column_names.include?(params[:sort]) ? params[:sort] : "date"
-      end
+    if params[:action] == 'players'
+      sum_column_list = %w(sum_time sum_gool sum_shoot sum_gool_against sum_shoot_against
+                           sum_yellow_card sum_red_card participation_count)
+      player_column_names = Player.column_names << sum_column_list
+      player_column_names.flatten.include?(params[:sort]) ? params[:sort] : "position"
+    else
+      Game.column_names.include?(params[:sort]) ? params[:sort] : "date"
+    end
   end
 end
