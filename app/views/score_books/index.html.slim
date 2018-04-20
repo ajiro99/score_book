@@ -57,12 +57,12 @@ div#wrapper
 
           div.col.s4
             table.bordered
-              - @goal_ranking.each_with_index do |(key, val), i|
+              - @goal_ranking.each_with_index do |(id, val), i|
                 tr
                   td
                     span.label.cyan.z-depth-2 = (i + 1).ordinalize
                   td.white-text
-                    b = goal_ranking_name(key)
+                    b = goal_ranking_name(id)
                   td.white-text
                     b = val
 

@@ -128,6 +128,7 @@ div.modal-content.indigo.lighten-4
           th.center-align 名前
           th.center-align 出場時間
           th.center-align 得点
+          th.center-align ｱｼｽﾄ
           th.center-align ｼｭｰﾄ
           th.center-align ｲｴﾛｰ
           th.center-align ﾚｯﾄﾞ
@@ -140,6 +141,7 @@ div.modal-content.indigo.lighten-4
             td = starting_member.player.name
             td.right-align = starting_member.time_decorate
             td.right-align = starting_member.goal
+            td.right-align = starting_member.assist
             td.right-align = starting_member.shoot
             td.right-align = starting_member.yellow_card
             td.right-align = starting_member.red_card
@@ -155,6 +157,7 @@ div.modal-content.indigo.lighten-4
           th.center-align 名前
           th.center-align 出場時間
           th.center-align 得点
+          th.center-align ｱｼｽﾄ
           th.center-align ｼｭｰﾄ
           th.center-align ｲｴﾛｰ
           th.center-align ﾚｯﾄﾞ
@@ -167,6 +170,7 @@ div.modal-content.indigo.lighten-4
             td = sub_member.player.name
             td.right-align = sub_member.time_decorate
             td.right-align = sub_member.goal unless sub_member.time == 0
+            td.right-align = sub_member.assist unless sub_member.time == 0
             td.right-align = sub_member.shoot unless sub_member.time == 0
             td.right-align = sub_member.yellow_card unless sub_member.time == 0
             td.right-align = sub_member.red_card unless sub_member.time == 0

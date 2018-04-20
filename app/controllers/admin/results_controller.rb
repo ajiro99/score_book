@@ -70,6 +70,6 @@ class Admin::ResultsController < Admin::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
-      params.require(:result).permit(:game_id, :player_id, :participation, :time, :goal, :goal_against, :shoot, :shoot_against, :yellow_card, :red_card)
+      params.require(:result).permit(:game_id, :player_id, :participation, :time, :goal, :goal_against, :shoot, :shoot_against, :assist, :yellow_card, :red_card)
     end
 end

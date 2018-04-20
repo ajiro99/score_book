@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def goal_ranking_name(player_id)
     player = Player.find(player_id)
-    "#{player.position_text}　#{player.name}"
+    "#{player.position_text} #{player.name}"
   end
 
   def title_label(icon_name, title_name)

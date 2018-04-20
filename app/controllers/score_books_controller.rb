@@ -53,7 +53,7 @@ class ScoreBooksController < ApplicationController
                .select("players.*, sum(results.time) AS sum_time, sum(results.goal) AS sum_goal,
                         sum(results.goal_against) AS sum_goal_against, sum(results.shoot) AS sum_shoot,
                         sum(results.shoot_against) AS sum_shoot_against, sum(results.yellow_card) AS sum_yellow_card,
-                        sum(results.red_card) AS sum_red_card,
+                        sum(results.red_card) AS sum_red_card, sum(results.assist) AS sum_assist,
                         (select count(*) from players as p
                            inner join results as r ON p.id  = r.player_id
                            where r.participation <> 2 and r.player_id = players.id) as participation_count")
@@ -70,7 +70,7 @@ class ScoreBooksController < ApplicationController
 
   def sort_column
     if params[:action] == 'players'
-      sum_column_list = %w(sum_time sum_goal sum_shoot sum_goal_against sum_shoot_against
+      sum_column_list = %w(sum_time sum_goal sum_shoot sum_assist sum_goal_against sum_shoot_against
                            sum_yellow_card sum_red_card participation_count)
       player_column_names = Player.column_names << sum_column_list
       player_column_names.flatten.include?(params[:sort]) ? params[:sort] : "position"
