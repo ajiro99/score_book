@@ -72,14 +72,16 @@ td.member {
 }
 
 #games tr:hover {
-  text-shadow: 1px 1px 2px #427388;
-  filter:alpha(opacity=80);
-  opacity:0.8;
+  background-color: #dcdcdc;
+  opacity: 0.8;
+}
 
+.page-footer a:hover {
+  color: #00bcd4 !important;
 }
 
 .card-panel {
-   padding: 15px 15px 5px 15px !important;
+  padding: 15px 15px 5px 15px !important;
 }
 
 span.label {
