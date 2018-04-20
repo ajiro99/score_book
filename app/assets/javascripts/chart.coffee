@@ -128,7 +128,7 @@ window.visitors_rank_graph = ->
     data: {
       labels: gon.home_section,
       datasets: [{
-        label: "ホーム入場者数",
+        label: "ホーム観客数",
         data: gon.visitors_rank,
         backgroundColor: "rgba(255, 99, 132)",
         borderColor: "white",

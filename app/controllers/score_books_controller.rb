@@ -50,9 +50,6 @@ class ScoreBooksController < ApplicationController
   def players
     convention = Convention.find(1)
     @players = Player.left_joins(:results)
-               .where(year: convention.year)
-               .order(sort_column + ' ' + sort_direction)
-               .group(:id)
                .select("players.*, sum(results.time) AS sum_time, sum(results.goal) AS sum_goal,
                         sum(results.goal_against) AS sum_goal_against, sum(results.shoot) AS sum_shoot,
                         sum(results.shoot_against) AS sum_shoot_against, sum(results.yellow_card) AS sum_yellow_card,
@@ -60,6 +57,9 @@ class ScoreBooksController < ApplicationController
                         (select count(*) from players as p
                            inner join results as r ON p.id  = r.player_id
                            where r.participation <> 2 and r.player_id = players.id) as participation_count")
+               .where(year: convention.year)
+               .group(:id)
+               .order(sort_column + ' ' + sort_direction)
   end
 
   private

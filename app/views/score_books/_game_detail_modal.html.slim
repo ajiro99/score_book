@@ -70,7 +70,7 @@ div.modal-content.indigo.lighten-4
           tbody
             tr
               td.center-align.red-text = @game.shoot
-              th.center-align シュート
+              th.center-align ｼｭｰﾄ
               td.center-align.blue-text = @game.shoot_against
             tr
               td.center-align.red-text = @game.ck
@@ -90,11 +90,11 @@ div.modal-content.indigo.lighten-4
               td.center-align.blue-text = @game.opponent_dominance_rate_decorate
             tr
               td.center-align.red-text = @game.yellow_card
-              th.center-align イエローカード
+              th.center-align ｲｴﾛｰｶｰﾄﾞ
               td.center-align.blue-text = @game.gave_yellow_card
             tr
               td.center-align.red-text = @game.red_card
-              th.center-align レッドカード
+              th.center-align ﾚｯﾄﾞｶｰﾄﾞ
               td.center-align.blue-text = @game.gave_red_card
 
       div.col.s4.offset-s1
@@ -107,7 +107,7 @@ div.modal-content.indigo.lighten-4
               th.right-align 主審
               td.right-align = @game.referee
             tr
-              th.right-align 入場者数
+              th.right-align 観客数
               td.right-align = @game.number_of_visitors_decorate(is_color: false)
             tr
               th.right-align 天候
@@ -124,13 +124,13 @@ div.modal-content.indigo.lighten-4
       thead
         tr
           th.center-align 番号
-          th.center-align ポジション
+          th.center-align ﾎﾟｼﾞｼｮﾝ
           th.center-align 名前
           th.center-align 出場時間
           th.center-align 得点
           th.center-align ｼｭｰﾄ
-          th.center-align 警告
-          th.center-align 退場
+          th.center-align ｲｴﾛｰ
+          th.center-align ﾚｯﾄﾞ
       tbody
         tr
         - @game.starting_members.each do |starting_member|
@@ -151,13 +151,13 @@ div.modal-content.indigo.lighten-4
       thead
         tr
           th.center-align 番号
-          th.center-align ポジション
+          th.center-align ﾎﾟｼﾞｼｮﾝ
           th.center-align 名前
           th.center-align 出場時間
           th.center-align 得点
           th.center-align ｼｭｰﾄ
-          th.center-align 警告
-          th.center-align 退場
+          th.center-align ｲｴﾛｰ
+          th.center-align ﾚｯﾄﾞ
       tbody
         tr
         - @game.sub_members.each do |sub_member|

@@ -20,10 +20,10 @@ class GamesDecorator < Draper::CollectionDecorator
   end
 
   def last_game_date
-    "第#{last.section_decorate}　#{last.date_decorate(is_color: false)} #{last.start_time_decorate} Kick off（#{last.home_away_text}）"
+    "第#{last.section_decorate}　#{last.date_decorate(is_color: false)} #{last.start_time_decorate} （#{last.home_away_text}）"
   end
 
   def last_game_result
-    "vs #{last.opponent.name}　#{last.goal} - #{last.goal_against}"
+    "#{last.opponent.name}　#{last.goal} - #{last.goal_against}"
   end
 end

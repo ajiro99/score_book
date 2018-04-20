@@ -7,10 +7,6 @@ body {
     background-image: image-url("blue_tile.jpg")
 }
 
-.brand-logo {
-  font-family: 'Nunito', sans-serif;
-}
-
 div#main {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -25,7 +21,7 @@ div#graph_zone {
   width: 63%;
 
   div.card-panel {
-     height: 385px;
+     height: 390px;
   }
 }
 
@@ -41,7 +37,7 @@ aside {
   width: 35%;
 
   div.card-panel {
-     height: 385px;
+     height: 390px;
   }
 }
 
@@ -138,9 +134,10 @@ div.next_game {
   background: #999;
 }
 
-nav .brand-logo {
+nav .nav-logo {
+  font-family: 'Nunito', sans-serif;
   border-radius: 30px;
-  padding: 0px 20px !important;
+  padding: 15px !important;
   font-weight: bold;
   font-style: italic;
   font-size: 1.8rem !important;
