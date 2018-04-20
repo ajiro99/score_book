@@ -35,11 +35,11 @@
           = f.select :result, Game.result.options, include_blank: true
           = f.label :result
        div.input-field.col.s2
-          = f.number_field :gool, min: 0
-          = f.label :gool
+          = f.number_field :goal, min: 0
+          = f.label :goal
        div.input-field.col.s2
-          = f.number_field :gool_against, min: 0
-          = f.label :gool_against
+          = f.number_field :goal_against, min: 0
+          = f.label :goal_against
        div.input-field.col.s2
           = f.number_field :rank, min: 1
           = f.label :rank
@@ -131,7 +131,7 @@
         div.input-field.col.s2
           = f.number_field :number_of_visitors, min: 0
           = f.label :number_of_visitors
- 
+
       div.row
         div.col.s2
           = f.submit class: "waves-effect waves-light btn"

@@ -7,8 +7,8 @@ class GamesDecorator < Draper::CollectionDecorator
     count
   end
 
-  def gool_difference
-    total_count(:gool) - total_count(:gool_against)
+  def goal_difference
+    total_count(:goal) - total_count(:goal_against)
   end
 
   def result_count(type)
@@ -24,6 +24,6 @@ class GamesDecorator < Draper::CollectionDecorator
   end
 
   def last_game_result
-    "vs #{last.opponent.name}　#{last.gool} - #{last.gool_against}"
+    "vs #{last.opponent.name}　#{last.goal} - #{last.goal_against}"
   end
 end

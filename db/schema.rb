@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330183310) do
+ActiveRecord::Schema.define(version: 20180421193322) do
 
   create_table "conventions", force: :cascade do |t|
     t.integer  "year"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20180330183310) do
     t.integer  "temperature"
     t.string   "referee"
     t.integer  "result"
-    t.integer  "gool",                 default: 0
-    t.integer  "gool_against",         default: 0
+    t.integer  "goal",                 default: 0
+    t.integer  "goal_against",         default: 0
     t.integer  "shoot",                default: 0
     t.integer  "shoot_against",        default: 0
     t.integer  "ck",                   default: 0
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 20180330183310) do
     t.integer  "player_id",                 null: false
     t.integer  "participation",             null: false
     t.integer  "time",          default: 0, null: false
-    t.integer  "gool"
-    t.integer  "gool_against"
+    t.integer  "goal"
+    t.integer  "goal_against"
     t.integer  "shoot"
     t.integer  "shoot_against"
     t.integer  "yellow_card",   default: 0, null: false

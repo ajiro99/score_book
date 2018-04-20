@@ -91,7 +91,7 @@ class GameDecorator < Draper::Decorator
   end
 
   def total_score
-    "#{gool} - #{gool_against}"
+    "#{goal} - #{goal_against}"
   end
 
   def half_score

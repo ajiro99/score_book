@@ -11,7 +11,7 @@ class ScoreBooksController < ApplicationController
     gon.goal_players << "その他"
 
     gon.goals = @goal_ranking.values
-    gon.goals << (games.sum(:gool) - @goal_ranking.values.sum())
+    gon.goals << (games.sum(:goal) - @goal_ranking.values.sum())
 
     gon.leage_section = games.pluck(:section)
     gon.leage_rank = games.pluck(:rank)
@@ -53,8 +53,8 @@ class ScoreBooksController < ApplicationController
                .where(year: convention.year)
                .order(sort_column + ' ' + sort_direction)
                .group(:id)
-               .select("players.*, sum(results.time) AS sum_time, sum(results.gool) AS sum_gool,
-                        sum(results.gool_against) AS sum_gool_against, sum(results.shoot) AS sum_shoot,
+               .select("players.*, sum(results.time) AS sum_time, sum(results.goal) AS sum_goal,
+                        sum(results.goal_against) AS sum_goal_against, sum(results.shoot) AS sum_shoot,
                         sum(results.shoot_against) AS sum_shoot_against, sum(results.yellow_card) AS sum_yellow_card,
                         sum(results.red_card) AS sum_red_card,
                         (select count(*) from players as p
@@ -70,7 +70,7 @@ class ScoreBooksController < ApplicationController
 
   def sort_column
     if params[:action] == 'players'
-      sum_column_list = %w(sum_time sum_gool sum_shoot sum_gool_against sum_shoot_against
+      sum_column_list = %w(sum_time sum_goal sum_shoot sum_goal_against sum_shoot_against
                            sum_yellow_card sum_red_card participation_count)
       player_column_names = Player.column_names << sum_column_list
       player_column_names.flatten.include?(params[:sort]) ? params[:sort] : "position"

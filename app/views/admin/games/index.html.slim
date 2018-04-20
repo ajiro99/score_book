@@ -1,7 +1,7 @@
 div.card-panel.hoverable.z-depth-5
   div.row
     h4 Listing games
-    div.col.s2.offset-s10.right-align 
+    div.col.s2.offset-s10.right-align
       = link_to 'New Game', new_admin_game_path, class: "waves-effect waves-light btn"
     div.row
       div.col.s12
@@ -21,7 +21,7 @@ div.card-panel.hoverable.z-depth-5
               th
               th
               th
-        
+
           tbody
             - @games.each do |game|
               tr
@@ -32,8 +32,8 @@ div.card-panel.hoverable.z-depth-5
                 td = game.opponent.name
                 td = game.home_away_text
                 td = game.result_text
-                td = game.gool
-                td = game.gool_against
+                td = game.goal
+                td = game.goal_against
                 td = game.rank
                 td = link_to 'Results', admin_results_path
                 td = link_to 'Edit', edit_admin_game_path(game)

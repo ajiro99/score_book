@@ -1,7 +1,7 @@
 div.card-panel.hoverable.z-depth-5
   div.row
     h4 Listing result
-    div.col.s2.offset-s10.right-align 
+    div.col.s2.offset-s10.right-align
       = link_to 'New Result', new_admin_result_path, class: "waves-effect waves-light btn"
     div.row
       div.col.s12
@@ -22,7 +22,7 @@ div.card-panel.hoverable.z-depth-5
               th
               th
               th
-        
+
           tbody
             - @results.each do |result|
               tr
@@ -31,12 +31,12 @@ div.card-panel.hoverable.z-depth-5
                 td = result.player.name
                 td = result.participation_text
                 td = result.time
-                td = result.gool
+                td = result.goal
                 td = result.shoot
-                td = result.gool_against
+                td = result.goal_against
                 td = result.shoot_against
                 td = result.yellow_card
                 td = result.red_card
                 td = link_to 'Show', admin_result_path(result)
                 td = link_to 'Edit', edit_admin_result_path(result)
-                td = link_to 'Destroy', admin_result_path(result), data: {         confirm: 'Are you sure?' }, method: :delete        
+                td = link_to 'Destroy', admin_result_path(result), data: {         confirm: 'Are you sure?' }, method: :delete
