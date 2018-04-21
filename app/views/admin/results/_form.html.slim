@@ -1,5 +1,5 @@
 = form_for([:admin, @result]) do |f|
-  p#notice.red-text = notice
+  p#notice.blue-text = notice
   - if @result.errors.any?
     #error_explanation
       h2 = "#{pluralize(@result.errors.count, "error")} prohibited this result from being saved:"

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   namespace :admin do
   	resources :games
   	resources :results
+    resources :goal_patterns
   end
 end

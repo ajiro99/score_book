@@ -1,0 +1,34 @@
+div.card-panel.hoverable.z-depth-5
+  div.row
+    h4 Listing GoalPattern
+    div.col.s2.offset-s10.right-align
+      = link_to 'New GoalPattern', new_admin_goal_pattern_path, class: "waves-effect waves-light btn"
+    div.row
+      div.col.s12
+        table.bordered.striped
+          thead
+            tr
+              th 節
+              th 時間
+              th 得点者
+              th アシスト者
+              th パターン
+              th 起点エリア
+              th ゴールエリア
+              th 得点部位
+              th
+              th
+
+          tbody
+            - @goal_patterns.each do |goal_pattern|
+              tr
+                td = goal_pattern.game.section
+                td = goal_pattern.goal_time
+                td = goal_pattern.player.name
+                td = goal_pattern.assist_player&.name
+                td = goal_pattern.pattern
+                td = goal_pattern.starting_area
+                td = goal_pattern.goal_area_text
+                td = goal_pattern.goal_parts_text
+                td = link_to 'Edit', edit_admin_goal_pattern_path(goal_pattern)
+                td = link_to 'Destroy', admin_goal_pattern_path(goal_pattern), data: { confirm: 'Are you sure?' }, method: :delete
