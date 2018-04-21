@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-  	resources :games
-  	resources :results
+    resources :games
+    resources :results
     resources :goal_patterns
+    resources :goal_against_patterns
   end
 end

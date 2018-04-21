@@ -1,0 +1,42 @@
+= form_for([:admin, @goal_against_pattern]) do |f|
+  p#notice.blue-text = notice
+  - if @goal_against_pattern.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@goal_against_pattern.errors.count, "error")} prohibited this goal_against_pattern from being saved:"
+      ul
+        - @goal_against_pattern.errors.full_messages.each do |message|
+          li = message
+
+  div.row
+    div.col.s12
+      div.row
+        div.input-field.col.s3
+          = f.collection_select :game_id, Game.all, :id, :section
+          = f.label :game
+
+      div.row
+        div.input-field.col.s2
+          = f.number_field :goal_against_time, min: 0, max: 120
+          = f.label :goal_against_time
+        div.input-field.col.s3
+          = f.collection_select :goal_against_player_id, Player.all, :id, :name
+          = f.label :goal_against_player
+
+      div.row
+        div.input-field.col.s2
+          = f.select :pattern, GoalAgainstPattern.pattern.options
+        div.input-field.col.s2
+          = f.select :starting_area, GoalAgainstPattern.starting_area.options
+          = f.label :starting_area
+        div.input-field.col.s2
+          = f.select :goal_area, GoalAgainstPattern.goal_area.options
+          = f.label :goal_area
+        div.input-field.col.s2
+          = f.select :goal_parts, GoalAgainstPattern.goal_parts.options
+          = f.label :goal_parts
+
+      div.row
+        div.col.s12
+            = f.submit class: "waves-effect waves-light btn button-margin"
+            = link_to 'New', new_admin_goal_against_pattern_path, class: "waves-effect waves-light btn blue button-margin"
+            = link_to 'Back', admin_goal_against_patterns_path, class: "waves-effect waves-light btn orange button-margin"

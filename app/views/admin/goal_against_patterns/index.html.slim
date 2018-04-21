@@ -1,0 +1,32 @@
+div.card-panel.hoverable.z-depth-5
+  div.row
+    h4 Listing GoalAgainstPattern
+    div.col.s2.offset-s10.right-align
+      = link_to 'New GoalAgainstPattern', new_admin_goal_against_pattern_path, class: "waves-effect waves-light btn"
+    div.row
+      div.col.s12
+        table.bordered.striped
+          thead
+            tr
+              th 節
+              th 時間
+              th 失点GK
+              th パターン
+              th 起点エリア
+              th ゴールエリア
+              th 得点部位
+              th
+              th
+
+          tbody
+            - @goal_against_patterns.each do |goal_against_pattern|
+              tr
+                td = goal_against_pattern.game.section
+                td = goal_against_pattern.goal_against_time
+                td = goal_against_pattern.goal_against_player&.name
+                td = goal_against_pattern.pattern
+                td = goal_against_pattern.starting_area
+                td = goal_against_pattern.goal_area_text
+                td = goal_against_pattern.goal_parts_text
+                td = link_to 'Edit', edit_admin_goal_against_pattern_path(goal_against_pattern)
+                td = link_to 'Destroy', admin_goal_against_pattern_path(goal_against_pattern), data: { confirm: 'Are you sure?' }, method: :delete
