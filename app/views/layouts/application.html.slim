@@ -16,8 +16,8 @@ html
       div
         nav.z-depth-3
           div.nav-wrapper.container
-            = link_to 'Kashima Antlers DATA ANALYSIS', root_path, { class: 'nav-logo', data: {turbolinks: false} }
-            ul#nav-mobile.right
+            = link_to 'Kashima Antlers DATA ANALYSIS', root_path, { class: 'brand-logo', data: {turbolinks: false} }
+            ul#nav-mobile.right.hide-on-med-and-down
               li#navi-root
                 = link_to fa_icon('home'), root_path, {data: {turbolinks: false} }
               li#navi-schedule
@@ -33,7 +33,7 @@ html
     footer.page-footer
       div.container
         div.row
-          div.col.offset-s5.s4
+          div.col.offset-l5.s12.l4
             h5.white-text Content
             ul
               li
@@ -44,7 +44,7 @@ html
                 = link_to title_label('users', 'players'), players_path, {data: {turbolinks: false}, class: 'white-text' }
               li
                 = link_to title_label('question-circle', 'About'), about_path, { data: {turbolinks: false}, class: 'white-text' }
-          div.col.s3
+          div.col.s12.l3
             h5.white-text Official Site
             a href = 'http://www.so-net.ne.jp/antlers/' target='_blank'
               = image_tag 'toANT.gif', size: '150x50'
