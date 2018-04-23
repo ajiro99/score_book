@@ -5,13 +5,13 @@ div.card-panel.hoverable.z-depth-5
   div.row
     div.col.s12
       div.row
-      table.bordered.striped
+      table.bordered.striped.responsive-table
         thead#players_title
           == render partial: 'score_books/players_title'
         tbody#players
           == render partial: 'score_books/player', collection: @players
 
-        thead
+        thead.hide-on-med-and-down
           tr
             th.center-align 番号
             th.center-align ﾎﾟｼﾞｼｮﾝ
