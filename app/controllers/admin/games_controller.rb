@@ -75,7 +75,7 @@ class Admin::GamesController < Admin::BaseController
         :result, :goal, :goal_against, :shoot, :shoot_against, :ck, :ck_against, :fk, :fk_against, :yellow_card,
         :gave_yellow_card, :red_card, :gave_red_card, :dominance_rate, :first_change_time, :first_change_out_id,
         :first_change_in_id, :second_change_time, :second_change_out_id, :second_change_in_id, :third_change_time,
-        :third_change_out_id, :third_change_in_id, :number_of_visitors, :rank
+        :third_change_out_id, :third_change_in_id, :number_of_visitors, :rank, :pk, :pk_against, :video_url
       )
     end
 end
