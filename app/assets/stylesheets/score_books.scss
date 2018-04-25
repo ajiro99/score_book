@@ -26,6 +26,12 @@ div#graph_zone {
   }
 }
 
+@media (max-width: 920px) {
+  #graph_zone, .right {
+    width: 100%!important;
+  }
+}
+
 canvas#leage_rank_graph {
   height: 270px !important;
 }
@@ -55,7 +61,7 @@ aside {
 td.member {
   color: #FFFFFF;
   background-color: #F44336;
-  border-radius: 40px 0px 0px 40px / 40px 0px 0px 40px;
+  border-radius: 50px 0px 0px 50px / 50px 0px 0px 50px !important;
 }
 
 .fa-black {color: black}
@@ -149,4 +155,9 @@ div.next_game {
 
 .panel-opacity {
   opacity: 0.9;
+}
+
+.table-div-border {
+  border: 3px solid #7986cb;
+  border-radius: 10px !important;
 }
