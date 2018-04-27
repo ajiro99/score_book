@@ -1,4 +1,8 @@
 $(function() {
+  $('.dropdown-trigger').dropdown({
+    belowOrigin: true
+})
+
   var showFlag = false;
   var topBtn = $('#page-top');
   topBtn.css('bottom', '-100px');

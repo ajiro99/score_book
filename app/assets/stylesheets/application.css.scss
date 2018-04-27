@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
  */
 @import "materialize/components/color";
 $primary-color: color("indigo", "darken-3") !default;
@@ -56,7 +57,7 @@ $table-border-color: #7986cb !default;
 }
 
 .divider {
-    margin-top: 8px;
+  margin-top: 18px;
 }
 
 td, th {
@@ -69,7 +70,7 @@ nav .brand-logo {
   padding: 0px 15px;
   font-weight: bold;
   font-style: italic;
-  font-size: 1.8rem !important;
+  font-size: 1.8rem;
   background-color: #1e2a7a;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }

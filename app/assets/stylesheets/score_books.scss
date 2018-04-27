@@ -18,30 +18,44 @@ div#graph_zone {
  // width: 63%;
 
   div.card-panel {
-     height: 390px;
+     height: 425px;
      border-radius: 25px;
   }
 }
 
-@media (max-width: 920px) {
- // #graph_zone, .right {
- //   width: 100%!important;
- // }
-}
-
 canvas#leage_rank_graph {
-  height: 270px !important;
+  height: 290px !important;
 }
 
 canvas#visitors_rank_graph {
-  height: 270px !important;
+  height: 290px !important;
+}
+
+canvas#ave_dominance_rate_graph {
+  margin-top: 20px;
+}
+
+canvas#home_ave_dominance_rate_graph {
+  margin-top: 20px;
+}
+
+div#goal_rank {
+  td {
+    border-bottom: 1px solid #1e2a7a;
+    font-size: 13px;
+  }
+
+  #goal_font {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+  }
 }
 
 div#info_zone {
   //width: 35%;
 
   div.card-panel {
-     height: 390px;
+     height: 425px;
      border-radius: 25px;
   }
 }
@@ -110,6 +124,7 @@ span.label {
 }
 
 div.next_game {
+  color: #0000ff;
   font-family: 'Anton', sans-serif;
 
   span {
@@ -157,4 +172,10 @@ div.next_game {
 .table-div-border {
   border: 3px solid #7986cb;
   border-radius: 10px !important;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    font-size: 20px !important;
+  }
 }

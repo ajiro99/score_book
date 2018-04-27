@@ -1,4 +1,4 @@
-div#wrapper
+div
   div.row
     div#graph_zone.col.s12.l8
       div.card-panel.hoverable.indigo.lighten-2.z-depth-5.panel-opacity
@@ -64,7 +64,7 @@ div#wrapper
                       span.label.cyan.z-depth-2 = (i + 1).ordinalize
                     td.white-text
                       b = goal_ranking_name(id)
-                    td.white-text
+                    td#goal_font.white-text
                       b = val
 
         div#leage_rank.col.s12
@@ -74,7 +74,7 @@ div#wrapper
           canvas#visitors_rank_graph
           script visitors_rank_graph()
         div#ave_dominance_rate.col.s12
-          div#wrapper.row
+          div.row
             div.col.s6
               canvas#ave_dominance_rate_graph
               script ave_dominance_rate_graph()
@@ -84,7 +84,6 @@ div#wrapper
 
     == render partial: 'information', locals: { games: @games }
 
-div.row
 div.card-panel.hoverable.grey.lighten-4.z-depth-5.table-div-border
   span.label.z-depth-3
     = title_label('calendar-check-o', 'RESUST')

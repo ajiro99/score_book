@@ -14,6 +14,16 @@ html
   body
     header
       div
+        ul#dropdown1.dropdown-content
+          li
+            = link_to 'Dashboard', root_path, {data: {turbolinks: false} }
+          li
+            = link_to 'Schedule', schedule_path, { data: {turbolinks: false} }
+          li
+            = link_to 'players', players_path, {data: {turbolinks: false} }
+          li
+            = link_to 'About', about_path, { data: {turbolinks: false} }
+
         nav.z-depth-3
           div.nav-wrapper.container
             = link_to 'Kashima Antlers DATA ANALYSIS', root_path, { class: 'brand-logo', data: {turbolinks: false} }
@@ -26,6 +36,9 @@ html
                 = link_to title_label('users', 'players'), players_path, {data: {turbolinks: false} }
               li#navi-about
                 = link_to title_label('question-circle', 'About'), about_path, { data: {turbolinks: false} }
+            ul#nav-mobile.right.hide-on-large-only
+              li
+                a.dropdown-trigger.right href="#" data-activates="dropdown1" menu
 
     div#main.container
       == yield

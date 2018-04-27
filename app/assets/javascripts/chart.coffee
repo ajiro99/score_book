@@ -188,7 +188,7 @@ window.ave_dominance_rate_graph = ->
       }]
     },
     options: {
-      cutoutPercentage: 60,
+      cutoutPercentage: 55,
       rotation: 3.143,
       circumference: 3.143,
       legend: {
@@ -228,7 +228,7 @@ window.home_ave_dominance_rate_graph = ->
       }]
     },
     options: {
-      cutoutPercentage: 60,
+      cutoutPercentage: 55,
       rotation: 3.143,
       circumference: 3.143,
       legend: {
