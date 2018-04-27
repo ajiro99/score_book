@@ -12,13 +12,10 @@ div#main {
   padding-bottom: 45px;
 }
 
-#wrapper {
-  overflow: hidden;
-}
 
 div#graph_zone {
-  float: left;
-  width: 63%;
+ // float: left;
+ // width: 63%;
 
   div.card-panel {
      height: 390px;
@@ -27,9 +24,9 @@ div#graph_zone {
 }
 
 @media (max-width: 920px) {
-  #graph_zone, .right {
-    width: 100%!important;
-  }
+ // #graph_zone, .right {
+ //   width: 100%!important;
+ // }
 }
 
 canvas#leage_rank_graph {
@@ -40,8 +37,8 @@ canvas#visitors_rank_graph {
   height: 270px !important;
 }
 
-aside {
-  width: 35%;
+div#info_zone {
+  //width: 35%;
 
   div.card-panel {
      height: 390px;
