@@ -1,28 +1,30 @@
 = Gon::Base.render_data
 div.modal-footer.indigo.darken-1
   div.row
-    div.col.s10
+    div.col.s8.l9.offset-s1.offset-l1
       p.white-text
         b = @game.detail_date(is_color: false)
-    div.col.s2.right-align
+    div.col.s3.l2.right-align
       span.white-text.modal-close.btn-flat = fa_icon("window-close-o title-padding")
 
 div.modal-content.indigo.lighten-4
   div.card-panel.hoverable.z-depth-5
     div.row
-      div.col.s3.right-align.red-text.text-lighten-2
+      div.col.s3.right-align.red-text.text-lighten-2.modal-team-name
         h4 鹿島
         = @game.home_away_text
       div.col.s6.center-align
-        h4
-          b = @game.total_score
-        = @game.half_score
-      div.col.s3.left-align.blue-text
+        div.col.s12.center-align
+          h4
+            b = @game.total_score
+          div.col.s12.center-align = @game.first_half_score
+          div.col.s12.center-align = @game.second_half_score
+      div.col.s3.left-align.blue-text.modal-team-name
         h4 = @game.opponent.short_name
         = @game.opponent_home_away
 
     div.row
-      div.col.s5.offset-s1
+      div.col.s12.l5.offset-l1
         ul
           li
             b = title_label('soccer-ball-o', '得点')
@@ -32,7 +34,7 @@ div.modal-content.indigo.lighten-4
               div.col.s10.red-text.text-lighten-2 = goal_pattern.goal_and_assist_player
               div.col.s10.offset-s2.text-lighten-2 = goal_pattern.goal_pattern
 
-      div.col.s5
+      div.col.s12.l5
         ul
           li
             b = title_label('soccer-ball-o', '失点')
@@ -43,9 +45,9 @@ div.modal-content.indigo.lighten-4
               div.col.s10.offset-s2.text-lighten-2 = goal_against_pattern.goal_pattern
 
     div.row
-      div.col.s5.offset-s1
+      div.col.s12.l11.offset-l1
         b = title_label('exchange', '選手交代')
-      div.col.s6 　
+
 
       div.col.s2.right-align = @game.first_change_time_decorate
       div.col.s10.red-text.text-lighten-2 == @game.first_change_player
@@ -60,7 +62,7 @@ div.modal-content.indigo.lighten-4
     canvas#myChart
     script draw_graph()
     div#wrapper.row
-      div.col.s5.offset-s1
+      div.col.s12.l5.offset-l1
         table#comparison_detail.bordered
           thead
             tr
@@ -97,7 +99,7 @@ div.modal-content.indigo.lighten-4
               th.center-align ﾚｯﾄﾞｶｰﾄﾞ
               td.center-align.blue-text = @game.gave_red_card
 
-      div.col.s4.offset-s1
+      div.col.s12.l4.offset-l1
         table.bordered
           thead
             tr
@@ -120,7 +122,8 @@ div.modal-content.indigo.lighten-4
   div.card-panel.hoverable.z-depth-5
     span.label.red.z-depth-3
       = title_label('users', 'スターティングメンバー')
-    table.bordered.highlight
+    div.row
+    table.bordered.highlight.responsive-table
       thead
         tr
           th.center-align 番号
@@ -147,9 +150,12 @@ div.modal-content.indigo.lighten-4
             td.right-align = starting_member.red_card
 
     div.row
+    div.divider
+    div.row
     span.label.z-depth-3.blue
       = title_label('users', '控えメンバー')
-    table.bordered.highlight
+    div.row
+    table.bordered.highlight.responsive-table
       thead
         tr
           th.center-align 番号

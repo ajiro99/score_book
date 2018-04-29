@@ -2,7 +2,7 @@ tr
   td.right-align.member = player.number
   td.center-align = player.position_text
   td.center-align = player.name
-  td.center-align = player.birthday
+  td.center-align.nowrap = player.birthday.strftime("%Y/%m/%d")
   td.center-align = player.height
   td.center-align = player.weight
   td.center-align = player.sum_goal.presence || 0

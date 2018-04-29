@@ -10,6 +10,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'
     link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 
   body
     header
@@ -38,7 +39,7 @@ html
                 = link_to title_label('question-circle', 'About'), about_path, { data: {turbolinks: false} }
             ul#nav-mobile.right.hide-on-large-only
               li
-                a.dropdown-trigger.right href="#" data-activates="dropdown1" menu
+                a.dropdown-trigger.right href="" data-activates="dropdown1" data-turbolinks="false" Menu ▼
 
     div#main.container
       == yield

@@ -15,17 +15,17 @@ div.card-panel.hoverable.z-depth-5.table-div-border
             th.center-align Kick off
             th.center-align 対戦相手
             th.center-align H/A
-            th.center-align 結果
+            th.center-align.hide-on-med-and-down 結果
         tbody
           tr
           - @first_half_games.each do |game|
             tr
-              td.right-align = game.section_decorate
+              td.right-align.nowrap = game.section_decorate
               td.center-align = game.date_decorate
               td.center-align = game.start_time_decorate
               td = game.opponent.name
               td.center-align = game.home_away_decorate
-              td.center-align = game.result_score
+              td.center-align.hide-on-med-and-down = game.result_score
 
 
     div.col.s12.l6
@@ -40,14 +40,14 @@ div.card-panel.hoverable.z-depth-5.table-div-border
             th.center-align Kick off
             th.center-align 対戦相手
             th.center-align H/A
-            th.center-align 結果
+            th.center-align.hide-on-med-and-down 結果
         tbody
           tr
           - @second_half_games.each do |game|
             tr
-              td.right-align = game.section_decorate
+              td.right-align.nowrap = game.section_decorate
               td.center-align = game.date_decorate
               td.center-align = game.start_time_decorate
               td = game.opponent.name
               td.center-align = game.home_away_decorate
-              td.center-align = game.result_decorate
+              td.center-align.hide-on-med-and-down = game.result_decorate

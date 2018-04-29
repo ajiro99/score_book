@@ -1,6 +1,6 @@
 window.draw_graph = ->
   ctx = document.getElementById("myChart").getContext('2d')
-  ctx.canvas.height = 88;
+  #ctx.canvas.height = 88;
   myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
@@ -123,7 +123,7 @@ window.leage_rank_graph = ->
 
 window.visitors_rank_graph = ->
   ctx = document.getElementById("visitors_rank_graph").getContext('2d')
-  myChart = new Chart(ctx, {
+  visitors_rank_graph = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: gon.home_section,

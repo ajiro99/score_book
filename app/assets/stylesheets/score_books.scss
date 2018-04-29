@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+html {
     font-size: 14px;
+}
+
+body {
     background-image: image-url("blue_tile.jpg")
 }
 
@@ -12,11 +15,7 @@ div#main {
   padding-bottom: 45px;
 }
 
-
 div#graph_zone {
- // float: left;
- // width: 63%;
-
   div.card-panel {
      height: 425px;
      border-radius: 25px;
@@ -52,7 +51,6 @@ div#goal_rank {
 }
 
 div#info_zone {
-  //width: 35%;
 
   div.card-panel {
      height: 425px;
@@ -174,8 +172,67 @@ div.next_game {
   border-radius: 10px !important;
 }
 
-@media screen and (max-width: 500px) {
+td.nowrap {
+  white-space: nowrap;
+}
+
+.modal-team-name {
+  padding-top: 15px !important;
+}
+
+@media screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 30% !important;
+    font-size: 0.8rem !important;
+    padding: 0px 14px !important;
+  }
+
+  div#graph_zone div.card-panel {
+      height: auto;
+      overflow: hidden;
+  }
+
+  canvas#leage_rank_graph {
+    height: auto !important;
+  }
+
+  canvas#visitors_rank_graph {
+    height: auto !important;
+  }
+
+  canvas#ave_dominance_rate_graph {
+    margin-top: 0px;
+  }
+
+  .responsive-table {
+    font-size: 0.8rem !important;
+  }
+
+  .modal {
+    max-height: 88% !important;
+    width: 93% !important;
+
+    .modal-footer {
+      font-size: 0.9rem !important;
+    }
+
+    .modal-content {
+      padding: 10px !important;
+    }
+
+    .modal-team-name {
+      padding-top: 2px !important;
+    }
+  }
+
+  td.member {
+    color: #FFFFFF;
+    background-color: #F44336;
+    border-radius: 40px !important;
+    text-align: center !important;
+  }
+
   footer {
-    font-size: 20px !important;
+    font-size: 1.4rem;
   }
 }

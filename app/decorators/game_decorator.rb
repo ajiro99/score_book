@@ -71,7 +71,7 @@ class GameDecorator < Draper::Decorator
   end
 
   def detail_date(is_color: true)
-    h.raw("　第#{section_decorate} #{date_decorate(is_color: is_color)}  #{start_time_decorate} kick off　 VS #{opponent.name}")
+    h.raw("第#{section_decorate} #{date_decorate(is_color: is_color)}  #{start_time_decorate} kick off　 VS #{opponent.name}")
   end
 
   def ather_date
@@ -94,8 +94,12 @@ class GameDecorator < Draper::Decorator
     "#{goal} - #{goal_against}"
   end
 
-  def half_score
-    "1st：#{first_herf_goal_count} - #{first_herf_goal_against_count}　2nd：#{second_herf_goal_count} - #{second_herf_goal_against_count}"
+  def first_half_score
+    "1st：#{first_herf_goal_count} - #{first_herf_goal_against_count}"
+  end
+
+  def second_half_score
+    "2nd：#{second_herf_goal_count} - #{second_herf_goal_against_count}"
   end
 
   def first_change_player
