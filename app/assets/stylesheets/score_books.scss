@@ -232,7 +232,15 @@ td.nowrap {
     text-align: center !important;
   }
 
+  #page-top a {
+    font-size: 67%;
+    width: 64px;
+    padding: 25px 0;
+  }
+
   footer {
-    font-size: 1.4rem;
+    div.col {
+      font-size: 1.4rem;
+    }
   }
 }

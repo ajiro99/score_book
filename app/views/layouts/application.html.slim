@@ -15,7 +15,7 @@ html
   body
     header
       div
-        ul#dropdown1.dropdown-content
+        ul#dropdown1.dropdown-content.indigo.darken-2
           li
             = link_to 'Dashboard', root_path, {data: {turbolinks: false} }
           li
@@ -38,7 +38,7 @@ html
               li#navi-about
                 = link_to title_label('question-circle', 'About'), about_path, { data: {turbolinks: false} }
             ul#nav-mobile.right.hide-on-large-only
-              li
+              li.active
                 a.dropdown-trigger.right href="" data-activates="dropdown1" data-turbolinks="false" Menu ▼
 
     div#main.container
