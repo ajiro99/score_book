@@ -86,11 +86,6 @@ window.leage_rank_graph = ->
           gridLines: {
             display: false,
           },
-          scaleLabel: {
-            display: true,
-            labelString: '順位',
-            fontColor: 'white'
-          },
           ticks: {
             reverse: true,
             fontColor: 'white',
