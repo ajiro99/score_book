@@ -22,7 +22,7 @@
           = f.collection_select :player_id, Player.all, :id, :name
           = f.label :player
         div.input-field.col.s3
-          = f.collection_select :assist_player_id, Player.all, :id, :name
+          = f.collection_select :assist_player_id, Player.all, :id, :name, include_blank: true
           = f.label :assist_player
 
       div.row
